@@ -1,0 +1,9 @@
+POS DarkMatter is just a modified version of the Official PhoenixOS.
+Special thanks to the android_x86-project and Chaozhuo.
+No such changes were made which would potentially harm the original devs in any means.
+
+Make sure that you downloaded this installer from the official website supreme-gamers.com
+If you downloaded it from somewhere else then we take no responsibilities of the outcome.
+
+There are also some clowns active over stealing our work like if it's their own property.
+Lastly, please share this project as that would encourage us more over the development.
