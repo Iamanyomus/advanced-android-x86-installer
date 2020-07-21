@@ -3,6 +3,6 @@
 
 <p align="center">
   <a href="https://discord.gg/red">
-    <img src="https://discordapp.com/api/guilds/133049272517001216/widget.png?style=shield" alt="Discord Server">
+    <img src="https://discordapp.com/api/guilds/470607426257682442/widget.png?style=banner1" alt="Discord Server">
   </a>
 </p>
