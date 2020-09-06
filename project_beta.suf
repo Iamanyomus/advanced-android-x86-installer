@@ -3158,31 +3158,30 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 </StyleData>
 <CustomCtrlList>
 <CustomCtrlInfo Left="180" Top="167" Width="115" Height="45" ID="121"/>
-<CustomCtrlInfo Left="4" Top="110" Width="189" Height="59" ID="213"/>
-<CustomCtrlInfo Left="319" Top="195" Width="171" Height="84" ID="214"/>
+<CustomCtrlInfo Left="110" Top="133" Width="283" Height="20" ID="214"/>
 </CustomCtrlList>
 <Events>
 <Event>
 <Name>On Preload</Name>
 <Args/>
 <Script>-- These actions are performed before the screen is shown.
-x64found = System.Is64BitOS();
+--x64found = System.Is64BitOS();
 
-if( x64found == true ) then
-para64pex = File.DoesExist("C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extservice.bak");
-if( para64pex == true ) then
+--if( x64found == true ) then
+--para64pex = File.DoesExist("C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extservice.bak");
+--if( para64pex == true ) then
 --Screen.Next();
-Dialog.TimedMessage("ExtFS Seems to be already patched, you can skip this step ...", "Working...", 5000, MB_ICONINFORMATION);
-end
-end
+--Dialog.TimedMessage("ExtFS Seems to be already patched, you can skip this step ...", "Working...", 5000, MB_ICONINFORMATION);
+--end
+--end
 
-if( x64found == false ) then
-para32pex = File.DoesExist("C:\\Program Files\\Paragon Software\\ExtFS for Windows\\extservice.bak");
-if( para32pex == true ) then
+--if( x64found == false ) then
+--para32pex = File.DoesExist("C:\\Program Files\\Paragon Software\\ExtFS for Windows\\extservice.bak");
+--if( para32pex == true ) then
 --Screen.Next();
-Dialog.TimedMessage("ExtFS Seems to be already patched, you can skip this step ...", "Working...", 5000, MB_ICONINFORMATION);
-end
-end</Script>
+--Dialog.TimedMessage("ExtFS Seems to be already patched, you can skip this step ...", "Working...", 5000, MB_ICONINFORMATION);
+--end
+--end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -3242,16 +3241,16 @@ if (e_MsgID == MSGID_CLICKED) then
 
 -- These actions are performed before the screen is shown.
 --ExtFS Patch
-x64found = System.Is64BitOS();
-if( x64found == true ) then
-		Shell.CreateShortcut("C:\\", "patch_me1", "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extservice.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
-		Shell.CreateShortcut("C:\\", "patch_me2", "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
+--x64found = System.Is64BitOS();
+--if( x64found == true ) then
+--		Shell.CreateShortcut("C:\\", "patch_me1", "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extservice.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
+--		Shell.CreateShortcut("C:\\", "patch_me2", "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
 		result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extpatch.exe"), "", "", SW_SHOWNORMAL, false);
-	else
-		Shell.CreateShortcut("C:\\", "patch_me1", "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\extservice.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
-		Shell.CreateShortcut("C:\\", "patch_me2", "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
-		result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extpatch.exe"), "", "", SW_SHOWNORMAL, false);
-end
+--	else
+--		Shell.CreateShortcut("C:\\", "patch_me1", "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\extservice.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
+--		Shell.CreateShortcut("C:\\", "patch_me2", "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
+--		result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extpatch.exe"), "", "", SW_SHOWNORMAL, false);
+--end
 	end
 		end
 </Script>
@@ -3286,18 +3285,10 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>213</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
-<Type>2</Type>
 <ID>214</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
-<TabOrder>3</TabOrder>
+<TabOrder>2</TabOrder>
 <IsHeading>0</IsHeading>
 </Control>
 <Control>
@@ -3342,7 +3333,7 @@ end
 <Messages>
 <IDS_WINDOW_TITLE>%ProductName% Setup</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Your Ext4 drivers need patching</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>You need to patch two files</IDS_SUBHEADER_TEXT>
+<IDS_SUBHEADER_TEXT>You need to generate a licence for your EXT drivers</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Skip &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
@@ -3350,8 +3341,7 @@ end
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
 <IDS_CTRL_BUTTON_01>Patch</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_STATICTEXT_LABEL_03>Step #1&gt;                                  Click on "Patch 2048 RSA" and select "C:\patch_me1"</IDS_CTRL_STATICTEXT_LABEL_03>
-<IDS_CTRL_STATICTEXT_LABEL_04>Step #2&gt;                             Click on "Patch 2048 RSA" again and select "C:\patch_me2". After that Click on "Generate" button.</IDS_CTRL_STATICTEXT_LABEL_04>
+<IDS_CTRL_STATICTEXT_LABEL_04>Click on "Generate" button and close the patcher</IDS_CTRL_STATICTEXT_LABEL_04>
 </Messages>
 </SUF70Messages>
 </Languages>
