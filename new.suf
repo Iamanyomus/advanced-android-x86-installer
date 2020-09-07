@@ -685,20 +685,20 @@
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -706,19 +706,29 @@
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -726,17 +736,7 @@
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -746,7 +746,7 @@
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -807,7 +807,7 @@ Screen.Back();
 <Args/>
 <Script>-- These actions are performed when the Next button is clicked.
 -- advance to the next screen
-Screen.Next();
+Screen.Jump("InstallationType");
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -820,6 +820,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -830,7 +831,7 @@ end
 <Name>On Help</Name>
 <Args/>
 <Script>-- These actions are performed when the Help button is clicked.
-</Script>
+Screen.Jump("HelpPage");</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -847,15 +848,15 @@ end
 <Control>
 <Type>1</Type>
 <ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>75</TabOrder>
 <FTButton>1</FTButton>
 </Control>
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>1</Visible>
+<Visible>0</Visible>
 <Enabled>0</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
@@ -921,8 +922,8 @@ end
 <IDS_SUBHEADER_TEXT>Welcome to the installer for %ProductName% %ProductVer%</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
+<IDS_CTRL_BUTTON_CANCEL>&amp;Exit</IDS_CTRL_BUTTON_CANCEL>
+<IDS_CTRL_BUTTON_HELP>&amp;Help-Utils</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_BODY>You are about to install %ProductName% %ProductVer%.
 
 It is strongly recommended that you exit all Windows programs before continuing with this installation.
@@ -936,8 +937,8 @@ It is advised that you don't run this installer in the same partition where you 
 </Screen>
 <Screen>
 <Type>170</Type>
-<Name>InstallationType</Name>
-<BannerStyle>2</BannerStyle>
+<Name>HelpPage</Name>
+<BannerStyle>1</BannerStyle>
 <TemplateName>Custom</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
@@ -945,20 +946,20 @@ It is advised that you don't run this installer in the same partition where you 
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -966,19 +967,29 @@ It is advised that you don't run this installer in the same partition where you 
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -986,17 +997,7 @@ It is advised that you don't run this installer in the same partition where you 
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1006,7 +1007,7 @@ It is advised that you don't run this installer in the same partition where you 
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1043,8 +1044,360 @@ It is advised that you don't run this installer in the same partition where you 
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="114" Top="155" Width="111" Height="67" ID="121"/>
-<CustomCtrlInfo Left="264" Top="155" Width="107" Height="68" ID="122"/>
+<CustomCtrlInfo Left="20" Top="84" Width="209" Height="45" ID="121"/>
+<CustomCtrlInfo Left="258" Top="84" Width="213" Height="45" ID="122"/>
+<CustomCtrlInfo Left="51" Top="20" Width="390" Height="41" ID="211"/>
+<CustomCtrlInfo Left="19" Top="158" Width="211" Height="39" ID="123"/>
+<CustomCtrlInfo Left="260" Top="157" Width="211" Height="40" ID="124"/>
+<CustomCtrlInfo Left="21" Top="222" Width="209" Height="39" ID="125"/>
+<CustomCtrlInfo Left="262" Top="223" Width="209" Height="37" ID="126"/>
+</CustomCtrlList>
+<Events>
+<Event>
+<Name>On Preload</Name>
+<Args/>
+<Script>-- These actions are performed before the screen is shown.
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Back</Name>
+<Args/>
+<Script>-- These actions are performed when the Back button is clicked.
+
+-- go back to the previous screen
+Screen.Back();
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Next</Name>
+<Args/>
+<Script>-- These actions are performed when the Next button is clicked.
+
+-- advance to the next screen
+Screen.Next();
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Cancel</Name>
+<Args/>
+<Script>-- These actions are performed when the Cancel button is clicked.
+
+-- from _SUF70_Global_Functions.lua:
+-- ask user if they're sure they want to exit
+if g_ConfirmSetupAbort() then
+	cleanTemp();
+	Application.Exit(EXIT_REASON_USER_ABORTED);
+end
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Help</Name>
+<Args/>
+<Script>-- These actions are performed when the Help button is clicked.
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Ctrl Message</Name>
+<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
+<Script>-- These actions are triggered by the controls on the screen.
+
+if (e_MsgID == MSGID_CLICKED) then
+
+	if (e_CtrlID == CTRL_BUTTON_01) then
+	
+		Dialog.Message("Information", "If you can\'t find the boot entry for PhoenixOS-DarkMatter then follow these steps &gt;&gt;\r\n\r\n1..] Open \"Grub2Win\" from desktop\r\n\r\n2..] Click on \"Manage Boot Entries\" in the bottom\r\n\r\n3..] Click on \"Add A New Entry\" on the top\r\n\r\n4..] Click on \"Type\" menu and select \"submenu\"\r\n\r\n5..] Then click on \"Load Sample Code\"\r\n\r\n6..] Finally click on \"Ok &gt; Apply &gt; Ok\"\r\n\r\n\r\nAnd just like that your problem should be hopefully fixed :)\r\n", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	
+	elseif (e_CtrlID == CTRL_BUTTON_02) then
+		Dialog.Message("Information", "If you face some error like \"Unknown Decompression error\" or if you can\'t find your ext4 partition in the installer then simply reboot and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+
+
+	elseif (e_CtrlID == CTRL_BUTTON_03) then
+	
+		if ( paragon_installed == false ) then
+			installParagon();
+		end
+		
+		mountExt();
+	
+	elseif (e_CtrlID == CTRL_BUTTON_04) then
+		
+		runPartitionTool();
+		
+	elseif (e_CtrlID == CTRL_BUTTON_05) then
+	
+		if ( paragon_installed == true ) then
+			Dialog.Message("Notice", "EXT4 drivers are already installed", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		else
+			installParagon();
+		end
+		
+	elseif (e_CtrlID == CTRL_BUTTON_06) then
+
+		installGrub2Win();
+
+	end
+
+end
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+</Events>
+<Controls>
+<Control>
+<Type>1</Type>
+<ID>100</ID>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
+<TabOrder>-10</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>102</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>-9</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>121</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>122</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>2</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>211</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>3</TabOrder>
+<IsHeading>1</IsHeading>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>123</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>4</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>124</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>5</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>125</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>6</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>126</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>7</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>103</ID>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
+<TabOrder>75</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>101</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>76</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+</Controls>
+<Languages>
+<SUF70Messages>
+<Language>
+<Name>English</Name>
+<Default>1</Default>
+<Primary>9</Primary>
+<Secondary>
+<ID>1</ID>
+<ID>2</ID>
+<ID>3</ID>
+<ID>4</ID>
+<ID>5</ID>
+<ID>6</ID>
+<ID>7</ID>
+<ID>8</ID>
+<ID>9</ID>
+<ID>10</ID>
+<ID>11</ID>
+<ID>12</ID>
+<ID>13</ID>
+</Secondary>
+</Language>
+<Messages>
+<IDS_WINDOW_TITLE>%ProductName% Help</IDS_WINDOW_TITLE>
+<IDS_HEADER_TEXT>Heading text</IDS_HEADER_TEXT>
+<IDS_SUBHEADER_TEXT>Subheading text</IDS_SUBHEADER_TEXT>
+<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
+<IDS_CTRL_BUTTON_CANCEL>&amp;Exit</IDS_CTRL_BUTTON_CANCEL>
+<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
+<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
+<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
+<IDS_CTRL_BUTTON_01>Fix Missing Boot Entry</IDS_CTRL_BUTTON_01>
+<IDS_CTRL_BUTTON_02>Fix EXT4 / Decompression Error</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_STATICTEXT_LABEL_01>Troubleshooting Errors and Utils</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_BUTTON_03>Mount EXT4 Partitions</IDS_CTRL_BUTTON_03>
+<IDS_CTRL_BUTTON_04>Open Partition Tool</IDS_CTRL_BUTTON_04>
+<IDS_CTRL_BUTTON_05>Install EXT4 Drivers</IDS_CTRL_BUTTON_05>
+<IDS_CTRL_BUTTON_06>Install Grub2Win Bootloader</IDS_CTRL_BUTTON_06>
+</Messages>
+</SUF70Messages>
+</Languages>
+</Screen>
+<Screen>
+<Type>170</Type>
+<Name>InstallationType</Name>
+<BannerStyle>2</BannerStyle>
+<TemplateName>Custom</TemplateName>
+<OverrideProjTheme>0</OverrideProjTheme>
+<StyleData>
+<CstClrs>1</CstClrs>
+<TBBG format="hex">ffffff</TBBG>
+<BDYBG format="hex">ffffff</BDYBG>
+<FTBG format="hex">ffffff</FTBG>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
+<CBG format="hex">ffffff</CBG>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
+<CBTNTXT format="hex">ffffff</CBTNTXT>
+<CTEXT format="hex">000000</CTEXT>
+<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CPRGRS format="hex">66728f</CPRGRS>
+<C3DSHDK format="hex">66728f</C3DSHDK>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
+<BDIMG>Modern_body.jpg</BDIMG>
+<BDFILL>1</BDFILL>
+<HDSEP>0</HDSEP>
+<FTSEP>0</FTSEP>
+<CstFnts>1</CstFnts>
+<Fonts>
+<FontData>
+<FontName>Android 101</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-19</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Montserrat</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Comic Sans MS</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+</Fonts>
+<CAOff>
+<TP>0</TP>
+<L>21</L>
+<T>35</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<CAOff>
+<TP>1</TP>
+<L>1</L>
+<T>95</T>
+<R>15</R>
+<B>-1</B>
+</CAOff>
+<CAOff>
+<TP>2</TP>
+<L>21</L>
+<T>92</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
+<ScreenW>497</ScreenW>
+<ScreenH>362</ScreenH>
+</StyleData>
+<CustomCtrlList>
+<CustomCtrlInfo Left="79" Top="155" Width="146" Height="67" ID="121"/>
+<CustomCtrlInfo Left="264" Top="155" Width="150" Height="68" ID="122"/>
+<CustomCtrlInfo Left="88" Top="86" Width="322" Height="45" ID="211"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -1084,6 +1437,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -1157,6 +1511,14 @@ end
 <FTButton>0</FTButton>
 </Control>
 <Control>
+<Type>2</Type>
+<ID>211</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>3</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
 <Type>1</Type>
 <ID>103</ID>
 <Visible>0</Visible>
@@ -1198,7 +1560,7 @@ end
 <Messages>
 <IDS_WINDOW_TITLE>Installation Type</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Select your installation type</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>It is recommended that you use the *Ext4 option for maximum performance and compatibility.</IDS_SUBHEADER_TEXT>
+<IDS_SUBHEADER_TEXT/>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
@@ -1207,6 +1569,7 @@ end
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
 <IDS_CTRL_BUTTON_01>Ext4 (Recommended)</IDS_CTRL_BUTTON_01>
 <IDS_CTRL_BUTTON_02>Ntfs</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_STATICTEXT_LABEL_01>It is recommended that you use the Ext4 option for maximum performance and compatibility</IDS_CTRL_STATICTEXT_LABEL_01>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -1214,7 +1577,7 @@ end
 <Screen>
 <Type>170</Type>
 <Name>InstallationMode</Name>
-<BannerStyle>1</BannerStyle>
+<BannerStyle>0</BannerStyle>
 <TemplateName>Custom</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
@@ -1222,20 +1585,20 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -1243,19 +1606,29 @@ end
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -1263,17 +1636,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1283,7 +1646,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1320,9 +1683,8 @@ end
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="53" Top="102" Width="386" Height="31" ID="211"/>
-<CustomCtrlInfo Left="114" Top="154" Width="111" Height="67" ID="121"/>
-<CustomCtrlInfo Left="264" Top="155" Width="107" Height="68" ID="122"/>
+<CustomCtrlInfo Left="114" Top="127" Width="111" Height="67" ID="121"/>
+<CustomCtrlInfo Left="264" Top="128" Width="107" Height="68" ID="122"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -1363,6 +1725,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -1418,19 +1781,11 @@ end
 <FTButton>1</FTButton>
 </Control>
 <Control>
-<Type>2</Type>
-<ID>211</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<IsHeading>1</IsHeading>
-</Control>
-<Control>
 <Type>1</Type>
 <ID>121</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
+<TabOrder>1</TabOrder>
 <FTButton>0</FTButton>
 </Control>
 <Control>
@@ -1438,7 +1793,7 @@ end
 <ID>122</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
-<TabOrder>3</TabOrder>
+<TabOrder>2</TabOrder>
 <FTButton>0</FTButton>
 </Control>
 <Control>
@@ -1490,7 +1845,6 @@ end
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_LABEL_01>Select your installation mode</IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_BUTTON_01>Auto</IDS_CTRL_BUTTON_01>
 <IDS_CTRL_BUTTON_02>Manual</IDS_CTRL_BUTTON_02>
 </Messages>
@@ -1508,20 +1862,20 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -1529,19 +1883,29 @@ end
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -1549,17 +1913,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1569,7 +1923,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1651,6 +2005,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -1811,20 +2166,20 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -1832,19 +2187,29 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -1852,17 +2217,7 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1872,7 +2227,7 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1909,8 +2264,8 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="164" Top="168" Width="148" Height="57" ID="121"/>
-<CustomCtrlInfo Left="32" Top="100" Width="442" Height="41" ID="212"/>
+<CustomCtrlInfo Left="166" Top="181" Width="148" Height="57" ID="121"/>
+<CustomCtrlInfo Left="70" Top="116" Width="347" Height="42" ID="212"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -1952,6 +2307,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -2064,14 +2420,14 @@ end
 <IDS_WINDOW_TITLE>%ProductName% Grub2Win</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Grub2Win Bootloader</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>For Multibooting</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Skipt &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_NEXT>&amp;Skip &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
 <IDS_CTRL_BUTTON_01>Install</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_STATICTEXT_LABEL_02>Grub2Win is a port of the original gnu-grub2 which allows you to multiboot between different OS while using the pure grub over messy-windows !</IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_STATICTEXT_LABEL_02>Grub2Win is a port of the original gnu-grub2 which allows you to multiboot between different OS easily</IDS_CTRL_STATICTEXT_LABEL_02>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -2087,20 +2443,20 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -2108,19 +2464,29 @@ end
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -2128,17 +2494,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -2148,7 +2504,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -2185,8 +2541,8 @@ end
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="168" Top="183" Width="139" Height="44" ID="121"/>
-<CustomCtrlInfo Left="108" Top="110" Width="270" Height="48" ID="212"/>
+<CustomCtrlInfo Left="172" Top="182" Width="139" Height="44" ID="121"/>
+<CustomCtrlInfo Left="99" Top="109" Width="302" Height="47" ID="212"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -2228,6 +2584,7 @@ Screen.Jump("Partition Wizard");
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -2252,7 +2609,11 @@ if (e_MsgID == MSGID_CLICKED) then
 
 	if (e_CtrlID == CTRL_BUTTON_01) then
 
-			installParagon();
+			if ( paragon_installed == true ) then
+				Dialog.Message("Notice", "EXT4 drivers are already installed", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			else
+				installParagon();
+			end
 			Screen.Jump("Partition Wizard");
 
 	end
@@ -2347,7 +2708,7 @@ end
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
 <IDS_CTRL_BUTTON_01>Install</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_STATICTEXT_LABEL_02>You will need ext4 filesystem drivers. So that you can mount ext type partitions on windows.</IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_STATICTEXT_LABEL_02>You will need ext4 filesystem drivers. So that you can mount ext type partitions on windows</IDS_CTRL_STATICTEXT_LABEL_02>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -2363,20 +2724,20 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -2384,19 +2745,29 @@ end
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -2404,17 +2775,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -2424,7 +2785,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -2515,6 +2876,7 @@ Screen.Next();</Script>
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -2675,20 +3037,20 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -2696,19 +3058,29 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -2716,17 +3088,7 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -2736,7 +3098,7 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -2773,12 +3135,12 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="88" Top="99" Width="323" Height="15" ID="211"/>
-<CustomCtrlInfo Left="136" Top="122" Width="225" Height="19" ID="213"/>
+<CustomCtrlInfo Left="93" Top="99" Width="323" Height="15" ID="211"/>
+<CustomCtrlInfo Left="137" Top="123" Width="225" Height="19" ID="213"/>
 <CustomCtrlInfo Left="191" Top="151" Width="104" Height="35" ID="121"/>
-<CustomCtrlInfo Left="110" Top="197" Width="294" Height="19" ID="214"/>
-<CustomCtrlInfo Left="11" Top="277" Width="241" Height="43" ID="216"/>
-<CustomCtrlInfo Left="74" Top="227" Width="366" Height="17" ID="212"/>
+<CustomCtrlInfo Left="64" Top="197" Width="354" Height="19" ID="214"/>
+<CustomCtrlInfo Left="10" Top="273" Width="247" Height="42" ID="216"/>
+<CustomCtrlInfo Left="57" Top="225" Width="385" Height="20" ID="212"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -2805,7 +3167,6 @@ Screen.Back();
 <Script>-- These actions are performed when the Next button is clicked.
 
 -- Mount ext4 partitions
-
 mountExt();
 
 -- advance to the next screen
@@ -2821,6 +3182,7 @@ Screen.Next();</Script>
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -2845,7 +3207,6 @@ Screen.Next();</Script>
 if (e_MsgID == MSGID_CLICKED) then
 	-- a control was clicked...
 	if (e_CtrlID == CTRL_BUTTON_01) then
-		checkInstallPartitionTool();
 		runPartitionTool();
 	end
 end</Script>
@@ -2967,7 +3328,7 @@ end</Script>
 <IDS_CTRL_BUTTON_HELP>&amp;Skip &gt;</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_LABEL_01>To install POS DarkMatter you need a EXT4 partition on your pc.</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_STATICTEXT_LABEL_01>To install POS DarkMatter you need an EXT4 partition on your pc.</IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_STATICTEXT_LABEL_03>Use the disk-partitioning tool below to do that.</IDS_CTRL_STATICTEXT_LABEL_03>
 <IDS_CTRL_BUTTON_01>Partition Tool</IDS_CTRL_BUTTON_01>
 <IDS_CTRL_STATICTEXT_LABEL_04>Resize an existing partition and format the new one as EXT4</IDS_CTRL_STATICTEXT_LABEL_04>
@@ -2988,20 +3349,20 @@ end</Script>
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -3009,19 +3370,29 @@ end</Script>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -3029,17 +3400,7 @@ end</Script>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3049,7 +3410,7 @@ end</Script>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3201,6 +3562,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -3272,8 +3634,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -3355,7 +3717,8 @@ end
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>Packages to supply: (You can leave these as is unless you want to specify your needs)</IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
+<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
+You can leave these as is unless you want to specify your needs</IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
 <IDS_CTRL_STATICTEXT_SPACEREQUIRED>Total space required: %SpaceRequired%</IDS_CTRL_STATICTEXT_SPACEREQUIRED>
 <IDS_CTRL_STATICTEXT_BODY/>
 </Messages>
@@ -3373,20 +3736,20 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -3394,19 +3757,29 @@ end
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -3414,17 +3787,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3434,7 +3797,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3574,6 +3937,7 @@ end
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -3623,8 +3987,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -3768,24 +4132,23 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>Installation Drive</IDS_WINDOW_TITLE>
+<IDS_WINDOW_TITLE>Installation Partition</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Installation Partition</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>On which partition would you like %ProductName% to be installed on?</IDS_SUBHEADER_TEXT>
+<IDS_SUBHEADER_TEXT/>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>You must use a ext4 partition if you had selected the *Ext4 option in *Installation-Type*.
-
-Or if you had selected the *Ntfs option in *Installation-Type* then use a ntfs partition.</IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
+<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS>Space required: %SpaceRequired%
 
 Space available on selected partition: %SpaceAvailable%
-Type %YoYo%
+
+Type: %InsType%
 
 
 </IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS>
-<IDS_CTRL_STATICTEXT_LABEL_01>Select the partition:</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_STATICTEXT_LABEL_01>Select your %InsType% partition:</IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_COMBOBOX_01_DEFAULT/>
 <IDS_CTRL_COMBOBOX_01_ITEMS/>
 </Messages>
@@ -3803,20 +4166,20 @@ Type %YoYo%
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -3824,19 +4187,29 @@ Type %YoYo%
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -3844,17 +4217,7 @@ Type %YoYo%
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3864,7 +4227,7 @@ Type %YoYo%
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3945,6 +4308,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -4085,7 +4449,7 @@ end
 <Messages>
 <IDS_WINDOW_TITLE>Data size</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Select your data.img size</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>It can take upto 10 minutes on generating your data.img depending on it's size</IDS_SUBHEADER_TEXT>
+<IDS_SUBHEADER_TEXT>In NTFS you need a data.img for storing your runtime data               Ideally 8GB should be enough for general purposes</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
@@ -4111,20 +4475,20 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -4132,19 +4496,29 @@ end
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -4152,17 +4526,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4172,7 +4536,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4251,6 +4615,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -4354,7 +4719,10 @@ end
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_BODY>Please review your Installation path to make sure it's correct...!
+<IDS_CTRL_STATICTEXT_BODY>
+
+
+Please review your Installation path to make sure it's correct...!
 
 Selected %InsType% Partition:        %AppFolder%
 
@@ -4380,20 +4748,20 @@ Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -4401,19 +4769,29 @@ Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -4421,17 +4799,7 @@ Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4441,7 +4809,7 @@ Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4550,6 +4918,7 @@ DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, e_StagePct);
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -4577,7 +4946,7 @@ end
 <Control>
 <Type>2</Type>
 <ID>211</ID>
-<Visible>1</Visible>
+<Visible>0</Visible>
 <Enabled>1</Enabled>
 <TabOrder>2</TabOrder>
 <IsHeading>0</IsHeading>
@@ -4652,14 +5021,16 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>%ProductName% Setup</IDS_WINDOW_TITLE>
+<IDS_WINDOW_TITLE>%ProductName%</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Installing %ProductName%</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>Please wait...</IDS_SUBHEADER_TEXT>
+<IDS_SUBHEADER_TEXT>Hol up !</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>Did you know :? DarkMatter is the most popular and advanced custom version of PhoenixOS discontinued project developed by a group of kiddo homies &gt;_&lt;</IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
+<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
+Did you know :?
+DarkMatter is the most popular and advanced custom version developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project </IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
 <IDS_CTRL_STATICTEXT_LABEL_01>  </IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_STATICTEXT_LABEL_02> </IDS_CTRL_STATICTEXT_LABEL_02>
-<IDS_CTRL_PROGRESS_BAR_01>Installing...</IDS_CTRL_PROGRESS_BAR_01>
+<IDS_CTRL_PROGRESS_BAR_01>Installing</IDS_CTRL_PROGRESS_BAR_01>
 <IDS_CTRL_STATICTEXT_LABEL_03>Progress Two</IDS_CTRL_STATICTEXT_LABEL_03>
 <IDS_CTRL_STATICTEXT_LABEL_04>Performing Actions...</IDS_CTRL_STATICTEXT_LABEL_04>
 <IDS_CTRL_PROGRESS_BAR_02/>
@@ -4681,20 +5052,20 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -4702,19 +5073,29 @@ end
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -4722,17 +5103,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4742,7 +5113,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4783,7 +5154,7 @@ end
 <Name>On Preload</Name>
 <Args/>
 <Script>-- These actions are performed before the screen is shown.
-postExit();</Script>
+</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -4791,9 +5162,9 @@ postExit();</Script>
 <Name>On Back</Name>
 <Args/>
 <Script>-- These actions are performed when the Back button is clicked.
+Shell.Execute("C:\\Program Files\\DarkMatter\\Boot.bat", "open", "", "C:\\Program Files\\DarkMatter\\", SW_SHOWNORMAL, false);
+Screen.Next();
 
--- go back to the previous screen
-Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -4803,7 +5174,7 @@ Screen.Back();
 <Args/>
 <Script>-- These actions are performed when the Next button is clicked.
 
-Folder.DeleteTree(SessionVar.Expand("%TempLaunchFolder%\\"), nil);
+postExit();
 Screen.Next();</Script>
 <BookMarks count="0">
 </BookMarks>
@@ -4851,8 +5222,8 @@ System.Reboot();</Script>
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -4916,12 +5287,10 @@ System.Reboot();</Script>
 <IDS_HEADER_TEXT>Installation Finished</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>The installation has completed successfully.</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Finish</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
+<IDS_CTRL_BUTTON_BACK>&amp;Reboot Now</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Reboot</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_BODY>%ProductName% %ProductVer% installation is complete.
-
-Now you can reboot and choose PhoenixOS DarkMatter from your new grub2win bootloader.
+<IDS_CTRL_STATICTEXT_BODY>Now you can reboot and choose PhoenixOS DarkMatter from your new grub2win bootloader.
 
 If you ever liked our work then please remember to leave your review at supreme-gamers.com :)
 </IDS_CTRL_STATICTEXT_BODY>
@@ -5229,20 +5598,20 @@ If you ever liked our work then please remember to leave your review at supreme-
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -5250,19 +5619,29 @@ If you ever liked our work then please remember to leave your review at supreme-
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5270,17 +5649,7 @@ If you ever liked our work then please remember to leave your review at supreme-
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -5290,7 +5659,7 @@ If you ever liked our work then please remember to leave your review at supreme-
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -5494,20 +5863,20 @@ Otherwise, click Next to continue.
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -5515,19 +5884,29 @@ Otherwise, click Next to continue.
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5535,17 +5914,7 @@ Otherwise, click Next to continue.
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -5555,7 +5924,7 @@ Otherwise, click Next to continue.
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -5785,20 +6154,20 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
+<TBIMG>Modern_body.jpg</TBIMG>
+<SBIMG>Modern_body.jpg</SBIMG>
 <BDIMG>Modern_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
@@ -5806,19 +6175,29 @@ end
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5826,17 +6205,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -5846,7 +6215,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -6081,7 +6450,7 @@ g_HandleSystemReboot();
 </UninstallData>
 <ProjectData>
 <LogFile>
-<Create>1</Create>
+<Create>0</Create>
 <Filename>%TempFolder%\%ProductName% Setup Log.txt</Filename>
 <WriteMode>0</WriteMode>
 <ActionDetailLevel>1</ActionDetailLevel>
@@ -6203,7 +6572,7 @@ g_HandleSystemReboot();
 <Action>0</Action>
 </SetupRequirements>
 <Launcher/>
-<ProjectTheme>Modern</ProjectTheme>
+<ProjectTheme>DarkMatter</ProjectTheme>
 <ProjFileDesc>New Project</ProjFileDesc>
 <ProjFileAuthor/>
 <ProjFileCompany/>
@@ -6237,14 +6606,6 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\parttool.exe</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
 <SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
@@ -6269,7 +6630,7 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\exfunc.bat</SourcePath>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\parttool.zip</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
@@ -6284,10 +6645,18 @@ g_HandleSystemReboot();
 <Script>-- Define global variables
 is_x64 = System.Is64BitOS();
 paragon_installed = false;
+ext_is_mounted = false;
 grub_disabled = false;
 is_ntfs = false;
 
 -- Define global functions
+function cleanTemp()
+
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C for /d %G in (\"%temp%\\_ir_sf_temp_*\") do rd /s /q \"%~G\" &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	Folder.DeleteTree(SessionVar.Expand("%TempLaunchFolder%\\"), nil);
+	
+end
+
 function installGrub2Win()
 
 	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\grub2win.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "01727717723xasif", ZIP_OVERWRITE_ALWAYS, nil);
@@ -6316,24 +6685,26 @@ function installParagon()
 end
 
 
-function checkInstallPartitionTool()
+--function checkInstallPartitionTool()
 
-	local parttool_exists = File.DoesExist("C:\\Program Files\\DiskGenius\\DiskGenius.exe");
-	if ( parttool_exists == false ) then
-		File.Run(SessionVar.Expand("%TempLaunchFolder%\\parttool.exe"), "/SILENT /NORESTART", "", SW_SHOWNORMAL, true);
-	end
+--	local parttool_exists = File.DoesExist("C:\\Program Files\\MiniTool Partition Wizard 12\\partitionwizard.exe");
+--	if ( parttool_exists == false ) then
+--		File.Run(SessionVar.Expand("%TempLaunchFolder%\\parttool.exe"), "/VERYSILENT /NORESTART", "", SW_SHOWNORMAL, true);
+--	end
 
-end
+--end
 
 
 function runPartitionTool()
 
-	Dialog.Message("Attention!", "Make an EXT4 partiton by resizing an existing partition then close the partition tool, you will not lose your data", MB_OK, MB_ICONNONE);
-	File.Run(SessionVar.Expand("C:\\Program Files\\DiskGenius\\DiskGenius.exe"), "", "", SW_MAXIMIZE, true);
+	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "01727717723xasif", ZIP_OVERWRITE_ALWAYS, nil);
+	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), "open", "", SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), SW_MAXIMIZE, false);
+	Dialog.TimedMessage("Hol Up !", "Loading the Partition Tool", 5000, MB_ICONINFORMATION);
 
 end
 
 function mountExt()
+	if ( ext_is_mounted == false ) then
 
 		if ( is_x64 == true ) then
 			paragon_mounter = "C:\Program Files (x86)\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
@@ -6341,12 +6712,17 @@ function mountExt()
 			paragon_mounter = "C:\Program Files\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
 		end
 
+		-- Kill if running
+		File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /IM \"Linux File Systems for Windows by Paragon Software.exe\" /F &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 		File.Run(paragon_mounter, "/umount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 		Service.Stop("ParagonLinuxFSMounter", "ParagonLinuxFSMounter", 0);
-		Application.Sleep(5000);
+		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 1)", 15000, MB_ICONINFORMATION);
 		Service.Start("ParagonLinuxFSMounter", "ParagonLinuxFSMounter", nil);
 		File.Run(paragon_mounter, "/mount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
-
+		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 2)", 35000, MB_ICONINFORMATION);
+		ext_is_mounted = true;
+		
+	end
 end
 
 function postExit()
@@ -6395,6 +6771,9 @@ function postExit()
 		File.Run(paragon_mounter, "/umount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 		Service.Stop("ParagonLinuxFSMounter", "ParagonLinuxFSMounter", 0);
 	end
+	
+	-- Clean %temp%
+	cleanTemp();
 
 end
 
@@ -6468,7 +6847,8 @@ end</Script>
 <Name>On Install Error</Name>
 <Args>number e_ErrorCode, string e_ErrorMsgID</Args>
 <Script>-- These actions are performed is an error occurs while the setup is installing files.
-Folder.DeleteTree(SessionVar.Expand("%TempLaunchFolder%\\"), nil);</Script>
+-- Clean %temp%
+cleanTemp();</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -6573,7 +6953,7 @@ g_HandleSystemReboot();
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
 <Filename>PhoenixOS_DarkMatter_Exo4.7.exe</Filename>
-<OutputFolder>C:\Users\AXON\Documents</OutputFolder>
+<OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
 <CustomSegSizeMode>0</CustomSegSizeMode>
@@ -6598,14 +6978,14 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>4.7</ResourceFileVersion>
-<ResourceProductVersion>4.7</ResourceProductVersion>
+<ResourceFileVersion>Exo4.7</ResourceFileVersion>
+<ResourceProductVersion>Exo4.7</ResourceProductVersion>
 <ResourceCompanyName/>
 <ResourceProductName>PhoenixOS DarkMatter</ResourceProductName>
 <ResourceComments>The SuperCharged PhoenixOS for Everyone</ResourceComments>
 <ResourceInternalName>ex_sg</ResourceInternalName>
 <ResourceFileDescription>PhoenixOS DarkMatter</ResourceFileDescription>
-<ResourceCopyright>Copyright © 2020 AXON</ResourceCopyright>
+<ResourceCopyright>Copyright © 2020 SupremeGamers</ResourceCopyright>
 <ResourceTrademarks>supreme-gamers.com</ResourceTrademarks>
 <ResourcePrivateBuild/>
 <ResourceSpecialBuild/>
