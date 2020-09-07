@@ -4140,7 +4140,8 @@ end
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS>Space required: %SpaceRequired%
+<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS>
+Space required: %SpaceRequired%
 
 Space available on selected partition: %SpaceAvailable%
 
@@ -4148,7 +4149,7 @@ Type: %InsType%
 
 
 </IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS>
-<IDS_CTRL_STATICTEXT_LABEL_01>Select your %InsType% partition:</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_STATICTEXT_LABEL_01>Select your %InsType% partition:                                                                                                                                                        </IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_COMBOBOX_01_DEFAULT/>
 <IDS_CTRL_COMBOBOX_01_ITEMS/>
 </Messages>
@@ -4449,7 +4450,7 @@ end
 <Messages>
 <IDS_WINDOW_TITLE>Data size</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Select your data.img size</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>In NTFS you need a data.img for storing your runtime data               Ideally 8GB should be enough for general purposes</IDS_SUBHEADER_TEXT>
+<IDS_SUBHEADER_TEXT>In NTFS you need a data.img for storing your runtime data                       Ideally 8GB should be enough for general purposes</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
@@ -4715,19 +4716,19 @@ end
 <IDS_WINDOW_TITLE>Ready to go</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Ready to Install</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>You are now ready to install %ProductName% %ProductVer%</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_NEXT>&amp;Install &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_BODY>
 
+Please review your Installation path to make sure it's correct.
 
-Please review your Installation path to make sure it's correct...!
 
 Selected %InsType% Partition:        %AppFolder%
 
 
-Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
+Click Install to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <IDS_CTRL_HEADINGTEXT_BODY>Title</IDS_CTRL_HEADINGTEXT_BODY>
 </Messages>
 </SUF70Messages>
@@ -5162,6 +5163,7 @@ DarkMatter is the most popular and advanced custom version developed by a group 
 <Name>On Back</Name>
 <Args/>
 <Script>-- These actions are performed when the Back button is clicked.
+postExit();
 Shell.Execute("C:\\Program Files\\DarkMatter\\Boot.bat", "open", "", "C:\\Program Files\\DarkMatter\\", SW_SHOWNORMAL, false);
 Screen.Next();
 
@@ -5283,18 +5285,18 @@ System.Reboot();</Script>
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>DarkMatter Installation Successful</IDS_WINDOW_TITLE>
+<IDS_WINDOW_TITLE>%ProductName% %ProductVer% Installation Successful</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Installation Finished</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>The installation has completed successfully.</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Finish</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&amp;Reboot Now</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Reboot</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_BODY>Now you can reboot and choose PhoenixOS DarkMatter from your new grub2win bootloader.
+<IDS_CTRL_STATICTEXT_BODY>Now you can reboot and choose %ProductName% from your new grub2win bootloader.
 
-If you ever liked our work then please remember to leave your review at supreme-gamers.com :)
+If you ever liked our work then please remember to leave your review at supreme_gamers.com :)
 </IDS_CTRL_STATICTEXT_BODY>
-<IDS_CTRL_HEADINGTEXT_BODY>Installation Successful</IDS_CTRL_HEADINGTEXT_BODY>
+<IDS_CTRL_HEADINGTEXT_BODY>                                      Installation Successful</IDS_CTRL_HEADINGTEXT_BODY>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -6699,7 +6701,7 @@ function runPartitionTool()
 
 	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "01727717723xasif", ZIP_OVERWRITE_ALWAYS, nil);
 	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), "open", "", SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), SW_MAXIMIZE, false);
-	Dialog.TimedMessage("Hol Up !", "Loading the Partition Tool", 5000, MB_ICONINFORMATION);
+	Dialog.TimedMessage("Hol Up !", "Loading the Partition Tool", 10000, MB_ICONINFORMATION);
 
 end
 
