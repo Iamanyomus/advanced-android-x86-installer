@@ -5199,9 +5199,9 @@ function mountExt()
 	if ( ext_is_mounted == false ) then
 
 		if ( is_x64 == true ) then
-			local paragon_mounter = "C:\Program Files (x86)\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
+			paragon_mounter = "C:\Program Files (x86)\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
 		else
-			local paragon_mounter = "C:\Program Files\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
+			paragon_mounter = "C:\Program Files\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
 		end
 
 		-- Kill if running
@@ -5225,9 +5225,9 @@ function postExit()
 	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot DarkMatter", "C:\\Program Files\\DarkMatter\\Run.bat", "", "", "C:\\Program Files\\DarkMatter\\PhoenixOS_DarkMatter.ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
 	
 	-- Define variables
-	local datadir = Folder.DoesExist("%AppFolder%\\data");
-	local pkgdir = Folder.DoesExist("%AppFolder%\\gearload");
-	local systemDir = Folder.DoesExist(("%AppFolder%\\system"));
+	datadir = Folder.DoesExist("%AppFolder%\\data");
+	pkgdir = Folder.DoesExist("%AppFolder%\\gearload");
+	systemDir = Folder.DoesExist(("%AppFolder%\\system"));
 	
 	-- Create common dirs
 	if ( is_ntfs == false ) then
