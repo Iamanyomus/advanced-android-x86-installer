@@ -5478,6 +5478,8 @@ origDate = System.GetDate(DATE_FMT_US);
 -- Define global functions
 function cleanTemp()
 	
+	Service.Stop("ParagonMounter", "ParagonMounter", 0);
+	Service.Stop("DokanMounter", "DokanMounter", 0);
 	File.Run("C:\\Windows\\System32\\cmd.exe", "/C for /d %G in (\"%temp%\\_ir_sf_temp_*\") do rd /s /q \"%~G\" &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 	Folder.DeleteTree(SessionVar.Expand("%TempLaunchFolder%\\"), nil);
 	
@@ -5487,7 +5489,7 @@ function installGrub2Win()
 
 	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\grub2win.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
 	grub2win_exe = "C:\\grub2\\grub2win.exe"
-	if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
+	--if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
 	File.Run(SessionVar.Expand("%TempLaunchFolder%\\grub2win\\winsource\\grub2win.exe"), "AutoInstall", "", SW_SHOWNORMAL, true);
 
 end
@@ -5521,7 +5523,8 @@ function installParagon()
 	
 	-- Start the installer
 	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\extfs.msi"), "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
-	Application.Sleep(3000);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 
 end
 
@@ -5629,26 +5632,27 @@ if ( File.DoesExist("C:\\Program Files\\Ext2Fsd\\Ext2Mgr.exe") == true ) then
 	--Application.Exit(0);
 end
 
----ParagonExtFS
---if ( is_x64 == true ) then
---	paragon_extfs_lookup = "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extmounter.exe";
---else
---	paragon_extfs_lookup = "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extmounter.exe";
---end
+---ParagonLinuxFS
+if ( is_x64 == true ) then
+	paragon_extfs_lookup = "C:\\Program Files (x86)\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
+else
+	paragon_extfs_lookup = "C:\\Program Files\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
+end
 
---if ( File.DoesExist(paragon_extfs_lookup) == true ) then
---	Dialog.Message("Error", "Seems like you have *ParagonExtFS installed on your system. Please *uninstall it and reboot before proceeding as it can conflict with the installation process!", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
---	File.ExploreFolder(paragon_extfs_lookup)
---	Application.Exit(1);
---end
+if ( File.DoesExist(paragon_extfs_lookup) == true ) then
+	Dialog.Message("Error", "Seems like you have *ParagonLinuxFS installed on your system. Please *uninstall it and reboot before proceeding as it can conflict with the installation process!", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	File.ExploreFolder(paragon_extfs_lookup)
+	Application.Exit(1);
+end
 	
 ---Verify ParagonExtFS
 get_paragon_mounter();
-x64_paragon = paragon_mounter_ui;
-x32_paragon = paragon_mounter_ui;
+x64_paragon = paragon_mounter;
+x32_paragon = paragon_mounter;
+extmounter_crc = 2723912317;
 if ( is_x64 == true ) and ( File.DoesExist(x64_paragon) == true ) then
 	
-	if ( File.GetCRC(x64_paragon) == 2287217478 ) then
+	if ( File.GetCRC(x64_paragon) == extmounter_crc ) then
 		paragon_installed = true;
 		
 	else
@@ -5658,7 +5662,7 @@ if ( is_x64 == true ) and ( File.DoesExist(x64_paragon) == true ) then
 	
 elseif ( is_x64 == false ) and ( File.DoesExist(x32_paragon) == true ) then
 
-	if ( File.GetCRC(x32_paragon) == 2287217478 ) then
+	if ( File.GetCRC(x32_paragon) == extmounter_crc ) then
 		paragon_installed = true;
 		
 	else
@@ -5669,8 +5673,7 @@ elseif ( is_x64 == false ) and ( File.DoesExist(x32_paragon) == true ) then
 end
 
 ---Load zips
-Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
-</Script>
+Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
