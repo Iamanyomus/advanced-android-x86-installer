@@ -5478,8 +5478,7 @@ origDate = System.GetDate(DATE_FMT_US);
 -- Define global functions
 function cleanTemp()
 	
-	Service.Stop("ParagonMounter", "ParagonMounter", 0);
-	Service.Stop("DokanMounter", "DokanMounter", 0);
+	umountExt();
 	File.Run("C:\\Windows\\System32\\cmd.exe", "/C for /d %G in (\"%temp%\\_ir_sf_temp_*\") do rd /s /q \"%~G\" &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 	Folder.DeleteTree(SessionVar.Expand("%TempLaunchFolder%\\"), nil);
 	
@@ -5548,14 +5547,10 @@ end
 
 function mountExt()
 	if ( ext_is_mounted == false ) then
-
-		get_paragon_mounter();
 		
 		-- Kill if running
 		File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /IM \"Paragon ExtFS for Windows.exe\" /F &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
-		File.Run(paragon_mounter, "/umount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
-		Service.Stop("ParagonMounter", "ParagonMounter", 0);
-		Service.Stop("DokanMounter", "DokanMounter", 0);
+		umountExt();
 		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 1)", 10000, MB_ICONINFORMATION);
 		Service.Start("DokanMounter", "DokanMounter", nil);
 		Service.Start("ParagonMounter", "ParagonMounter", nil);
@@ -5564,6 +5559,17 @@ function mountExt()
 		ext_is_mounted = true;
 		
 	end
+end
+
+function umountExt()
+
+	if ( is_ntfs == false ) then
+		get_paragon_mounter();
+		File.Run(paragon_mounter, "/umount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+		Service.Stop("ParagonMounter", "ParagonMounter", 0);
+		Service.Stop("DokanMounter", "DokanMounter", 0);
+	end
+
 end
 
 function postExit()
@@ -5608,12 +5614,7 @@ function postExit()
 	
 	
 	-- Unmount ext4 and reset date
-	if ( is_ntfs == false ) then
-		get_paragon_mounter();
-		File.Run(paragon_mounter, "/umount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
-		Service.Stop("ParagonMounter", "ParagonMounter", 0);
-		Service.Stop("DokanMounter", "DokanMounter", 0);
-	end
+	umountExt();
 	
 	-- Clean %temp%
 	cleanTemp();
