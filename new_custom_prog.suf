@@ -2815,25 +2815,36 @@ end
 <Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
 <Script>-- These actions are triggered by the controls on the screen.
 
+
+function makeDataImg(sizeMb, sizeGb)
+	
+	Dialog.Message("Attention", "Now this installer will try to generate a data.img with a size of "..sizeGb.."\r\nPlease wait patiently while the window is active.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	sizeBytes = sizeMb * 1048576;
+	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", "-l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder\\data.img"), SessionVar.Expand("%AppFolder%"), SW_SHOWNORMAL, true);
+
+	
+end
+
+
+
 if (e_MsgID == MSGID_CLICKED) then
 	-- a control was clicked...
 
 	if (e_CtrlID == CTRL_BUTTON_01) then
 
-		File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\makedata_4", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
+		makeDataImg(4000,"4GB");
 	
 	elseif (e_CtrlID == CTRL_BUTTON_02) then
 
-		File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\makedata_8", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
-		
+		makeDataImg(4000,"8GB");
 	
 	elseif (e_CtrlID == CTRL_BUTTON_03) then
 
-			File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\makedata_16", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
+		makeDataImg(4000,"16GB");
 	
 	elseif (e_CtrlID == CTRL_BUTTON_04) then
 	
-			File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\makedata_32", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
+		makeDataImg(4000,"32GB");
 
 	end
 	
@@ -3371,7 +3382,8 @@ end
 
 function verifyInstallSource(toCheck, basename)
 
-	if ( File.DoesExist(toCheck) == false ) then
+	 while ( File.DoesExist(toCheck) == false )
+	 do
 	
 		choice = Dialog.Message("Notice", basename.." is missing, things can go wrong ...", MB_ABORTRETRYIGNORE, MB_ICONINFORMATION, MB_DEFBUTTON1);
 		
@@ -3379,13 +3391,8 @@ function verifyInstallSource(toCheck, basename)
 			cleanTemp();
 			Application.Exit(EXIT_REASON_USER_ABORTED);
 			
-		elseif ( choice == IDRETRY ) then
-			while ( File.DoesExist(toCheck) == false )
-			do
-				verifyInstallSource(toCheck, basename);
-			end
 		elseif ( choice == IDIGNORE ) then
-			return 0;
+			break;
 		end
 		
 	end
@@ -5459,6 +5466,30 @@ g_HandleSystemReboot();
 <Cfg>All</Cfg>
 </BuildConfigs>
 </PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\cyggcc_s-1.dll</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\cygwin1.dll</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\make_ext4fs.exe</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
 </PrimerFiles>
 <Events>
 <Event>
@@ -5484,11 +5515,26 @@ function cleanTemp()
 	
 end
 
+
+function killProcess(targetProcess)
+
+	instances_of_file = 0;
+	file_to_check_for = targetProcess; --have all lowercase
+	processes = System.EnumerateProcesses();
+	
+	for j, file_path in pairs(processes) do
+	    file = String.SplitPath(file_path);
+	    if (String.Lower(file.Filename..file.Extension)) == file_to_check_for then
+	        System.TerminateProcess(j);
+	    end
+	end
+end
+
 function installGrub2Win()
 
 	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\grub2win.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
 	grub2win_exe = "C:\\grub2\\grub2win.exe"
-	--if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
+	if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
 	File.Run(SessionVar.Expand("%TempLaunchFolder%\\grub2win\\winsource\\grub2win.exe"), "AutoInstall", "", SW_SHOWNORMAL, true);
 
 end
@@ -5516,14 +5562,29 @@ function installParagon()
 	--Registry.DeleteKey(HKEY_CURRENT_USER, "Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Compatibility Assistant\\Store");
 	
 	-- Kill if running
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /IM \"Paragon ExtFS for Windows.exe\" /F &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	--File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /IM \"Paragon ExtFS for Windows.exe\" /F &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	killProcess("paragon extfs for windows.exe");
 	Service.Stop("ParagonMounter", "ParagonMounter", 0);
 	Service.Stop("DokanMounter", "DokanMounter", 0);
 	
 	-- Start the installer
 	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\extfs.msi"), "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, false);
+	
+	-- Read the contents of a text file into a string (Append host Product ID to validate license)
+	LIC_FILE = "C:\\ProgramData\\Paragon\\ExtFS for Windows\\EXTFS4";
+	contents = TextFile.ReadToString(LIC_FILE);
+	
+	--File.Run(SessionVar.Expand("%TempLaunchFolder%\\pid.bat"), "", "", SW_MINIMIZE, true);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C wmic os get \"SerialNumber\" | find /v \"SerialNumber\" | cmd /q /v:on /c \"set/p .=&amp;set /p=!.!\" &gt; %temp%/pid", "", SW_MINIMIZE, false);
+	local PRODUCT_ID_TMP = TextFile.ReadToString(_TempFolder.."\\pid");
+	PRODUCT_ID = String.Replace(PRODUCT_ID_TMP, "   ", "", true);
+
+    -- Replace every occurrence
+    new_contents = String.Replace(contents, "&lt;Pcid&gt;00264-00000-00001-AA048&lt;/Pcid&gt;", "&lt;Pcid&gt;"..PRODUCT_ID.."&lt;/Pcid&gt;", true);
+
+    -- Write out the modified contents of the text file.
+    TextFile.WriteFromString(LIC_FILE, new_contents, false);
 
 end
 
@@ -5549,7 +5610,8 @@ function mountExt()
 	if ( ext_is_mounted == false ) then
 		
 		-- Kill if running
-		File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /IM \"Paragon ExtFS for Windows.exe\" /F &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+		killProcess("paragon extfs for windows.exe");
+		--File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /IM \"Paragon ExtFS for Windows.exe\" /F &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 		umountExt();
 		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 1)", 10000, MB_ICONINFORMATION);
 		Service.Start("DokanMounter", "DokanMounter", nil);
@@ -5563,7 +5625,7 @@ end
 
 function umountExt()
 
-	if ( is_ntfs == false ) then
+	if ( ext_is_mounted == true ) then
 		get_paragon_mounter();
 		File.Run(paragon_mounter, "/umount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 		Service.Stop("ParagonMounter", "ParagonMounter", 0);
