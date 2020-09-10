@@ -359,6 +359,26 @@ Screen.Back();
 <Args/>
 <Script>-- These actions are performed when the Next button is clicked.
 -- advance to the next screen
+
+--Check for system files in SourceFolder
+if ( File.DoesExist(_SourceFolder.."\\initrd.img") == false ) then
+	answer = Dialog.Message("Attention", "No Android-x86 OS Files Were Found.\r\nDo you want to select an ISO to load from it ?", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	if ( answer == IDYES ) then
+		ISO_IMAGE = Dialog.FileBrowse(true, "Select ISO Image", _SourceFolder, "All Files (*.*)|*.*|", "", "iso", false, true);
+		
+		if (ISO_IMAGE[1] ~= "CANCEL") and (ISO_IMAGE ~= nil) then
+			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\"".._SourceFolder.."\" \""..ISO_IMAGE[1].."\"".." initrd.img kernel ramdisk.img gearlock system.img system.sfs", _TempLaunchFolder, SW_SHOWNORMAL, true);
+		else
+			Dialog.Message("Notice", "No valid input was provided, the installer will exit", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		end
+		
+	else
+		Dialog.TimedMessage("Notice", "Okay, then the installer has nothing to work with, thus it will exit", 2000, MB_ICONEXCLAMATION);
+		Application.Exit(1);
+	end
+end
+
+
 Screen.Jump("InstallationType");
 </Script>
 <BookMarks count="0">
@@ -2756,7 +2776,7 @@ end
 if (e_MsgID == MSGID_CLICKED) then
 	-- a control was clicked...
 	
-	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder")) == false ) then Folder.Create(SessionVar.Expand("%AppFolder")); end
+	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%")) == false ) then Folder.Create(SessionVar.Expand("%AppFolder%")); end
 
 	if (e_CtrlID == CTRL_BUTTON_01) then
 
@@ -5528,8 +5548,9 @@ function installGrub2Win()
 	end
 	
 	-- Check if entry already exists and append entry as required
-	String.Find(grubcfg_orig_contents, "Android-x86-ASG", 1, true);
-	if (error ~= 0) then
+	check_entry_existence = String.Find(grubcfg_orig_contents, "Android-x86-ASG", 1, true);
+
+	if ( check_entry_existence == -1 ) then
 		TextFile.WriteFromString(GRUB_CFG, grubcfg_new_footer_contents, true);
 		
 		if ( File.DoesExist(_SourceFolder.."\\windows\\Android-x86-ASG.cfg") == true ) then
@@ -5582,7 +5603,6 @@ function installParagon()
 	LIC_FILE = "C:\\ProgramData\\Paragon\\ExtFS for Windows\\EXTFS4";
 	contents = TextFile.ReadToString(LIC_FILE);
 	
-	--File.Run(SessionVar.Expand("%TempLaunchFolder%\\pid.bat"), "", "", SW_MINIMIZE, true);
 	File.Run("C:\\Windows\\System32\\cmd.exe", "/C wmic os get \"SerialNumber\" | find /v \"SerialNumber\" | cmd /q /v:on /c \"set/p .=&amp;set /p=!.!\" &gt; %temp%/pid", "", SW_MINIMIZE, false);
 	local PRODUCT_ID_TMP = TextFile.ReadToString(_TempFolder.."\\pid");
 	PRODUCT_ID = String.Replace(PRODUCT_ID_TMP, "   ", "", true);
@@ -5650,9 +5670,9 @@ function postExit()
 	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot DarkMatter", "C:\\Program Files\\DarkMatter\\Run.bat", "", "", "C:\\Program Files\\DarkMatter\\PhoenixOS_DarkMatter.ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
 	
 	-- Define variables
-	datadir = Folder.DoesExist("%AppFolder%\\data");
-	pkgdir = Folder.DoesExist("%AppFolder%\\gearload");
-	systemDir = Folder.DoesExist(("%AppFolder%\\system"));
+	datadir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data"));
+	pkgdir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\gearload"));
+	systemDir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\system"));
 	
 	-- Create common dirs
 	if ( is_ntfs == false ) then
@@ -5661,29 +5681,29 @@ function postExit()
 		--File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\fixfs_firstboot", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
 		
 		if ( datadir == false ) then
-			Folder.Create("%AppFolder%\\data");
+			Folder.Create(SessionVar.Expand("%AppFolder%\\data"));
 		end
 		
 	else
 		
 		if ( datadir == true ) then
-			Folder.DeleteTree("%AppFolder%\\data\\");
+			Folder.DeleteTree(SessionVar.Expand("%AppFolder%\\data\\"));
 		end
 	
 	end
 	
 	if ( pkgdir == false ) then
-		Folder.Create("%AppFolder%\\gearload");
+		Folder.Create(SessionVar.Expand("%AppFolder%\\gearload"));
 	end
 	
 	
 	if ( systemDir == true ) then
 		Dialog.Message("Notice", "An earlier version of darkmatter detected, your system folder has been renamed to old.system", MB_OK, MB_ICONNONE);
-		Folder.Rename("%AppFolder%\\system", "%AppFolder%\\old.system");
+		Folder.Rename(SessionVar.Expand("%AppFolder%\\system"), SessionVar.Expand("%AppFolder%\\old.system"));
 	end
 	
 	-- Create placeholder file for grub2win detection
-	File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\findme", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), SessionVar.Expand("%AppFolder%\\findme"), FILE_INSTALL_ALWAYS, false, false, nil, nil);
 	
 	-- Unmount ext4 and reset date
 	umountExt();
@@ -5743,24 +5763,6 @@ elseif ( is_x64 == false ) and ( File.DoesExist(x32_paragon) == true ) then
 		Application.Exit(1);
 	end
 	
-end
-
---Check for system files in SourceFolder
-if ( File.DoesExist(_SourceFolder.."\\initrd.img") == false ) then
-	answer = Dialog.Message("Attention", "No Android-x86 OS Files Were Found.\r\nDo you want to select an ISO to load from it ?", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
-	if ( answer == IDYES ) then
-		ISO_IMAGE = Dialog.FileBrowse(true, "Select ISO Image", _SourceFolder, "All Files (*.*)|*.*|", "", "iso", false, true);
-		
-		if (ISO_IMAGE[1] ~= "CANCEL") and (ISO_IMAGE ~= nil) then
-			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\"".._SourceFolder.."\" \""..ISO_IMAGE[1].."\"".." initrd.img kernel ramdisk.img gearlock system.img system.sfs", _TempLaunchFolder, SW_SHOWNORMAL, true);
-		else
-			Dialog.Message("Notice", "No valid input was provided, the installer will exit", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
-		end
-		
-	else
-		Dialog.TimedMessage("Notice", "Okay, then the installer has nothing to work with, thus it will exit", 2000, MB_ICONEXCLAMATION);
-		Application.Exit(1);
-	end
 end
 
 
@@ -5931,7 +5933,7 @@ g_HandleSystemReboot();
 <ResourcePrivateBuild/>
 <ResourceSpecialBuild/>
 <StampResources>1</StampResources>
-<CompressionType CompressionSetting="LZMA2_HIGH" DictionarySize="24" WordSize="32" CPUThreads="2"/>
+<CompressionType CompressionSetting="LZMA2_HIGH" DictionarySize="24" WordSize="32" CPUThreads="4"/>
 <Vars/>
 </BuildConfig>
 </BuildConfigurations>
