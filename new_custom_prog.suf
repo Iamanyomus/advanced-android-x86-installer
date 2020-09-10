@@ -2820,8 +2820,7 @@ function makeDataImg(sizeMb, sizeGb)
 	
 	Dialog.Message("Attention", "Now this installer will try to generate a data.img with a size of "..sizeGb.."\r\nPlease wait patiently while the window is active.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 	sizeBytes = sizeMb * 1048576;
-	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", "-l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder\\data.img"), SessionVar.Expand("%AppFolder%"), SW_SHOWNORMAL, true);
-
+	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", " -l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder%\\data.img"), _TempLaunchFolder, SW_SHOWNORMAL, true);
 	
 end
 
@@ -2836,15 +2835,15 @@ if (e_MsgID == MSGID_CLICKED) then
 	
 	elseif (e_CtrlID == CTRL_BUTTON_02) then
 
-		makeDataImg(4000,"8GB");
+		makeDataImg(8000,"8GB");
 	
 	elseif (e_CtrlID == CTRL_BUTTON_03) then
 
-		makeDataImg(4000,"16GB");
+		makeDataImg(16000,"16GB");
 	
 	elseif (e_CtrlID == CTRL_BUTTON_04) then
 	
-		makeDataImg(4000,"32GB");
+		makeDataImg(32000,"32GB");
 
 	end
 	
@@ -5490,6 +5489,22 @@ g_HandleSystemReboot();
 <Cfg>All</Cfg>
 </BuildConfigs>
 </PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\7z.dll</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\7z.exe</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
 </PrimerFiles>
 <Events>
 <Event>
@@ -5735,8 +5750,28 @@ elseif ( is_x64 == false ) and ( File.DoesExist(x32_paragon) == true ) then
 	
 end
 
+--Check for system files in SourceFolder
+if ( File.DoesExist(_SourceFolder.."\\initrd.img") == false ) then
+	answer = Dialog.Message("Attention", "No Android-x86 OS Files Were Found.\r\nDo you want to select an ISO to load from it ?", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	if ( answer == IDYES ) then
+		ISO_IMAGE = Dialog.FileBrowse(true, "Select ISO Image", _SourceFolder, "All Files (*.*)|*.*|", "", "iso", false, true);
+		
+		if (ISO_IMAGE[1] ~= "CANCEL") and (ISO_IMAGE ~= nil) then
+			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\"".._SourceFolder.."\" \""..ISO_IMAGE[1].."\"".." initrd.img ramdisk.img gearlock system.img system.sfs", _TempLaunchFolder, SW_SHOWNORMAL, true);
+		else
+			Dialog.Message("Notice", "No valid input was provided, the installer will exit", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		end
+		
+	else
+		Dialog.TimedMessage("Notice", "Okay, then the installer has nothing to work with, thus it will exit", 2000, MB_ICONEXCLAMATION);
+		Application.Exit(1);
+	end
+end
+
+
 ---Load zips
-Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);</Script>
+Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
+</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -5845,7 +5880,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%AppFolder%</Name>
-<Value>%SelectedDrive%\DarkMatter</Value>
+<Value>%SelectedDrive%\\DarkMatter</Value>
 <Type>2</Type>
 </SessionVar>
 <SessionVar>
