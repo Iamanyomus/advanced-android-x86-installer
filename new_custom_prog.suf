@@ -2755,6 +2755,8 @@ end
 
 if (e_MsgID == MSGID_CLICKED) then
 	-- a control was clicked...
+	
+	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder")) == false ) then Folder.Create(SessionVar.Expand("%AppFolder")); end
 
 	if (e_CtrlID == CTRL_BUTTON_01) then
 
