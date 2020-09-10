@@ -6,79 +6,6 @@
 <ArchiveFiles>
 <FileData>
 <FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\findme</FullName>
-<FileName>findme</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild</Source>
-<Ext>matter</Ext>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>%AppFolder%</Dest>
-<Overwrite>2</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>dark</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
 <FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\Boot.bat</FullName>
 <FileName>Boot.bat</FileName>
 <Source>D:\ProjectBase\DarkMatter\WinInstallerBuild</Source>
@@ -5505,6 +5432,30 @@ g_HandleSystemReboot();
 <Cfg>All</Cfg>
 </BuildConfigs>
 </PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grubconfigs\Android-x86-ASG.cfg</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grubconfigs\grub.cfg.footer</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grub2win_assets.zip</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
 </PrimerFiles>
 <Events>
 <Event>
@@ -5534,7 +5485,7 @@ end
 function killProcess(targetProcess)
 
 	instances_of_file = 0;
-	file_to_check_for = targetProcess; --have all lowercase
+	file_to_check_for = String.Lower(targetProcess); --have all lowercase
 	processes = System.EnumerateProcesses();
 	
 	for j, file_path in pairs(processes) do
@@ -5547,10 +5498,49 @@ end
 
 function installGrub2Win()
 
+	-- Get assets path
+	if ( File.DoesExist(_SourceFolder.."\\grub2win_assets.zip") == true ) then
+		grub2win_assets_file = _SourceFolder.."\\windows\\grub2win_assets.zip";
+	else 
+		grub2win_assets_file = _TempLaunchFolder.."\\grub2win_assets.zip";
+	end
+	
+	-- Install grub2win
 	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\grub2win.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
-	grub2win_exe = "C:\\grub2\\grub2win.exe"
-	if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
+--	grub2win_exe = "C:\\grub2\\grub2win.exe"
+--	if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
+--	Folder.DeleteTree(_TempFolder.."\\grub2win", nil);
+--	Application.Sleep(3000);
 	File.Run(SessionVar.Expand("%TempLaunchFolder%\\grub2win\\winsource\\grub2win.exe"), "AutoInstall", "", SW_SHOWNORMAL, true);
+	
+	-- Merge assets
+	Zip.Extract(grub2win_assets_file, {"*.*"}, "C:\\grub2", true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
+	
+	-- Install grub entry
+	GRUB_CFG = "C:\\grub2\\grub.cfg"
+	grubcfg_orig_contents = TextFile.ReadToString(GRUB_CFG);
+	if ( File.DoesExist(_SourceFolder.."\\windows\\grub.cfg.footer") == true ) then
+		grubcfg_new_footer_contents = TextFile.ReadToString(_SourceFolder.."\\windows\\grub.cfg.footer");
+	else
+		grubcfg_new_footer_contents = TextFile.ReadToString(_TempLaunchFolder.."\\grub.cfg.footer");
+	end
+	
+	-- Check if entry already exists and append entry as required
+	String.Find(grubcfg_orig_contents, "Android-x86-ASG", 1, true);
+	if (error ~= 0) then
+		TextFile.WriteFromString(GRUB_CFG, grubcfg_new_footer_contents, true);
+		
+		if ( File.DoesExist(_SourceFolder.."\\windows\\Android-x86-ASG.cfg") == true ) then
+			GRUB_CFG_CUSTOM = _SourceFolder.."\\windows\\Android-x86-ASG.cfg"
+		else
+			GRUB_CFG_CUSTOM = SessionVar.Expand("%TempLaunchFolder%\\Android-x86-ASG.cfg")
+		end
+
+		File.Install(GRUB_CFG_CUSTOM, "C:\\grub2\\windata\\customconfigs\\Android-x86-ASG.cfg", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+		File.Install(GRUB_CFG_CUSTOM, "C:\\grub2\\winsource\\sample.submenu.txt", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+		
+	end
+
 
 end
 
@@ -5616,8 +5606,9 @@ end
 
 function runPartitionTool()
 
-	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), "open", "", SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), SW_MAXIMIZE, false);
+	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil)
 	Dialog.TimedMessage("Hol Up !", "Loading the Partition Tool", 5000, MB_ICONINFORMATION);
+	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), "open", "", SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), SW_MAXIMIZE, false);
 
 end
 
@@ -5665,7 +5656,7 @@ function postExit()
 	if ( is_ntfs == false ) then
 		
 		File.Delete(SessionVar.Expand("%AppFolder%\\data.img"), false, false, false, nil);
-		File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\fixfs_firstboot", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
+		--File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\fixfs_firstboot", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
 		
 		if ( datadir == false ) then
 			Folder.Create("%AppFolder%\\data");
@@ -5689,6 +5680,8 @@ function postExit()
 		Folder.Rename("%AppFolder%\\system", "%AppFolder%\\old.system");
 	end
 	
+	-- Create placeholder file for grub2win detection
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\findme", FILE_INSTALL_ALWAYS, false, false, nil, nil);
 	
 	-- Unmount ext4 and reset date
 	umountExt();
@@ -5757,7 +5750,7 @@ if ( File.DoesExist(_SourceFolder.."\\initrd.img") == false ) then
 		ISO_IMAGE = Dialog.FileBrowse(true, "Select ISO Image", _SourceFolder, "All Files (*.*)|*.*|", "", "iso", false, true);
 		
 		if (ISO_IMAGE[1] ~= "CANCEL") and (ISO_IMAGE ~= nil) then
-			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\"".._SourceFolder.."\" \""..ISO_IMAGE[1].."\"".." initrd.img ramdisk.img gearlock system.img system.sfs", _TempLaunchFolder, SW_SHOWNORMAL, true);
+			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\"".._SourceFolder.."\" \""..ISO_IMAGE[1].."\"".." initrd.img kernel ramdisk.img gearlock system.img system.sfs", _TempLaunchFolder, SW_SHOWNORMAL, true);
 		else
 			Dialog.Message("Notice", "No valid input was provided, the installer will exit", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 		end
@@ -5770,7 +5763,7 @@ end
 
 
 ---Load zips
-Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
+--Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -5880,7 +5873,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%AppFolder%</Name>
-<Value>%SelectedDrive%\\DarkMatter</Value>
+<Value>%SelectedDrive%\\Android-x86-ASG</Value>
 <Type>2</Type>
 </SessionVar>
 <SessionVar>
