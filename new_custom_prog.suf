@@ -3009,9 +3009,21 @@ function installFile(inputFile)
 	
 		if ( inputFile == "system.img" ) or ( inputFile == "system.sfs" ) then
 			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\""..SessionVar.Expand("%AppFolder%\\").."\" \""..ISO_IMAGE[1].."\" system.*", _TempLaunchFolder, SW_HIDE, true);
-		else	
+			
+			if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\system.img")) == true ) then
+				inputFile = "system.img"
+			else
+				inputFile = "system.sfs"
+			end
+			
+		else
+			
 			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\""..SessionVar.Expand("%AppFolder%\\").."\" \""..ISO_IMAGE[1].."\" "..inputFile, _TempLaunchFolder, SW_HIDE, true);
+			
 		end
+		
+		-- Verify if file was successfully installed for ISO also
+		verifyInstallSource(SessionVar.Expand("%AppFolder%\\")..inputFile, inputFile);
 		
 	else
 	
