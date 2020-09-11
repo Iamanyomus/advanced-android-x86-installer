@@ -3007,8 +3007,12 @@ function installFile(inputFile)
 	
 	if ( loadFromISO == true ) then
 	
-		Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\""..SessionVar.Expand("%AppFolder%\\").."\" \""..ISO_IMAGE[1].."\" "..inputFile, _TempLaunchFolder, SW_MINIMIZE, true);
-	
+		if ( inputFile == "system.img" ) or ( inputFile == "system.sfs" ) then
+			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\""..SessionVar.Expand("%AppFolder%\\").."\" \""..ISO_IMAGE[1].."\" system.*", _TempLaunchFolder, SW_HIDE, true);
+		else	
+			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\""..SessionVar.Expand("%AppFolder%\\").."\" \""..ISO_IMAGE[1].."\" "..inputFile, _TempLaunchFolder, SW_HIDE, true);
+		end
+		
 	else
 	
 		from = _SourceFolder.."\\"..inputFile;
