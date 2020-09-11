@@ -5361,17 +5361,17 @@ g_HandleSystemReboot();
 <SUF7SessionVars>
 <SessionVar>
 <Name>%ProductName%</Name>
-<Value>PhoenixOS DarkMatter</Value>
+<Value>Advanced Android-x86 Installer</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
 <Name>%CompanyName%</Name>
-<Value>aXoNuS</Value>
+<Value>SupremeGamers</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>Exo4.7</Value>
+<Value>Beta 0.5</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5414,7 +5414,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>PhoenixOS_DarkMatter_Exo4.7.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_Beta_v0.5.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
