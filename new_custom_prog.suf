@@ -490,14 +490,14 @@ Screen.Jump("HelpPage");</Script>
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>%ProductName%</IDS_WINDOW_TITLE>
+<IDS_WINDOW_TITLE>%ProductName% %ProductVer%</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Welcome</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>Welcome to the installer for %ProductName% %ProductVer%</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Exit</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help-Utils</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_BODY>You are about to install %ProductName% %ProductVer%.
+<IDS_CTRL_STATICTEXT_BODY>You are using %ProductName%.
 
 It is strongly recommended that you exit all Windows programs before continuing with this installation.
 
@@ -3190,7 +3190,7 @@ end
 </Language>
 <Messages>
 <IDS_WINDOW_TITLE>%ProductName% %ProductVer%</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Installing %ProductName%</IDS_HEADER_TEXT>
+<IDS_HEADER_TEXT>Installing Your Fav Android-x86 OS</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>Hol up !</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
@@ -3200,7 +3200,7 @@ end
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
 <IDS_CTRL_PROGRESS_BAR_01>Installing</IDS_CTRL_PROGRESS_BAR_01>
 <IDS_CTRL_STATICTEXT_LABEL_-6>IDS_CTRL_STATICTEXT_LABEL_-6</IDS_CTRL_STATICTEXT_LABEL_-6>
-<IDS_CTRL_STATICTEXT_LABEL_02>                                                                Did you know :?                                          DarkMatter is the most popular and advanced custom version developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project </IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_STATICTEXT_LABEL_02>Did you know :?                                                                                                                  DarkMatter is the most popular and advanced custom version developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project </IDS_CTRL_STATICTEXT_LABEL_02>
 </Messages>
 </SUF70Messages>
 </Languages>
