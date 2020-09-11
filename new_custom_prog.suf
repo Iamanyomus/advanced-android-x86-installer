@@ -362,7 +362,7 @@ Screen.Back();
 
 --Check for system files in SourceFolder
 if ( File.DoesExist(_SourceFolder.."\\initrd.img") == false ) then
-	answer = Dialog.Message("Attention", "No Android-x86 OS Files Were Found.\r\nDo you want to select an ISO to load from it ?", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	answer = Dialog.Message("Attention", "No Android-x86 OS files were found in this folder.\r\nDo you want to select an ISO to load from it ?", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
 	if ( answer == IDYES ) then
 		ISO_IMAGE = Dialog.FileBrowse(true, "Select ISO Image", _SourceFolder, "All Files (*.*)|*.*|", "", "iso", false, true);
 		
@@ -5185,7 +5185,7 @@ end
 function makeDataImg(sizeMb, sizeGb)
 
 	sizeBytes = sizeMb * 1048576;
-	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", " -l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder%\\data.img"), _TempLaunchFolder, SW_MINIMIZE, true);
+	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", " -l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder%\\data.img"), _TempLaunchFolder, SW_HIDE, true);
 	
 end
 
