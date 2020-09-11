@@ -3062,14 +3062,10 @@ end;
 
 ------- Install Files
 
-installFile("initrd.img");
-Application.Sleep(1500);
-DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 40);
-installFile("ramdisk.img");
-Application.Sleep(1500);
-DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 60);
-installFile("gearlock");
-DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 80);
+installFile("initrd.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 30);
+installFile("ramdisk.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 40);
+installFile("gearlock"); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 45);
+installFile("kernel"); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 50);
 
 if ( File.DoesExist(_SourceFolder.."\\system.img") == true ) then
 	installFile("system.img");
@@ -3078,7 +3074,7 @@ else
 end
 
 if ( genDataImg == true ) then
-	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 90);
+	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 75);
 	updateProgStat("Creating a "..genDataImgSize.."GB data.img");
 	makeDataImg(genDataImgSize.."000", genDataImgSize.."GB");
 end
