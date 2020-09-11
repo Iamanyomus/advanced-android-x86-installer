@@ -14,7 +14,7 @@
 <Desc/>
 <Recurse>1</Recurse>
 <MatchMode>0</MatchMode>
-<Dest>C:\Program Files\DarkMatter</Dest>
+<Dest>C:\Program Files\Android-x86-ASG</Dest>
 <Overwrite>2</Overwrite>
 <Backup>0</Backup>
 <Protect>0</Protect>
@@ -87,7 +87,7 @@
 <Desc/>
 <Recurse>1</Recurse>
 <MatchMode>0</MatchMode>
-<Dest>C:\Program Files\DarkMatter</Dest>
+<Dest>C:\Program Files\Android-x86-ASG</Dest>
 <Overwrite>2</Overwrite>
 <Backup>0</Backup>
 <Protect>0</Protect>
@@ -160,7 +160,7 @@
 <Desc/>
 <Recurse>1</Recurse>
 <MatchMode>0</MatchMode>
-<Dest>C:\Program Files\DarkMatter</Dest>
+<Dest>C:\Program Files\Android-x86-ASG</Dest>
 <Overwrite>2</Overwrite>
 <Backup>0</Backup>
 <Protect>0</Protect>
@@ -5111,7 +5111,7 @@ function installParagon()
 	-- Start the installer
 	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\extfs.msi"), "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
 	Application.Sleep(3000);
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	--File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 	
 	-- Read the contents of a text file into a string (Append host Product ID to validate license)
 	LIC_FILE = "C:\\ProgramData\\Paragon\\ExtFS for Windows\\EXTFS4";
@@ -5188,9 +5188,9 @@ end
 function postExit()
 
 	-- Cleate shortcuts
-	File.Install(SessionVar.Expand("%TempLaunchFolder%\\logo.ico"), "C:\\Program Files\\DarkMatter\\PhoenixOS_DarkMatter.ico", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\logo.ico"), "C:\\Program Files\\Android-x86-ASG\\SG.ico", FILE_INSTALL_ALWAYS, false, false, nil, nil);
 	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Grub2Win", "C:\\grub2\\grub2win.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_DEFAULT);
-	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot DarkMatter", "C:\\Program Files\\DarkMatter\\Run.bat", "", "", "C:\\Program Files\\DarkMatter\\PhoenixOS_DarkMatter.ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
+	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot Android-x86", "C:\\Program Files\\Android-x86-ASG\\Run.bat", "", "", "C:\\Program Files\\Android-x86-ASG\\SG.ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
 	
 	-- Define variables
 	datadir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data"));
@@ -5221,7 +5221,7 @@ function postExit()
 	
 	
 	if ( systemDir == true ) then
-		Dialog.Message("Notice", "An earlier version of darkmatter detected, your system folder has been renamed to old.system", MB_OK, MB_ICONNONE);
+		Dialog.Message("Notice", "An earlier version of Android-x86 detected, your system folder has been renamed to old.system", MB_OK, MB_ICONNONE);
 		Folder.Rename(SessionVar.Expand("%AppFolder%\\system"), SessionVar.Expand("%AppFolder%\\old.system"));
 	end
 	

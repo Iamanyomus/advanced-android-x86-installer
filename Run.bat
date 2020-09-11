@@ -9,7 +9,7 @@ if '%errorlevel%' NEQ '0' (
 	if exist "%temp%\getadmin" del "%temp%\getadmin.vbs" >nul 2>&1
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
     set params = %*:"=""
-    echo UAC.ShellExecute "C:\Program Files\DarkMatter\Boot.bat", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+    echo UAC.ShellExecute "C:\Program Files\Android-x86-ASG\Boot.bat", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
 
     "%temp%\getadmin.vbs"
 
