@@ -249,9 +249,9 @@
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -367,9 +367,10 @@ if ( File.DoesExist(_SourceFolder.."\\initrd.img") == false ) then
 		ISO_IMAGE = Dialog.FileBrowse(true, "Select ISO Image", _SourceFolder, "All Files (*.*)|*.*|", "", "iso", false, true);
 		
 		if (ISO_IMAGE[1] ~= "CANCEL") and (ISO_IMAGE ~= nil) then
-			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\"".._SourceFolder.."\" \""..ISO_IMAGE[1].."\"".." initrd.img kernel ramdisk.img gearlock system.img system.sfs", _TempLaunchFolder, SW_SHOWNORMAL, true);
+			loadFromISO = true;
 		else
 			Dialog.Message("Notice", "No valid input was provided, the installer will exit", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			Application.Exit(1);
 		end
 		
 	else
@@ -530,9 +531,9 @@ It is advised that you don't run this installer in the same partition where you 
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -881,9 +882,9 @@ end
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -1033,6 +1034,7 @@ if (e_MsgID == MSGID_CLICKED) then
 	-- a control was clicked...
 
 	if (e_CtrlID == CTRL_BUTTON_01) then
+		is_ntfs = false;
 		SessionVar.Set("%InsType%","EXT4");
 	end
 	
@@ -1169,9 +1171,9 @@ end
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -1287,17 +1289,16 @@ Screen.Back();
 
 
 if( is_ntfs == true ) then
-	Screen.Jump("Select Packages");
+	Screen.Jump("Data Image");
 else
 		
 	if ( paragon_installed == false ) then
 		installParagon();
 	end
 
+Screen.Next();
 
-end
-
-Screen.Next();</Script>
+end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -1482,9 +1483,9 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -1602,8 +1603,14 @@ Screen.Back();
 -- Mount ext4 partitions
 mountExt();
 
--- advance to the next screen
-Screen.Next();</Script>
+
+if( is_ntfs == false ) then
+	genDataImg = false;
+	Screen.Jump("Select Drive");
+else
+	Screen.Next();
+end
+</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -1772,10 +1779,10 @@ end</Script>
 </Languages>
 </Screen>
 <Screen>
-<Type>145</Type>
-<Name>Select Packages</Name>
+<Type>170</Type>
+<Name>Data Image</Name>
 <BannerStyle>2</BannerStyle>
-<TemplateName>Select Packages</TemplateName>
+<TemplateName>Custom</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
 <CstClrs>1</CstClrs>
@@ -1794,9 +1801,9 @@ end</Script>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -1879,85 +1886,17 @@ end</Script>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
-<Descriptions>1</Descriptions>
-<TotalSize>1</TotalSize>
-<PackageShowType>1</PackageShowType>
-<NumCategories>0</NumCategories>
-<packages>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>initrd</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>1</node_sibling>
-</ptr_node>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>system</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>1</node_sibling>
-</ptr_node>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>ramdisk</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>1</node_sibling>
-</ptr_node>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>gearlock</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>1</node_sibling>
-</ptr_node>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>kernel</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>0</node_sibling>
-</ptr_node>
-</packages>
+<CustomCtrlList>
+<CustomCtrlInfo Left="30" Top="144" Width="92" Height="78" ID="121"/>
+<CustomCtrlInfo Left="143" Top="144" Width="92" Height="78" ID="122"/>
+<CustomCtrlInfo Left="256" Top="144" Width="92" Height="78" ID="123"/>
+<CustomCtrlInfo Left="370" Top="144" Width="92" Height="78" ID="124"/>
+</CustomCtrlList>
 <Events>
 <Event>
 <Name>On Preload</Name>
 <Args/>
 <Script>-- These actions are performed before the screen is shown.
-
--- calculate the amount of space required for the installation
-_SpaceRequired = SetupData.CalculateRequiredSpace();
-
--- format it as a string with an appropriate unit of measurement (e.g. "0 bytes")
-local strSpaceRequired = String.GetFormattedSize(_SpaceRequired);
-
--- store the string in a session variable so it can be used in the screen text
-SessionVar.Set("%SpaceRequired%", strSpaceRequired);
-
--- from _SUF70_Global_Functions.lua:
--- update the 'Total space required:' message (expands any session variables in it)
-g_UpdateStaticTextCtrl(CTRL_STATICTEXT_SPACEREQUIRED, "IDS_CTRL_STATICTEXT_SPACEREQUIRED");
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -1968,7 +1907,7 @@ g_UpdateStaticTextCtrl(CTRL_STATICTEXT_SPACEREQUIRED, "IDS_CTRL_STATICTEXT_SPACE
 <Script>-- These actions are performed when the Back button is clicked.
 
 -- go back to the previous screen
-Screen.Previous();
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -1977,11 +1916,8 @@ Screen.Previous();
 <Name>On Next</Name>
 <Args/>
 <Script>-- These actions are performed when the Next button is clicked.
--- Tip: this is where you could add actions to validate the
---      user's input before proceeding
 
 -- advance to the next screen
---result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\mount_extfs.bat"), "", "", SW_SHOWNORMAL, true);
 Screen.Next();
 </Script>
 <BookMarks count="0">
@@ -2015,40 +1951,33 @@ end
 <Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
 <Script>-- These actions are triggered by the controls on the screen.
 
-if(e_CtrlID == CTRL_SELECT_PACKAGE_TREE) then
-	-- the control message is from the select packages tree...
+if (e_MsgID == MSGID_CLICKED) then
+	-- a control was clicked...
+	
+	genDataImg = true;
+	
+	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%")) == false ) then Folder.Create(SessionVar.Expand("%AppFolder%")); end
 
-	-- if the current selection changed (i.e. a different package was selected),
-	-- update the description field
-	if(e_MsgID == MSGID_ONSELCHANGED) then
+	if (e_CtrlID == CTRL_BUTTON_01) then
+		
+		genDataImgSize = 4;
+	
+	elseif (e_CtrlID == CTRL_BUTTON_02) then
 
-		-- get the selected item's description
-		local strText = e_Details.Description;
-		
-		-- if the selected item is a package, add its size to the description
-		if(e_Details.Type == 1) then
-			strText = strText.."\n( "..String.GetFormattedSize(e_Details.Size).." )";
-		end
-		
-		-- update the description field
-		DlgStaticText.SetProperties(CTRL_STATICTEXT_BODY, {Text=strText});
+		genDataImgSize = 8;
+	
+	elseif (e_CtrlID == CTRL_BUTTON_03) then
+
+		genDataImgSize = 16;
+	
+	elseif (e_CtrlID == CTRL_BUTTON_04) then
+	
+		genDataImgSize = 32;
+
 	end
+	
+	Screen.Next();
 
-
-	-- if an item's state changed (i.e. a package was turned on or off),
-	-- update the 'Total space required:' message
-	if(e_MsgID == MSGID_ONSTATECHANGED) then
-
-		-- calculate the amount of space required for the installation
-		_SpaceRequired = SetupData.CalculateRequiredSpace();
-		
-		-- set %SpaceRequired% to a string with an appropriate unit of measurement (e.g. "0 bytes")
-		SessionVar.Set("%SpaceRequired%", String.GetFormattedSize(_SpaceRequired) );
-
-		-- from _SUF70_Global_Functions.lua:
-		-- update the 'Total space required:' message (expands any session variables in it)
-		g_UpdateStaticTextCtrl(CTRL_STATICTEXT_SPACEREQUIRED, "IDS_CTRL_STATICTEXT_SPACEREQUIRED");
-	end
 end
 </Script>
 <BookMarks count="0">
@@ -2056,6 +1985,54 @@ end
 </Event>
 </Events>
 <Controls>
+<Control>
+<Type>1</Type>
+<ID>100</ID>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
+<TabOrder>-10</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>102</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>-9</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>121</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>122</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>2</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>123</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>3</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>124</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>4</TabOrder>
+<FTButton>0</FTButton>
+</Control>
 <Control>
 <Type>1</Type>
 <ID>103</ID>
@@ -2071,53 +2048,6 @@ end
 <Enabled>1</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>2</Type>
-<ID>203</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
-<Type>8</Type>
-<ID>1000</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
-</Control>
-<Control>
-<Type>2</Type>
-<ID>200</ID>
-<Visible>0</Visible>
-<Enabled>1</Enabled>
-<TabOrder>3</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
-<Type>2</Type>
-<ID>208</ID>
-<Visible>0</Visible>
-<Enabled>1</Enabled>
-<TabOrder>4</TabOrder>
-<IsHeading>0</IsHeading>
 </Control>
 </Controls>
 <Languages>
@@ -2143,17 +2073,19 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>Packages</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Select Packages</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT/>
+<IDS_WINDOW_TITLE>Data size</IDS_WINDOW_TITLE>
+<IDS_HEADER_TEXT>Select your data.img size</IDS_HEADER_TEXT>
+<IDS_SUBHEADER_TEXT>In NTFS you need a data.img for storing your runtime data                       Ideally 8GB should be enough for general purposes</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
-You can leave these as is unless you want to specify your needs</IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
-<IDS_CTRL_STATICTEXT_SPACEREQUIRED>Total space required: %SpaceRequired%</IDS_CTRL_STATICTEXT_SPACEREQUIRED>
-<IDS_CTRL_STATICTEXT_BODY/>
+<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
+<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
+<IDS_CTRL_BUTTON_01>4 GB</IDS_CTRL_BUTTON_01>
+<IDS_CTRL_BUTTON_02>8 GB</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_BUTTON_03>16 GB</IDS_CTRL_BUTTON_03>
+<IDS_CTRL_BUTTON_04>32 GB</IDS_CTRL_BUTTON_04>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -2181,9 +2113,9 @@ You can leave these as is unless you want to specify your needs</IDS_CTRL_STATIC
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -2274,6 +2206,53 @@ You can leave these as is unless you want to specify your needs</IDS_CTRL_STATIC
 <Args/>
 <Script>-- These actions are performed before the screen is shown.
 
+
+
+function addSize(myFile2Calc)
+
+if ( File.DoesExist(myFile2Calc) == true ) then total_size_of_files = total_size_of_files + File.GetSize(_SourceFolder.."\\"..myFile2Calc); end
+
+end
+
+-- Update required size
+if ( loadFromISO == true ) then
+
+	total_size_of_files = File.GetSize(ISO_IMAGE[1]);
+	
+else
+
+	total_size_of_files = 0;
+	addSize("initrd.img");
+	addSize("ramdisk.img");
+	addSize("gearlock");
+	addSize("kernel");
+	
+	-- Calc system.*
+	if ( File.DoesExist(_SourceFolder.."\\system.img") == true ) then
+		addSize("system.img");
+	else
+		addSize("system.sfs");
+	end
+		
+end
+
+-- Calc data.img size when needed
+if ( is_ntfs == true ) then
+	genDataImgSizeBytes = genDataImgSize * 1073741824;
+	total_size_of_files = total_size_of_files + genDataImgSizeBytes;
+end
+
+---- Finally update the size in session variable
+-- format it as a string with an appropriate unit of measurement (e.g. "0 bytes")
+strSpaceRequired = String.GetFormattedSize(total_size_of_files);
+
+-- store the string in a session variable so it can be used in the screen text
+SessionVar.Set("%SpaceRequired%", strSpaceRequired);
+
+
+
+
+
 -- set up a table to contain this screen's functions (this is a nice way to avoid naming conflicts)
 if not SelectDriveScreen then SelectDriveScreen = {}; end
 
@@ -2301,13 +2280,13 @@ function SelectDriveScreen.UpdateSizeMessages()
 end
 
 -- calculate the amount of space required for the installation
-_SpaceRequired = SetupData.CalculateRequiredSpace();
+--_SpaceRequired = SetupData.CalculateRequiredSpace();
 
 -- format it as a string with an appropriate unit of measurement (e.g. "0 bytes")
-local strSpaceRequired = String.GetFormattedSize(_SpaceRequired);
+--local strSpaceRequired = String.GetFormattedSize(_SpaceRequired);
 
 -- store the string in a session variable so it can be used in the screen text
-SessionVar.Set("%SpaceRequired%", strSpaceRequired);
+--SessionVar.Set("%SpaceRequired%", strSpaceRequired);
 
 -- from _SUF70_Global_Functions.lua:
 -- fill a table with all fixed and remote drives
@@ -2329,7 +2308,7 @@ SelectDriveScreen.UpdateSizeMessages();
 <Script>-- These actions are performed when the Back button is clicked.
 
 -- go back to the previous screen
-Screen.Jump("Select Packages");
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -2353,12 +2332,7 @@ if( File.DoesExist("%AppFolder%\\system.img") == true ) then
 	--Folder.Rename("%AppFolder%\\system", "%AppFolder%\\old.system");
 end
 
-if( is_ntfs == true ) then
-	Screen.Jump("Data Image");
-else
-	Screen.Jump("Ready to Install");
-end
-</Script>
+Screen.Next();</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -2578,334 +2552,13 @@ Space required: %SpaceRequired%
 
 Space available on selected partition: %SpaceAvailable%
 
-Type: %InsType%
+Installation type: %InsType%
 
 
 </IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS>
 <IDS_CTRL_STATICTEXT_LABEL_01>Select your %InsType% partition:                                                                                                                                                        </IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_COMBOBOX_01_DEFAULT/>
 <IDS_CTRL_COMBOBOX_01_ITEMS/>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
-<Type>170</Type>
-<Name>Data Image</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>Custom</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
-<StyleData>
-<CstClrs>1</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
-<BDYTXT format="hex">ffffff</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">333333</C3DFACE>
-<C3DHLT format="hex">333399</C3DHLT>
-<C3DLIT format="hex">ffff00</C3DLIT>
-<C3DSH format="hex">333333</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
-<CPRGRS format="hex">66728f</CPRGRS>
-<C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Android 101</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-19</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Montserrat</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Google Sans</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Google Sans</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Comic Sans MS</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>21</L>
-<T>35</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>1</L>
-<T>95</T>
-<R>15</R>
-<B>-1</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>21</L>
-<T>92</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<TBTXTX>10</TBTXTX>
-<TBTXTY>10</TBTXTY>
-<ScreenW>497</ScreenW>
-<ScreenH>362</ScreenH>
-</StyleData>
-<CustomCtrlList>
-<CustomCtrlInfo Left="30" Top="144" Width="92" Height="78" ID="121"/>
-<CustomCtrlInfo Left="143" Top="144" Width="92" Height="78" ID="122"/>
-<CustomCtrlInfo Left="256" Top="144" Width="92" Height="78" ID="123"/>
-<CustomCtrlInfo Left="370" Top="144" Width="92" Height="78" ID="124"/>
-</CustomCtrlList>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
-
--- advance to the next screen
-Screen.Next();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
-	cleanTemp();
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-
-function makeDataImg(sizeMb, sizeGb)
-	
-	Dialog.Message("Attention", "Now this installer will try to generate a data.img with a size of "..sizeGb.."\r\nPlease wait patiently while the window is active.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
-	sizeBytes = sizeMb * 1048576;
-	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", " -l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder%\\data.img"), _TempLaunchFolder, SW_SHOWNORMAL, true);
-	
-end
-
-
-
-if (e_MsgID == MSGID_CLICKED) then
-	-- a control was clicked...
-	
-	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%")) == false ) then Folder.Create(SessionVar.Expand("%AppFolder%")); end
-
-	if (e_CtrlID == CTRL_BUTTON_01) then
-
-		makeDataImg(4000,"4GB");
-	
-	elseif (e_CtrlID == CTRL_BUTTON_02) then
-
-		makeDataImg(8000,"8GB");
-	
-	elseif (e_CtrlID == CTRL_BUTTON_03) then
-
-		makeDataImg(16000,"16GB");
-	
-	elseif (e_CtrlID == CTRL_BUTTON_04) then
-	
-		makeDataImg(32000,"32GB");
-
-	end
-	
-	Screen.Next();
-
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>0</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>121</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>122</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>123</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>3</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>124</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>4</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>Data size</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Select your data.img size</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>In NTFS you need a data.img for storing your runtime data                       Ideally 8GB should be enough for general purposes</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_BUTTON_01>4 GB</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_BUTTON_02>8 GB</IDS_CTRL_BUTTON_02>
-<IDS_CTRL_BUTTON_03>16 GB</IDS_CTRL_BUTTON_03>
-<IDS_CTRL_BUTTON_04>32 GB</IDS_CTRL_BUTTON_04>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -2933,9 +2586,9 @@ end
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -3033,7 +2686,7 @@ end
 <Script>-- These actions are performed when the Back button is clicked.
 
 -- go back to the previous screen
-Screen.Jump("Select Drive");
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -3184,7 +2837,7 @@ Click Install to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <Name>FinalStage</Name>
 <BannerStyle>2</BannerStyle>
 <TemplateName>Custom Progress</TemplateName>
-<OverrideProjTheme>1</OverrideProjTheme>
+<OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
 <CstClrs>1</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
@@ -3202,9 +2855,9 @@ Click Install to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>C:\ProgramData\IndigoRose\Setup Factory\9.0\Themes\DarkMatter\Modern_body.jpg</TBIMG>
-<SBIMG>C:\ProgramData\IndigoRose\Setup Factory\9.0\Themes\DarkMatter\Modern_body.jpg</SBIMG>
-<BDIMG>C:\ProgramData\IndigoRose\Setup Factory\9.0\Themes\DarkMatter\Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -3350,15 +3003,23 @@ end
 
 function installFile(inputFile)
 
-	updateProgStat(inputFile);
+	updateProgStat(inputFile);	
 	
-	from = _SourceFolder.."\\"..inputFile;
-	to = SessionVar.Expand("%AppFolder%\\")..inputFile;
+	if ( loadFromISO == true ) then
 	
-	--- Check for file existence
-	verifyInstallSource(from, inputFile);
+		Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\""..SessionVar.Expand("%AppFolder%\\").."\" \""..ISO_IMAGE[1].."\" "..inputFile, _TempLaunchFolder, SW_MINIMIZE, true);
 	
-	File.Install(from, to, FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	else
+	
+		from = _SourceFolder.."\\"..inputFile;
+		to = SessionVar.Expand("%AppFolder%\\")..inputFile;
+	
+		--- Check for file existence
+		verifyInstallSource(from, inputFile);
+		
+		File.Install(from, to, FILE_INSTALL_ALWAYS, false, false, nil, nil);
+		
+	end
 
 end
 
@@ -3393,7 +3054,19 @@ Application.Sleep(1500);
 DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 60);
 installFile("gearlock");
 DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 80);
-installFile("system.sfs");
+
+if ( File.DoesExist(_SourceFolder.."\\system.img") == true ) then
+	installFile("system.img");
+else
+	installFile("system.sfs")
+end
+
+if ( genDataImg == true ) then
+	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 90);
+	updateProgStat("Creating a "..genDataImgSize.."GB data.img");
+	makeDataImg(genDataImgSize.."000", genDataImgSize.."GB");
+end
+
 DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 100);</Script>
 <BookMarks count="0">
 </BookMarks>
@@ -3442,14 +3115,6 @@ end
 <FTButton>1</FTButton>
 </Control>
 <Control>
-<Type>2</Type>
-<ID>203</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
 <Type>7</Type>
 <ID>900</ID>
 <Visible>1</Visible>
@@ -3459,6 +3124,14 @@ end
 <Min>0</Min>
 <Max>100</Max>
 <XPStyleBars>0</XPStyleBars>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>203</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<IsHeading>0</IsHeading>
 </Control>
 <Control>
 <Type>2</Type>
@@ -3543,9 +3216,9 @@ end
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -3840,9 +3513,9 @@ end
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -4069,7 +3742,7 @@ System.Reboot();</Script>
 <IDS_CTRL_BUTTON_HELP>&amp;Reboot</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_BODY>Now you can reboot and choose %ProductName% from your new grub2win bootloader.
 
-If you ever liked our work then please remember to leave your review at supreme_gamers.com :)
+If you ever liked our work then please remember to leave your review at supreme-gamers.com :)
 </IDS_CTRL_STATICTEXT_BODY>
 <IDS_CTRL_HEADINGTEXT_BODY>                                      Installation Successful</IDS_CTRL_HEADINGTEXT_BODY>
 </Messages>
@@ -4077,178 +3750,7 @@ If you ever liked our work then please remember to leave your review at supreme_
 </Languages>
 </Screen>
 </AfterInstallingScreens>
-<Packages>
-<Package>
-<ID>system</ID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>System</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>It's the system.img</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-<Package>
-<ID>initrd</ID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>Initrd</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>It's the Initial ramdisk image.</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-<Package>
-<ID>ramdisk</ID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>Ramdisk</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>It's the secondary ramdisk image</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-<Package>
-<ID>kernel</ID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>Kernel 4.14.90-xanmod</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>This is the Stock PhoenixOS Kernel</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-<Package>
-<ID>gearlock</ID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>GearLock</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>GearLock Recovery</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-</Packages>
+<Packages/>
 <SerialLists>
 <SerialListData>
 <Name>List 1</Name>
@@ -4387,9 +3889,9 @@ If you ever liked our work then please remember to leave your review at supreme_
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -4652,9 +4154,9 @@ Otherwise, click Next to continue.
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -4943,9 +4445,9 @@ end
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_body.jpg</TBIMG>
-<SBIMG>Modern_body.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -5489,10 +4991,9 @@ paragon_installed = false;
 ext_is_mounted = false;
 grub_disabled = false;
 is_portable = false;
+loadFromISO = false;
+genDataImg = false;
 is_ntfs = false;
-
---Store orig Date
-origDate = System.GetDate(DATE_FMT_US);
 
 -- Define global functions
 function cleanTemp()
@@ -5597,14 +5098,15 @@ function installParagon()
 	
 	-- Start the installer
 	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\extfs.msi"), "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, false);
+	Application.Sleep(3000);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 	
 	-- Read the contents of a text file into a string (Append host Product ID to validate license)
 	LIC_FILE = "C:\\ProgramData\\Paragon\\ExtFS for Windows\\EXTFS4";
 	contents = TextFile.ReadToString(LIC_FILE);
 	
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C wmic os get \"SerialNumber\" | find /v \"SerialNumber\" | cmd /q /v:on /c \"set/p .=&amp;set /p=!.!\" &gt; %temp%/pid", "", SW_MINIMIZE, false);
-	local PRODUCT_ID_TMP = TextFile.ReadToString(_TempFolder.."\\pid");
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C wmic os get \"SerialNumber\" | find /v \"SerialNumber\" | cmd /q /v:on /c \"set/p .=&amp;set /p=!.!\" &gt; %temp%/pid", "", SW_MINIMIZE, true);
+	PRODUCT_ID_TMP = TextFile.ReadToString(_TempFolder.."\\pid");
 	PRODUCT_ID = String.Replace(PRODUCT_ID_TMP, "   ", "", true);
 
     -- Replace every occurrence
@@ -5635,6 +5137,7 @@ function runPartitionTool()
 end
 
 function mountExt()
+
 	if ( ext_is_mounted == false ) then
 		
 		-- Kill if running
@@ -5649,6 +5152,7 @@ function mountExt()
 		ext_is_mounted = true;
 		
 	end
+	
 end
 
 function umountExt()
@@ -5660,6 +5164,13 @@ function umountExt()
 		Service.Stop("DokanMounter", "DokanMounter", 0);
 	end
 
+end
+
+function makeDataImg(sizeMb, sizeGb)
+
+	sizeBytes = sizeMb * 1048576;
+	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", " -l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder%\\data.img"), _TempLaunchFolder, SW_MINIMIZE, true);
+	
 end
 
 function postExit()
@@ -5704,11 +5215,8 @@ function postExit()
 	
 	-- Create placeholder file for grub2win detection
 	File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), SessionVar.Expand("%AppFolder%\\findme"), FILE_INSTALL_ALWAYS, false, false, nil, nil);
-	
-	-- Unmount ext4 and reset date
-	umountExt();
-	
-	-- Clean %temp%
+		
+	-- Clean %temp% and unMount
 	cleanTemp();
 
 end
@@ -5763,12 +5271,7 @@ elseif ( is_x64 == false ) and ( File.DoesExist(x32_paragon) == true ) then
 		Application.Exit(1);
 	end
 	
-end
-
-
----Load zips
---Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
-</Script>
+end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
