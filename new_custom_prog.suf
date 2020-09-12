@@ -160,7 +160,7 @@ if ( File.DoesExist(_SourceFolder.."\\initrd.img") == false ) then
 end
 
 
-Screen.Jump("InstallationType");
+Screen.Jump("InstallationConfig");
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -417,21 +417,17 @@ It is advised that you don't run this installer in the same partition where you 
 <Event>
 <Name>On Back</Name>
 <Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
+<Script/>
 <BookMarks count="0">
 </BookMarks>
 </Event>
 <Event>
 <Name>On Next</Name>
 <Args/>
-<Script>-- These actions are performed when the Next button is clicked.
+<Script>-- These actions are performed when the Back button is clicked.
 
--- advance to the next screen
-Screen.Next();
+-- go back to the previous screen
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -510,8 +506,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>100</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>-10</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -590,8 +586,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -622,7 +618,7 @@ end
 <IDS_WINDOW_TITLE>%ProductName% Help</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Heading text</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>Subheading text</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_NEXT>&lt; &amp;Back</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Exit</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
@@ -641,7 +637,7 @@ end
 </Screen>
 <Screen>
 <Type>170</Type>
-<Name>InstallationType</Name>
+<Name>InstallationConfig</Name>
 <BannerStyle>2</BannerStyle>
 <TemplateName>Custom</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
@@ -748,9 +744,16 @@ end
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="79" Top="155" Width="146" Height="67" ID="121"/>
-<CustomCtrlInfo Left="264" Top="155" Width="150" Height="68" ID="122"/>
-<CustomCtrlInfo Left="88" Top="86" Width="322" Height="45" ID="211"/>
+<CustomCtrlInfo Left="79" Top="112" Width="146" Height="67" ID="121"/>
+<CustomCtrlInfo Left="264" Top="110" Width="150" Height="68" ID="122"/>
+<CustomCtrlInfo Left="11" Top="38" Width="434" Height="17" ID="211"/>
+<CustomCtrlInfo Left="73" Top="246" Width="191" Height="20" ID="821"/>
+<CustomCtrlInfo Left="18" Top="247" Width="52" Height="17" ID="212"/>
+<CustomCtrlInfo Left="73" Top="218" Width="191" Height="20" ID="822"/>
+<CustomCtrlInfo Left="18" Top="219" Width="42" Height="16" ID="213"/>
+<CustomCtrlInfo Left="19" Top="279" Width="189" Height="42" ID="214"/>
+<CustomCtrlInfo Left="296" Top="221" Width="179" Height="18" ID="1300"/>
+<CustomCtrlInfo Left="296" Top="247" Width="178" Height="18" ID="1301"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -763,21 +766,17 @@ end
 <Event>
 <Name>On Back</Name>
 <Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
+<Script/>
 <BookMarks count="0">
 </BookMarks>
 </Event>
 <Event>
 <Name>On Next</Name>
 <Args/>
-<Script>-- These actions are performed when the Next button is clicked.
+<Script>-- These actions are performed when the Back button is clicked.
 
--- advance to the next screen
-Screen.Next();
+-- go back to the previous screen
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -810,20 +809,36 @@ end
 <Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
 <Script>-- These actions are triggered by the controls on the screen.
 
+function updateConfig()
+
+	NAME = SessionVar.Expand("%UserProductName%");
+	VERSION = SessionVar.Expand("%UserProductVer%");
+	reinitSessionVars();
+
+end
+
 if (e_MsgID == MSGID_CLICKED) then
 	-- a control was clicked...
 
-	if (e_CtrlID == CTRL_BUTTON_01) then
-		is_ntfs = false;
-		SessionVar.Set("%InsType%","EXT4");
-	end
+	if (e_CtrlID == CTRL_BUTTON_01) or (e_CtrlID == CTRL_BUTTON_02) then
+
+		if (e_CtrlID == CTRL_BUTTON_01) then
+			is_ntfs = false; SessionVar.Set("%InsType%","EXT4");
+		elseif (e_CtrlID == CTRL_BUTTON_02) then
+			is_ntfs = true; SessionVar.Set("%InsType%","NTFS");
+		end
+		
+		-- Update Default values from UserInput
+		updateConfig();
 	
-	if (e_CtrlID == CTRL_BUTTON_02) then
-		is_ntfs = true;
-		SessionVar.Set("%InsType%","NTFS");
+		if( is_ntfs == true ) then
+			Screen.Jump("Data Image");
+		else
+			if ( paragon_installed == false ) then installParagon(); end
+			Screen.Next();
+		end
+		
 	end
-	
-	Screen.Next();
 
 end
 </Script>
@@ -835,8 +850,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>100</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>-10</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -873,6 +888,84 @@ end
 <IsHeading>0</IsHeading>
 </Control>
 <Control>
+<Type>6</Type>
+<ID>821</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>4</TabOrder>
+<TextAlign>0</TextAlign>
+<VertScroll>1</VertScroll>
+<HorizScroll>0</HorizScroll>
+<RTLReadingOrder>0</RTLReadingOrder>
+<Style>0</Style>
+<Mode>0</Mode>
+<MaskReturnMode>0</MaskReturnMode>
+<ReadOnly>0</ReadOnly>
+<StartNewRow>1</StartNewRow>
+<SizeColumns>4</SizeColumns>
+<Variable>%UserProductVer%</Variable>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>212</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>5</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>6</Type>
+<ID>822</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>6</TabOrder>
+<TextAlign>0</TextAlign>
+<VertScroll>1</VertScroll>
+<HorizScroll>0</HorizScroll>
+<RTLReadingOrder>0</RTLReadingOrder>
+<Style>0</Style>
+<Mode>0</Mode>
+<MaskReturnMode>0</MaskReturnMode>
+<ReadOnly>0</ReadOnly>
+<StartNewRow>1</StartNewRow>
+<SizeColumns>4</SizeColumns>
+<Variable>%UserProductName%</Variable>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>213</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>7</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>214</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>8</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>10</Type>
+<ID>1300</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>9</TabOrder>
+<Checked>1</Checked>
+<Variable>install_grub2win</Variable>
+</Control>
+<Control>
+<Type>10</Type>
+<ID>1301</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>10</TabOrder>
+<Checked>0</Checked>
+<Variable>always_make_data_image</Variable>
+</Control>
+<Control>
 <Type>1</Type>
 <ID>103</ID>
 <Visible>0</Visible>
@@ -883,8 +976,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -912,10 +1005,10 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>Installation Type</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Select your installation type</IDS_HEADER_TEXT>
+<IDS_WINDOW_TITLE>Installation Configuation</IDS_WINDOW_TITLE>
+<IDS_HEADER_TEXT>Configure your installation opions</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT/>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_NEXT>&lt; &amp;Back</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
@@ -923,319 +1016,18 @@ end
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
 <IDS_CTRL_BUTTON_01>Ext4 (Recommended)</IDS_CTRL_BUTTON_01>
 <IDS_CTRL_BUTTON_02>Ntfs</IDS_CTRL_BUTTON_02>
-<IDS_CTRL_STATICTEXT_LABEL_01>It is recommended that you use the Ext4 option for maximum performance and compatibility</IDS_CTRL_STATICTEXT_LABEL_01>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
-<Type>125</Type>
-<Name>License Agreement</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>License Agreement</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
-<StyleData>
-<CstClrs>1</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
-<BDYTXT format="hex">ffffff</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">333333</C3DFACE>
-<C3DHLT format="hex">333399</C3DHLT>
-<C3DLIT format="hex">ffff00</C3DLIT>
-<C3DSH format="hex">333333</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
-<CPRGRS format="hex">66728f</CPRGRS>
-<C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
-<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
-<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Android 101</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-19</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Montserrat</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Google Sans</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Google Sans</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Comic Sans MS</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>21</L>
-<T>35</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>1</L>
-<T>95</T>
-<R>15</R>
-<B>-1</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>21</L>
-<T>92</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<TBTXTX>10</TBTXTX>
-<TBTXTY>10</TBTXTY>
-<ScreenW>497</ScreenW>
-<ScreenH>362</ScreenH>
-</StyleData>
-<Checked>1</Checked>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
--- from _SUF70_Global_Functions.lua:
--- disable the Next button unless 'I agree' is selected
-g_LicenseAgreementScreen_UpdateNextButton();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
--- Tip: this is where you could add actions to validate the
---      user's input before proceeding
-
-
-if( is_ntfs == true ) then
-	Screen.Jump("Data Image");
-else
-		
-	if ( paragon_installed == false ) then
-		installParagon();
-	end
-
-Screen.Next();
-
-end</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
-	cleanTemp();
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-if (e_CtrlID == CTRL_RADIOBTN_AGREE or e_CtrlID == CTRL_RADIOBTN_DISAGREE) then
-	-- the control message is from one of the radio buttons
-	-- if it's a click message, update the Next button
-	if (e_MsgID == MSGID_CLICKED) then
-		-- from _SUF70_Global_Functions.lua:
-		-- disable the Next button unless 'I agree' is selected
-		g_LicenseAgreementScreen_UpdateNextButton();
-	end
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>3</Type>
-<ID>400</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>0</TabOrder>
-<IsHTML>0</IsHTML>
-<TextAlign>0</TextAlign>
-<VertScroll>1</VertScroll>
-<HorizScroll>0</HorizScroll>
-<RTLReadingOrder>0</RTLReadingOrder>
-<Style>1</Style>
-<ReadOnly>1</ReadOnly>
-<SpecifyType>0</SpecifyType>
-<Variable/>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>602</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>35</TabOrder>
-<Group>1</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>603</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>40</TabOrder>
-<Group>0</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>License Agreement</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>License Agreement</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>Please read the following license agreement carefully.</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_SCROLLTEXT_BODY>POS DarkMatter is just a modified version of the Official PhoenixOS. So, all the credits goes to the android_x86roject and Chaozhuo  devs. No such changes were made which would potentially harm the original devs in any means.
-
-
-Lastly, I want to request you guys that please share this project as that would encourage me more over the development. So that others could also be benefited by it.
-There are some rats active over stealing our work and sharing with their own names.
-Some additional system components such as *GearLock are copyrighted by us and you're not permitted to redistrubute them since these are not opensource yet, but will be soon.
-
-Currently active thieves are : Woltrex, TipsLab etc.
-Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly over his new ROC versions 2019-2020</IDS_CTRL_SCROLLTEXT_BODY>
-<IDS_CTRL_RADIOBTN_AGREE>Okay</IDS_CTRL_RADIOBTN_AGREE>
-<IDS_CTRL_RADIOBTN_DISAGREE>Nope</IDS_CTRL_RADIOBTN_DISAGREE>
-<IDS_CTRL_SCROLLTEXT_FILE>D:\ProjectBase\DarkMatter\WinInstallerBuild\licence.txt</IDS_CTRL_SCROLLTEXT_FILE>
+<IDS_CTRL_STATICTEXT_LABEL_01>It is recommended that you use the Ext4 option for best user experience</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_EDIT_01>%ProductVer%</IDS_CTRL_EDIT_01>
+<IDS_CTRL_EDIT_MASK_01/>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_01> </IDS_CTRL_EDIT_MASK_PLACE_HOLDER_01>
+<IDS_CTRL_STATICTEXT_LABEL_02>Version:</IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_EDIT_02>%ProductName%</IDS_CTRL_EDIT_02>
+<IDS_CTRL_EDIT_MASK_02/>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_02> </IDS_CTRL_EDIT_MASK_PLACE_HOLDER_02>
+<IDS_CTRL_STATICTEXT_LABEL_03>Name:</IDS_CTRL_STATICTEXT_LABEL_03>
+<IDS_CTRL_STATICTEXT_LABEL_04>You can change these for creating multiple boot instances</IDS_CTRL_STATICTEXT_LABEL_04>
+<IDS_CTRL_CHECK_BOX_01>Install/Update Grub2Win</IDS_CTRL_CHECK_BOX_01>
+<IDS_CTRL_CHECK_BOX_02>Always Make Data Image</IDS_CTRL_CHECK_BOX_02>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -1349,12 +1141,12 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="93" Top="99" Width="323" Height="15" ID="211"/>
+<CustomCtrlInfo Left="120" Top="99" Width="240" Height="17" ID="211"/>
 <CustomCtrlInfo Left="137" Top="123" Width="225" Height="19" ID="213"/>
 <CustomCtrlInfo Left="191" Top="151" Width="104" Height="35" ID="121"/>
-<CustomCtrlInfo Left="64" Top="197" Width="354" Height="19" ID="214"/>
+<CustomCtrlInfo Left="69" Top="197" Width="354" Height="19" ID="214"/>
 <CustomCtrlInfo Left="10" Top="273" Width="247" Height="42" ID="216"/>
-<CustomCtrlInfo Left="57" Top="225" Width="385" Height="20" ID="212"/>
+<CustomCtrlInfo Left="65" Top="225" Width="370" Height="20" ID="212"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -1384,7 +1176,7 @@ Screen.Back();
 mountExt();
 
 
-if( is_ntfs == false ) then
+if( is_ntfs == false ) and ( always_make_data_image == false ) then
 	genDataImg = false;
 	Screen.Jump("Select Drive");
 else
@@ -1548,7 +1340,7 @@ end</Script>
 <IDS_CTRL_BUTTON_HELP>&amp;Skip &gt;</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_LABEL_01>To install POS DarkMatter you need an EXT4 partition on your pc.</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_STATICTEXT_LABEL_01>To install this you need an EXT4 partition</IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_STATICTEXT_LABEL_03>Use the disk-partitioning tool below to do that.</IDS_CTRL_STATICTEXT_LABEL_03>
 <IDS_CTRL_BUTTON_01>Partition Tool</IDS_CTRL_BUTTON_01>
 <IDS_CTRL_STATICTEXT_LABEL_04>Resize an existing partition and format the new one as EXT4</IDS_CTRL_STATICTEXT_LABEL_04>
@@ -1684,21 +1476,17 @@ end</Script>
 <Event>
 <Name>On Back</Name>
 <Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
+<Script/>
 <BookMarks count="0">
 </BookMarks>
 </Event>
 <Event>
 <Name>On Next</Name>
 <Args/>
-<Script>-- These actions are performed when the Next button is clicked.
+<Script>-- These actions are performed when the Back button is clicked.
 
--- advance to the next screen
-Screen.Next();
+-- go back to the previous screen
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -1735,8 +1523,6 @@ if (e_MsgID == MSGID_CLICKED) then
 	-- a control was clicked...
 	
 	genDataImg = true;
-	
-	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%")) == false ) then Folder.Create(SessionVar.Expand("%AppFolder%")); end
 
 	if (e_CtrlID == CTRL_BUTTON_01) then
 		
@@ -1768,8 +1554,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>100</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>-10</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -1824,8 +1610,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -1856,8 +1642,8 @@ end
 <IDS_WINDOW_TITLE>Data size</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Select your data.img size</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>In NTFS you need a data.img for storing your runtime data                       Ideally 8GB should be enough for general purposes</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
+<IDS_CTRL_BUTTON_NEXT>&lt; &amp;Back</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_BACK/>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
@@ -2017,7 +1803,7 @@ else
 end
 
 -- Calc data.img size when needed
-if ( is_ntfs == true ) then
+if ( is_ntfs == true ) or ( always_make_data_image == true ) then
 	genDataImgSizeBytes = genDataImgSize * 1073741824;
 	total_size_of_files = total_size_of_files + genDataImgSizeBytes;
 end
@@ -2840,8 +2626,8 @@ end
 	
 
 ------- Install Grub2Win
-	choice = Dialog.Message("Attention", "Grub2Win boot-loader will be installed now.\r\nIt is required to multiboot between "..NAME.." and Windows.\r\nIf you have grub2win already installed it will update that without effecting anything.\r\n\r\nSure to proceed with the operation ?\r\n\r\nEven if you are unsure, you must always click on *Yes*.", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
-	if ( choice == IDYES ) then
+
+	if ( install_grub2win == true ) then
 	
 		updateProgStat("Installing Grub2Win"); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 10);
 		installGrub2Win(); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 20);
@@ -2905,7 +2691,7 @@ end
 	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Grub2Win", "C:\\grub2\\grub2win.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_DEFAULT);
 	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot "..NAME, "C:\\Program Files\\"..NAME.."\\Run.bat", "", "", "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
 	
-	Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 95);
+	Application.Sleep(1500); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 95);
 
 
 
@@ -2913,44 +2699,41 @@ end
 
 ----- Process addtional files
 	updateProgStat("Processing addtional files and folders");
-	
-	-- Define variables
-	datadir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data"));
-	pkgdir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\gearload"));
-	systemDir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\system"));
+
 	
 	-- Create common dirs
 	if ( is_ntfs == false ) then
 		
+		-- When EXT4
 		File.Delete(SessionVar.Expand("%AppFolder%\\data.img"), false, false, false, nil);
 		--File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\fixfs_firstboot", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
 		
-		if ( datadir == false ) then
-			Folder.Create(datadir);
+		if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data")) == false ) then
+			Folder.Create(SessionVar.Expand("%AppFolder%\\data"));
 		end
 		
 	else
-		
-		if ( datadir == true ) then
-			Folder.DeleteTree(datadir);
+		-- When NTFS
+		if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data")) == true ) then
+			Folder.DeleteTree(SessionVar.Expand("%AppFolder%\\data"));
 		end
 	
 	end
 	
-	if ( pkgdir == false ) then
-		Folder.Create(pkgdir);
+	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\gearload")) == false ) then
+		Folder.Create(SessionVar.Expand("%AppFolder%\\gearload"));
 	end
 	
 	
-	if ( systemDir == true ) then
-		Dialog.Message("Notice", "An earlier version of "..NAME.." detected, your system folder has been renamed to old.system", MB_OK, MB_ICONNONE);
-		Folder.Rename(systemdir, SessionVar.Expand("%AppFolder%\\old.system"));
+	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\system")) == true ) then
+		Folder.Rename(SessionVar.Expand("%AppFolder%\\system"), SessionVar.Expand("%AppFolder%\\old.system"));
+		Folder.DeleteTree(SessionVar.Expand("%AppFolder%\\old.system"), nil);
 	end
 	
 	-- Create placeholder file for grub2win detection
 	File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), SessionVar.Expand("%AppFolder%\\findme"), FILE_INSTALL_ALWAYS, false, false, nil, nil);
 	
-Application.Sleep(1000);
+Application.Sleep(1500);
 DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 100);</Script>
 <BookMarks count="0">
 </BookMarks>
@@ -3076,7 +2859,7 @@ end
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
 <IDS_CTRL_PROGRESS_BAR_01>Installing</IDS_CTRL_PROGRESS_BAR_01>
 <IDS_CTRL_STATICTEXT_LABEL_-6>IDS_CTRL_STATICTEXT_LABEL_-6</IDS_CTRL_STATICTEXT_LABEL_-6>
-<IDS_CTRL_STATICTEXT_LABEL_02>Did you know :?                                                                                                                  DarkMatter is the most popular and advanced custom version developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project </IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_STATICTEXT_LABEL_02>%END_CREDITS%</IDS_CTRL_STATICTEXT_LABEL_02>
 <IDS_CTRL_STATICTEXT_LABEL_01>Powered by Advanced Android-x86 Installer Programmed by AXON</IDS_CTRL_STATICTEXT_LABEL_01>
 </Messages>
 </SUF70Messages>
@@ -4926,10 +4709,12 @@ g_HandleSystemReboot();
 <Event>
 <Name>Global Functions</Name>
 <Args/>
-<Script>-- Define global variables
+<Script>-- Initialize global variables
 ----Booleans
+always_make_data_image = false;
 is_x64 = System.Is64BitOS();
 paragon_installed = false;
+install_grub2win = true;
 ext_is_mounted = false;
 grub_disabled = false;
 is_portable = false;
@@ -4939,22 +4724,49 @@ is_ntfs = false;
 ----Strings
 NAME = "Android-x86";
 VERSION = "ASG";
-LOGO_ICON = SessionVar.Expand("%TempLaunchFolder%\\logo.ico")
+END_CREDITS = "Did you know :?                                                                                                                  DarkMatter is the most popular and advanced custom version developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project"
+
+-- Initialize logo
+if ( File.DoesExist(_SourceFolder.."\\windows\\logo.ico") == true ) then
+	LOGO_ICON = _SourceFolder.."\\windows\\logo.ico"
+else
+	LOGO_ICON = SessionVar.Expand("%TempLaunchFolder%\\logo.ico")
+end
 
 -- Initialize config.ini
-if ( File.DoesExist(_SourceFolder.."\\windows\\config.ini") == true ) then
+CONFIG_INI = _SourceFolder.."\\windows\\config.ini"
+if ( File.DoesExist(CONFIG_INI) == true ) then
 	
-
+	-- META-DATA
+	nameProp = INIFile.GetValue(CONFIG_INI, "META-DATA", "NAME");
+	versionProp = INIFile.GetValue(CONFIG_INI, "META-DATA", "VERSION");
+	end_creditsProp = INIFile.GetValue(CONFIG_INI, "META-DATA", "END_CREDITS");
+	
+	if not ( nameProp == "" ) then NAME = nameProp; end
+	if not ( versionProp == "" ) then VERSION = versionProp; end
+	if not ( versionProp == "" ) then VERSION = versionProp; end
+	if not ( end_creditsProp == "" ) then END_CREDITS = end_creditsProp;  SessionVar.Set("%END_CREDITS%", END_CREDITS); end	
+	
+	-- FUNCTIONS
+	always_make_data_imageProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "ALWAYS_MAKE_DATA_IMAGE");
+	install_grub2winProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "INSTALL_GRUB2WIN");
+	
+	if not ( always_make_data_imageProp == "" ) then always_make_data_image = always_make_data_imageProp; end
+	if not ( install_grub2winProp == "" ) then install_grub2win = install_grub2winProp; end
 
 end
 
 
--- Re-initialize session vars
-SessionVar.Set("%ProductName%", NAME);
-SessionVar.Set("%ProductVer%", VERSION);
-SessionVar.Set("%AppFolder%", SessionVar.Expand("%AppFolder%\\"..NAME.."-"..VERSION));
+function reinitSessionVars()
+	
+	SessionVar.Set("%ProductName%", NAME);
+	SessionVar.Set("%ProductVer%", VERSION);
+	SessionVar.Set("%AppFolder%", SessionVar.Expand("%SelectedDrive%\\"..NAME.."-"..VERSION));
+	SessionVar.Set("%END_CREDITS%", END_CREDITS);
+	
+end
 
-
+reinitSessionVars(); -- Re-initialize session vars
 
 -- Define global functions
 function cleanTemp()
@@ -5019,7 +4831,7 @@ function installGrub2Win()
 		if ( File.DoesExist(_SourceFolder.."\\windows\\"..NAME.."-"..VERSION..".cfg") == true ) then
 			GRUB_CFG_CUSTOM = _SourceFolder.."\\windows\\"..NAME.."-"..VERSION..".cfg"
 		else
-			GRUB_CFG_CUSTOM = SessionVar.Expand("%TempLaunchFolder%\\"..NAME.."-"..VERSION..".cfg")
+			GRUB_CFG_CUSTOM = SessionVar.Expand("%TempLaunchFolder%\\Android-x86-ASG.cfg")
 		end
 		
 		-- Replace default NAME with new ones
@@ -5320,7 +5132,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>Beta 0.5</Value>
+<Value>Beta 0.7</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5363,7 +5175,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_Beta_v0.5.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_Beta_v0.7.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
