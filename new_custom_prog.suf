@@ -4992,6 +4992,30 @@ g_HandleSystemReboot();
 <Cfg>All</Cfg>
 </BuildConfigs>
 </PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\extpatch.exe</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\au3.exe</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\run.me</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
 </PrimerFiles>
 <Events>
 <Event>
@@ -5110,22 +5134,13 @@ function installParagon()
 	
 	-- Start the installer
 	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\extfs.msi"), "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
-	Application.Sleep(3000);
-	--File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
-	
-	-- Read the contents of a text file into a string (Append host Product ID to validate license)
-	LIC_FILE = "C:\\ProgramData\\Paragon\\ExtFS for Windows\\EXTFS4";
-	contents = TextFile.ReadToString(LIC_FILE);
-	
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C wmic os get \"SerialNumber\" | find /v \"SerialNumber\" | cmd /q /v:on /c \"set/p .=&amp;set /p=!.!\" &gt; %temp%/pid", "", SW_MINIMIZE, true);
-	PRODUCT_ID_TMP = TextFile.ReadToString(_TempFolder.."\\pid");
-	PRODUCT_ID = String.Replace(PRODUCT_ID_TMP, "   ", "", true);
-
-    -- Replace every occurrence
-    new_contents = String.Replace(contents, "&lt;Pcid&gt;00264-00000-00001-AA048&lt;/Pcid&gt;", "&lt;Pcid&gt;"..PRODUCT_ID.."&lt;/Pcid&gt;", true);
-
-    -- Write out the modified contents of the text file.
-    TextFile.WriteFromString(LIC_FILE, new_contents, false);
+	-- update the extpatch.exe path in autoit script and run it
+	orig_au_script = TextFile.ReadToString(SessionVar.Expand("%TempLaunchFolder%\\run.me"));
+	new_au_script = String.Replace(orig_au_script, "changeme", _TempLaunchFolder, true);
+	TextFile.WriteFromString(SessionVar.Expand("%TempLaunchFolder%\\run.me"), new_au_script, false);
+	Shell.Execute(_TempLaunchFolder.."\\au3.exe", "open", _TempLaunchFolder.."\\run.me", _TempFolder, SW_MINIMIZE, true);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 
 end
 
