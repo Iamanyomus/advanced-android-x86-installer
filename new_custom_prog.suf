@@ -3,227 +3,7 @@
 <ProductID>{AFB904C4-C255-4540-B97E-A75A34F1FFB0}</ProductID>
 <ProductVersion>9.5.3.0</ProductVersion>
 <ProductType/>
-<ArchiveFiles>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\Boot.bat</FullName>
-<FileName>Boot.bat</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild</Source>
-<Ext>bat</Ext>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>C:\Program Files\Android-x86-ASG</Dest>
-<Overwrite>2</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>1</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>Boot</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\Run.bat</FullName>
-<FileName>Run.bat</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild</Source>
-<Ext>bat</Ext>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>C:\Program Files\Android-x86-ASG</Dest>
-<Overwrite>2</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>1</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>Run</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\src</FullName>
-<FileName>src</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild</Source>
-<Ext/>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>C:\Program Files\Android-x86-ASG</Dest>
-<Overwrite>2</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>src</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-</ArchiveFiles>
+<ArchiveFiles/>
 <ExternalFiles/>
 <BeforeInstallingScreens>
 <Screen>
@@ -2943,17 +2723,13 @@ Click Install to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <CustomCtrlList>
 <CustomCtrlInfo Left="22" Top="184" Width="460" Height="31" ID="900"/>
 <CustomCtrlInfo Left="25" Top="105" Width="451" Height="53" ID="212"/>
+<CustomCtrlInfo Left="22" Top="312" Width="262" Height="34" ID="211"/>
 </CustomCtrlList>
 <Events>
 <Event>
 <Name>On Preload</Name>
 <Args/>
-<Script>-- These actions are performed before the screen is shown.
-if ( is_portable == true ) then
-
-	Dialog.Message("Warning", "You are using the portable windows-installer of PhoenixOS DarkMatter.\r\n\r\nIt is not stable while copying big files and can become irresponsive.\r\n\r\nSo don\'t panic and wait patiently, also don\'t click on anything.\r\n\r\nGot it !!??", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
-
-end;</Script>
+<Script>-- These actions are performed before the screen is shown.</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -2993,6 +2769,7 @@ function verifyInstallSource(toCheck, basename)
 			Application.Exit(EXIT_REASON_USER_ABORTED);
 			
 		elseif ( choice == IDIGNORE ) then
+			FILE_IGNORED = true;
 			break;
 		end
 		
@@ -3016,6 +2793,13 @@ function installFile(inputFile)
 				inputFile = "system.sfs"
 			end
 			
+			-- A workaround to verify if the OS files we're acutally installed in AppFolder from ISO by only verifying system image. (Check existence and.or file size &lt; 100MB)
+			if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\")..inputFile) == false ) or ( File.GetSize(SessionVar.Expand("%AppFolder%\\")..inputFile) &lt; 104857600 ) then
+				Dialog.Message("Error", "Failed to properly install files from your ISO, the installation can not continue.\r\nPlease restart your PC and try again and make sure everything is fine.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+				cleanTemp();
+				Application.Exit(1);
+			end
+			
 		else
 			
 			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\""..SessionVar.Expand("%AppFolder%\\").."\" \""..ISO_IMAGE[1].."\" "..inputFile, _TempLaunchFolder, SW_HIDE, true);
@@ -3033,7 +2817,17 @@ function installFile(inputFile)
 		--- Check for file existence
 		verifyInstallSource(from, inputFile);
 		
-		File.Install(from, to, FILE_INSTALL_ALWAYS, false, false, nil, nil);
+		-- Check if the user ignored it on missing
+		if ( FILE_IGNORED == true ) then
+			FILE_IGNORED = false;
+			return 1;
+		end
+		
+		if ( File.Install(from, to, FILE_INSTALL_ALWAYS, false, false, nil, nil) == false ) then
+			Dialog.Message("Error", "Failed to copy "..inputFile..", the installation can not continue.\r\nPlease restart your PC and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			cleanTemp();
+			Application.Exit(1);	
+		end
 		
 	end
 
@@ -3042,43 +2836,121 @@ end
 
 
 -- Set total range
-DlgProgressBar.SetRange(CTRL_PROGRESS_BAR_01, 1, 100);
+	DlgProgressBar.SetRange(CTRL_PROGRESS_BAR_01, 1, 100);
+	
+
+------- Install Grub2Win
+	choice = Dialog.Message("Attention", "Grub2Win boot-loader will be installed now.\r\nIt is required to multiboot between "..NAME.." and Windows.\r\nIf you have grub2win already installed it will update that without effecting anything.\r\n\r\nSure to proceed with the operation ?\r\n\r\nEven if you are unsure, you must always click on *Yes*.", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	if ( choice == IDYES ) then
+	
+		updateProgStat("Installing Grub2Win"); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 10);
+		installGrub2Win(); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 20);
+		
+	else
+	
+		DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 20);
+		
+	end
 
 
-------- Grub2Win Stage
-
-choice = Dialog.Message("Attention", "Grub2Win boot-loader will be installed now. It is a port of the original gnu-grub2 which allows you to multi-boot between different OS easily. Are you okay with that ?\r\n\r\nEven if you are unsure then you must always click on *Yes*.", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
-if ( choice == IDYES ) then
-
-	updateProgStat("Installing Grub2Win");
-	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 10);
-	installGrub2Win();
-	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 20);
-else
-	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 20);
-end;
 
 
 
-------- Install Files
+------- Install basic Files
+	FILE_IGNORED = false; -- Initialize ignored variable.
+	installFile("initrd.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 30);
+	installFile("ramdisk.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 40);
+	installFile("gearlock"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 45);
+	installFile("kernel"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 50);
 
-installFile("initrd.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 30);
-installFile("ramdisk.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 40);
-installFile("gearlock"); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 45);
-installFile("kernel"); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 50);
 
-if ( File.DoesExist(_SourceFolder.."\\system.img") == true ) then
-	installFile("system.img");
-else
-	installFile("system.sfs")
-end
 
-if ( genDataImg == true ) then
+------- Make data.img
+	if ( genDataImg == true ) then
+		updateProgStat("Creating a "..genDataImgSize.."GB data.img");
+		makeDataImg(genDataImgSize.."000", genDataImgSize.."GB");
+	end
+	
 	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 75);
-	updateProgStat("Creating a "..genDataImgSize.."GB data.img");
-	makeDataImg(genDataImgSize.."000", genDataImgSize.."GB");
-end
 
+
+
+------- Install system image
+	if ( File.DoesExist(_SourceFolder.."\\system.img") == true ) then
+		installFile("system.img");
+	else
+		installFile("system.sfs")
+	end
+	
+	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 90);
+	
+
+
+
+
+------ Install shortcuts
+	updateProgStat("Installing Shortcuts");
+	-- Install program files
+	Folder.Create("C:\\Program Files\\"..NAME);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Boot.bat"), "C:\\Program Files\\"..NAME.."\\Boot.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Run.bat"), "C:\\Program Files\\"..NAME.."\\Run.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\src"), "C:\\Program Files\\"..NAME.."\\src", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(LOGO_ICON, "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	
+	-- Update NAME in shortcut source bat files
+	TextFile.WriteFromString("C:\\Program Files\\"..NAME.."\\Run.bat", String.Replace(TextFile.ReadToString("C:\\Program Files\\"..NAME.."\\Run.bat"), "Android-x86-ASG", NAME, true), false);
+	TextFile.WriteFromString("C:\\Program Files\\"..NAME.."\\Boot.bat", String.Replace(TextFile.ReadToString("C:\\Program Files\\"..NAME.."\\Boot.bat"), "Android-x86-ASG", NAME, true), false);
+	
+	-- Cleate shortcuts
+	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Grub2Win", "C:\\grub2\\grub2win.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_DEFAULT);
+	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot "..NAME, "C:\\Program Files\\"..NAME.."\\Run.bat", "", "", "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
+	
+	Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 95);
+
+
+
+
+
+----- Process addtional files
+	updateProgStat("Processing addtional files and folders");
+	
+	-- Define variables
+	datadir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data"));
+	pkgdir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\gearload"));
+	systemDir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\system"));
+	
+	-- Create common dirs
+	if ( is_ntfs == false ) then
+		
+		File.Delete(SessionVar.Expand("%AppFolder%\\data.img"), false, false, false, nil);
+		--File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\fixfs_firstboot", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
+		
+		if ( datadir == false ) then
+			Folder.Create(datadir);
+		end
+		
+	else
+		
+		if ( datadir == true ) then
+			Folder.DeleteTree(datadir);
+		end
+	
+	end
+	
+	if ( pkgdir == false ) then
+		Folder.Create(pkgdir);
+	end
+	
+	
+	if ( systemDir == true ) then
+		Dialog.Message("Notice", "An earlier version of "..NAME.." detected, your system folder has been renamed to old.system", MB_OK, MB_ICONNONE);
+		Folder.Rename(systemdir, SessionVar.Expand("%AppFolder%\\old.system"));
+	end
+	
+	-- Create placeholder file for grub2win detection
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), SessionVar.Expand("%AppFolder%\\findme"), FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	
+Application.Sleep(1000);
 DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 100);</Script>
 <BookMarks count="0">
 </BookMarks>
@@ -3127,6 +2999,14 @@ end
 <FTButton>1</FTButton>
 </Control>
 <Control>
+<Type>2</Type>
+<ID>203</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
 <Type>7</Type>
 <ID>900</ID>
 <Visible>1</Visible>
@@ -3139,14 +3019,6 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>203</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
-<Type>2</Type>
 <ID>212</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
@@ -3156,6 +3028,14 @@ end
 <Control>
 <Type>2</Type>
 <ID>204</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>3</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>211</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
@@ -3197,6 +3077,7 @@ end
 <IDS_CTRL_PROGRESS_BAR_01>Installing</IDS_CTRL_PROGRESS_BAR_01>
 <IDS_CTRL_STATICTEXT_LABEL_-6>IDS_CTRL_STATICTEXT_LABEL_-6</IDS_CTRL_STATICTEXT_LABEL_-6>
 <IDS_CTRL_STATICTEXT_LABEL_02>Did you know :?                                                                                                                  DarkMatter is the most popular and advanced custom version developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project </IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_STATICTEXT_LABEL_01>Powered by Advanced Android-x86 Installer Programmed by AXON</IDS_CTRL_STATICTEXT_LABEL_01>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -4873,7 +4754,7 @@ g_HandleSystemReboot();
 <ProjFileEmail/>
 <ProjFileCreatedVer>9.5.3.0</ProjFileCreatedVer>
 <ProjFileSavedVer>9.5.3.0</ProjFileSavedVer>
-<BaseFolderArchive>D:\ProjectBase\DarkMatter\kernels</BaseFolderArchive>
+<BaseFolderArchive/>
 <BaseFolderExternal/>
 <UseSkinFile>0</UseSkinFile>
 <SkinFilename/>
@@ -5016,12 +4897,37 @@ g_HandleSystemReboot();
 <Cfg>All</Cfg>
 </BuildConfigs>
 </PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\Boot.bat</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\Run.bat</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\src</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
 </PrimerFiles>
 <Events>
 <Event>
 <Name>Global Functions</Name>
 <Args/>
 <Script>-- Define global variables
+----Booleans
 is_x64 = System.Is64BitOS();
 paragon_installed = false;
 ext_is_mounted = false;
@@ -5030,6 +4936,25 @@ is_portable = false;
 loadFromISO = false;
 genDataImg = false;
 is_ntfs = false;
+----Strings
+NAME = "Android-x86";
+VERSION = "ASG";
+LOGO_ICON = SessionVar.Expand("%TempLaunchFolder%\\logo.ico")
+
+-- Initialize config.ini
+if ( File.DoesExist(_SourceFolder.."\\windows\\config.ini") == true ) then
+	
+
+
+end
+
+
+-- Re-initialize session vars
+SessionVar.Set("%ProductName%", NAME);
+SessionVar.Set("%ProductVer%", VERSION);
+SessionVar.Set("%AppFolder%", SessionVar.Expand("%AppFolder%\\"..NAME.."-"..VERSION));
+
+
 
 -- Define global functions
 function cleanTemp()
@@ -5079,28 +5004,31 @@ function installGrub2Win()
 	GRUB_CFG = "C:\\grub2\\grub.cfg"
 	grubcfg_orig_contents = TextFile.ReadToString(GRUB_CFG);
 	if ( File.DoesExist(_SourceFolder.."\\windows\\grub.cfg.footer") == true ) then
-		grubcfg_new_footer_contents = TextFile.ReadToString(_SourceFolder.."\\windows\\grub.cfg.footer");
+		grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_SourceFolder.."\\windows\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
 	else
-		grubcfg_new_footer_contents = TextFile.ReadToString(_TempLaunchFolder.."\\grub.cfg.footer");
+		grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_TempLaunchFolder.."\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
 	end
 	
 	-- Check if entry already exists and append entry as required
-	check_entry_existence = String.Find(grubcfg_orig_contents, "Android-x86-ASG", 1, true);
+	check_entry_existence = String.Find(grubcfg_orig_contents, NAME.."-"..VERSION, 1, true);
 
 	if ( check_entry_existence == -1 ) then
+	
 		TextFile.WriteFromString(GRUB_CFG, grubcfg_new_footer_contents, true);
 		
-		if ( File.DoesExist(_SourceFolder.."\\windows\\Android-x86-ASG.cfg") == true ) then
-			GRUB_CFG_CUSTOM = _SourceFolder.."\\windows\\Android-x86-ASG.cfg"
+		if ( File.DoesExist(_SourceFolder.."\\windows\\"..NAME.."-"..VERSION..".cfg") == true ) then
+			GRUB_CFG_CUSTOM = _SourceFolder.."\\windows\\"..NAME.."-"..VERSION..".cfg"
 		else
-			GRUB_CFG_CUSTOM = SessionVar.Expand("%TempLaunchFolder%\\Android-x86-ASG.cfg")
+			GRUB_CFG_CUSTOM = SessionVar.Expand("%TempLaunchFolder%\\"..NAME.."-"..VERSION..".cfg")
 		end
-
-		File.Install(GRUB_CFG_CUSTOM, "C:\\grub2\\windata\\customconfigs\\Android-x86-ASG.cfg", FILE_INSTALL_ALWAYS, false, false, nil, nil);
-		File.Install(GRUB_CFG_CUSTOM, "C:\\grub2\\winsource\\sample.submenu.txt", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+		
+		-- Replace default NAME with new ones
+		GRUB_CFG_CUSTOM_CONTENTS = String.Replace(TextFile.ReadToString(GRUB_CFG_CUSTOM), "Android-x86-ASG", NAME.."-"..VERSION, true);
+		
+		TextFile.WriteFromString("C:\\grub2\\windata\\customconfigs\\"..NAME.."-"..VERSION..".cfg", GRUB_CFG_CUSTOM_CONTENTS, false);
+		TextFile.WriteFromString("C:\\grub2\\winsource\\sample.submenu.txt", GRUB_CFG_CUSTOM_CONTENTS, false);
 		
 	end
-
 
 end
 
@@ -5202,10 +5130,20 @@ end
 
 function postExit()
 
+	-- Install program files
+	Folder.Create("C:\\Program Files\\"..NAME);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Boot.bat"), "C:\\Program Files\\"..NAME.."\\Boot.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Run.bat"), "C:\\Program Files\\"..NAME.."\\Run.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\src"), "C:\\Program Files\\"..NAME.."\\src", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(LOGO_ICON, "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+
+	-- Update NAME in shortcut source bat files
+	TextFile.WriteFromString("C:\\Program Files\\"..NAME.."\\Run.bat", String.Replace(TextFile.ReadToString("C:\\Program Files\\"..NAME.."\\Run.bat"), "Android-x86-ASG", NAME, true), false);
+	TextFile.WriteFromString("C:\\Program Files\\"..NAME.."\\Boot.bat", String.Replace(TextFile.ReadToString("C:\\Program Files\\"..NAME.."\\Boot.bat"), "Android-x86-ASG", NAME, true), false);
+	
 	-- Cleate shortcuts
-	File.Install(SessionVar.Expand("%TempLaunchFolder%\\logo.ico"), "C:\\Program Files\\Android-x86-ASG\\SG.ico", FILE_INSTALL_ALWAYS, false, false, nil, nil);
 	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Grub2Win", "C:\\grub2\\grub2win.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_DEFAULT);
-	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot Android-x86", "C:\\Program Files\\Android-x86-ASG\\Run.bat", "", "", "C:\\Program Files\\Android-x86-ASG\\SG.ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
+	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot "..NAME, "C:\\Program Files\\"..NAME.."\\Run.bat", "", "", "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
 	
 	-- Define variables
 	datadir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data"));
@@ -5236,7 +5174,7 @@ function postExit()
 	
 	
 	if ( systemDir == true ) then
-		Dialog.Message("Notice", "An earlier version of Android-x86 detected, your system folder has been renamed to old.system", MB_OK, MB_ICONNONE);
+		Dialog.Message("Notice", "An earlier version of "..NAME.." detected, your system folder has been renamed to old.system", MB_OK, MB_ICONNONE);
 		Folder.Rename(SessionVar.Expand("%AppFolder%\\system"), SessionVar.Expand("%AppFolder%\\old.system"));
 	end
 	
@@ -5407,7 +5345,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%AppFolder%</Name>
-<Value>%SelectedDrive%\\Android-x86-ASG</Value>
+<Value>%SelectedDrive%</Value>
 <Type>2</Type>
 </SessionVar>
 <SessionVar>
