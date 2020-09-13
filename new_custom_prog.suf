@@ -759,7 +759,8 @@ end
 <Event>
 <Name>On Preload</Name>
 <Args/>
-<Script>-- These actions are performed before the screen is shown.</Script>
+<Script>-- Set default values to the checklists since they overwrite em.
+</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -813,6 +814,25 @@ function updateConfig()
 
 	NAME = SessionVar.Expand("%UserProductName%");
 	VERSION = SessionVar.Expand("%UserProductVer%");
+	
+
+	-- ReSet vendor FUNCTION values to the checklists since they overwrite em.
+	always_make_data_imageProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "ALWAYS_MAKE_DATA_IMAGE");
+	install_grub2winProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "INSTALL_GRUB2WIN");
+	
+	if not ( always_make_data_imageProp == "" ) then
+		if ( always_make_data_imageProp == "true" ) then always_make_data_image = true; else always_make_data_image = false; end
+	else
+		always_make_data_image = always_make_data_image_btn;
+	end
+	
+	if not ( install_grub2winProp == "" ) then
+		if ( install_grub2winProp == "true" ) then install_grub2win = true; else install_grub2win = false; end
+	else
+		install_grub2win = install_grub2win_btn;
+	end
+	
+
 	reinitSessionVars();
 
 end
@@ -954,7 +974,7 @@ end
 <Enabled>1</Enabled>
 <TabOrder>9</TabOrder>
 <Checked>1</Checked>
-<Variable>install_grub2win</Variable>
+<Variable>install_grub2win_btn</Variable>
 </Control>
 <Control>
 <Type>10</Type>
@@ -963,7 +983,7 @@ end
 <Enabled>1</Enabled>
 <TabOrder>10</TabOrder>
 <Checked>0</Checked>
-<Variable>always_make_data_image</Variable>
+<Variable>always_make_data_image_btn</Variable>
 </Control>
 <Control>
 <Type>1</Type>
@@ -2702,7 +2722,7 @@ end
 
 	
 	-- Create common dirs
-	if ( is_ntfs == false ) then
+	if ( is_ntfs == false ) and ( always_make_data_image == false ) then
 		
 		-- When EXT4
 		File.Delete(SessionVar.Expand("%AppFolder%\\data.img"), false, false, false, nil);
@@ -2782,14 +2802,6 @@ end
 <FTButton>1</FTButton>
 </Control>
 <Control>
-<Type>2</Type>
-<ID>203</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
 <Type>7</Type>
 <ID>900</ID>
 <Visible>1</Visible>
@@ -2802,6 +2814,14 @@ end
 </Control>
 <Control>
 <Type>2</Type>
+<ID>203</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>2</Type>
 <ID>212</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
@@ -2810,7 +2830,7 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>204</ID>
+<ID>211</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
@@ -2818,7 +2838,7 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>211</ID>
+<ID>204</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
@@ -4747,13 +4767,6 @@ if ( File.DoesExist(CONFIG_INI) == true ) then
 	if not ( versionProp == "" ) then VERSION = versionProp; end
 	if not ( end_creditsProp == "" ) then END_CREDITS = end_creditsProp;  SessionVar.Set("%END_CREDITS%", END_CREDITS); end	
 	
-	-- FUNCTIONS
-	always_make_data_imageProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "ALWAYS_MAKE_DATA_IMAGE");
-	install_grub2winProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "INSTALL_GRUB2WIN");
-	
-	if not ( always_make_data_imageProp == "" ) then always_make_data_image = always_make_data_imageProp; end
-	if not ( install_grub2winProp == "" ) then install_grub2win = install_grub2winProp; end
-
 end
 
 
@@ -4879,8 +4892,7 @@ function installParagon()
 	new_au_script = String.Replace(orig_au_script, "changeme", _TempLaunchFolder, true);
 	TextFile.WriteFromString(SessionVar.Expand("%TempLaunchFolder%\\run.me"), new_au_script, false);
 	Shell.Execute(_TempLaunchFolder.."\\au3.exe", "open", _TempLaunchFolder.."\\run.me", _TempFolder, SW_MINIMIZE, true);
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 
 end
 
