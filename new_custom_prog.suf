@@ -2532,7 +2532,7 @@ Click Install to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <CustomCtrlList>
 <CustomCtrlInfo Left="22" Top="184" Width="460" Height="31" ID="900"/>
 <CustomCtrlInfo Left="25" Top="105" Width="451" Height="53" ID="212"/>
-<CustomCtrlInfo Left="22" Top="312" Width="262" Height="34" ID="211"/>
+<CustomCtrlInfo Left="22" Top="312" Width="279" Height="34" ID="211"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -2703,8 +2703,8 @@ end
 	Folder.Create("C:\\Program Files\\"..NAME);
 	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Boot.bat"), "C:\\Program Files\\"..NAME.."\\Boot.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
 	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Run.bat"), "C:\\Program Files\\"..NAME.."\\Run.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
-	File.Install(SessionVar.Expand("%TempLaunchFolder%\\src"), "C:\\Program Files\\"..NAME.."\\src", FILE_INSTALL_ALWAYS, false, false, nil, nil);
 	File.Install(LOGO_ICON, "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(ASCII_ART, "C:\\Program Files\\"..NAME.."\\ascii.art", FILE_INSTALL_ALWAYS, false, false, nil, nil);
 	
 	-- Update NAME in shortcut source bat files
 	TextFile.WriteFromString("C:\\Program Files\\"..NAME.."\\Run.bat", String.Replace(TextFile.ReadToString("C:\\Program Files\\"..NAME.."\\Run.bat"), "Android-x86-ASG", NAME, true), false);
@@ -2716,7 +2716,8 @@ end
 	
 	-- Refresh the icon cache
 	Application.Sleep(1500);
-	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\nircmdc.exe"), "open", "shellrefresh", "", SW_HIDE, true);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C ie4uinit.exe -ClearIconCache &amp; ie4uinit.exe -show", "", SW_MINIMIZE, true);
+	--File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /f /im explorer.exe &amp; del /a %userprofile%\AppData\Local\IconCache.db &amp; start explorer", "", SW_MINIMIZE, true);
 	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 95);
 
 
@@ -2885,7 +2886,7 @@ end
 <IDS_CTRL_PROGRESS_BAR_01>Installing</IDS_CTRL_PROGRESS_BAR_01>
 <IDS_CTRL_STATICTEXT_LABEL_-6>IDS_CTRL_STATICTEXT_LABEL_-6</IDS_CTRL_STATICTEXT_LABEL_-6>
 <IDS_CTRL_STATICTEXT_LABEL_02>%END_CREDITS%</IDS_CTRL_STATICTEXT_LABEL_02>
-<IDS_CTRL_STATICTEXT_LABEL_01>Powered by Advanced Android-x86 Installer Programmed by AXON</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_STATICTEXT_LABEL_01>Powered by Advanced Android-x86 Installer Programmed by AXON (supreme-gamers.com)</IDS_CTRL_STATICTEXT_LABEL_01>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -4722,15 +4723,7 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\src</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\nircmdc.exe</SourcePath>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\ascii.art</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
@@ -4760,12 +4753,18 @@ NAME = "Android-x86";
 VERSION = "ASG";
 END_CREDITS = "Did you know :?                                                                                                                  DarkMatter is the most popular and advanced custom version developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project"
 
--- Initialize logo
+-- Initialize logo and ascii art
 if ( File.DoesExist(_SourceFolder.."\\windows\\logo.ico") == true ) then
 	LOGO_ICON = _SourceFolder.."\\windows\\logo.ico"
 else
 	LOGO_ICON = SessionVar.Expand("%TempLaunchFolder%\\logo.ico")
 end
+if ( File.DoesExist(_SourceFolder.."\\windows\\ascii.art") == true ) then
+	ASCII_ART = _SourceFolder.."\\windows\\ascii.art"
+else
+	ASCII_ART = SessionVar.Expand("%TempLaunchFolder%\\ascii.art")
+end
+
 
 -- Initialize config.ini
 CONFIG_INI = _SourceFolder.."\\windows\\config.ini"
@@ -5100,7 +5099,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>Beta 0.7</Value>
+<Value>Beta 0.8</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5143,7 +5142,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_Beta_v0.7.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_Beta_v0.8.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
