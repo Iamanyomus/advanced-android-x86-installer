@@ -4940,7 +4940,8 @@ function mountExt()
 		Service.Start("DokanMounter", "DokanMounter", nil);
 		Service.Start("ParagonMounter", "ParagonMounter", nil);
 		File.Run(paragon_mounter, "/mount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
-		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 2)", 30000, MB_ICONINFORMATION);
+		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 2)", 20000, MB_ICONNONE);
+		Dialog.TimedMessage("Hol up !", "If you can\'t find your EXT4 partitions then you must RESTART and try again.", 5000, MB_ICONINFORMATION);
 		ext_is_mounted = true;
 		
 	end
