@@ -142,9 +142,9 @@ Screen.Back();
 
 --Check for system files in SourceFolder
 if ( File.DoesExist(_SourceFolder.."\\initrd.img") == false ) then
-	answer = Dialog.Message("Attention", "No Android-x86 OS files were found in this folder.\r\nDo you want to select an ISO to load from it ?", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	answer = Dialog.Message("Attention", "No Android-x86 OS files were found in this folder.\r\nDo you want to select an OS-PACKAGE to load from it ?", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
 	if ( answer == IDYES ) then
-		ISO_IMAGE = Dialog.FileBrowse(true, "Select ISO Image", _SourceFolder, "All Files (*.*)|*.*|", "", "iso", false, true);
+		ISO_IMAGE = Dialog.FileBrowse(true, "Select Operating System Image / Archive", _SourceFolder, "ISO &amp; Archives (.iso, .zip, .7z, .rar)|*.iso;*.zip;*.7z;*.rar", "", "", false, true);
 		
 		if (ISO_IMAGE[1] ~= "CANCEL") and (ISO_IMAGE ~= nil) then
 			loadFromISO = true;
@@ -819,6 +819,7 @@ function updateConfig()
 	-- ReSet vendor FUNCTION values to the checklists since they overwrite em.
 	always_make_data_imageProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "ALWAYS_MAKE_DATA_IMAGE");
 	install_grub2winProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "INSTALL_GRUB2WIN");
+	make_gearload_folderProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "MAKE_GEARLOAD_FOLDER");
 	
 	if not ( always_make_data_imageProp == "" ) then
 		if ( always_make_data_imageProp == "true" ) then always_make_data_image = true; else always_make_data_image = false; end
@@ -831,6 +832,8 @@ function updateConfig()
 	else
 		install_grub2win = install_grub2win_btn;
 	end
+	
+	if not ( make_gearload_folderProp == "" ) then if ( make_gearload_folderProp == "true" ) then make_gearload_folder = true; else make_gearload_folder = false; end; end
 	
 
 	reinitSessionVars();
@@ -2649,8 +2652,8 @@ end
 
 	if ( install_grub2win == true ) then
 	
-		updateProgStat("Installing Grub2Win"); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 10);
-		installGrub2Win(); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 20);
+		if ( File.DoesExist("C:\\grub2\\grub2win.exe") == true ) then updateProgStat("Updating Grub2Win"); else updateProgStat("Installing Grub2Win"); end;
+		DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 10); installGrub2Win(); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 20);
 		
 	else
 	
@@ -2740,7 +2743,7 @@ end
 	
 	end
 	
-	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\gearload")) == false ) then
+	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\gearload")) == false ) and ( make_gearload_folder == true ) then
 		Folder.Create(SessionVar.Expand("%AppFolder%\\gearload"));
 	end
 	
@@ -2802,6 +2805,14 @@ end
 <FTButton>1</FTButton>
 </Control>
 <Control>
+<Type>2</Type>
+<ID>203</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
 <Type>7</Type>
 <ID>900</ID>
 <Visible>1</Visible>
@@ -2814,14 +2825,6 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>203</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
-<Type>2</Type>
 <ID>212</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
@@ -2830,7 +2833,7 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>211</ID>
+<ID>204</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
@@ -2838,7 +2841,7 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>204</ID>
+<ID>211</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
@@ -4732,6 +4735,7 @@ g_HandleSystemReboot();
 <Script>-- Initialize global variables
 ----Booleans
 always_make_data_image = false;
+make_gearload_folder = true;
 is_x64 = System.Is64BitOS();
 paragon_installed = false;
 install_grub2win = true;
