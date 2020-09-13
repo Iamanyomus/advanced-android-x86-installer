@@ -2714,8 +2714,10 @@ end
 	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Grub2Win", "C:\\grub2\\grub2win.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_DEFAULT);
 	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot "..NAME, "C:\\Program Files\\"..NAME.."\\Run.bat", "", "", "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
 	
-	Application.Sleep(1500); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 95);
-
+	-- Refresh the icon cache
+	Application.Sleep(1500);
+	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\nircmdc.exe"), "open", "shellrefresh", "", SW_HIDE, true);
+	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 95);
 
 
 
@@ -2805,14 +2807,6 @@ end
 <FTButton>1</FTButton>
 </Control>
 <Control>
-<Type>2</Type>
-<ID>203</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
 <Type>7</Type>
 <ID>900</ID>
 <Visible>1</Visible>
@@ -2825,6 +2819,14 @@ end
 </Control>
 <Control>
 <Type>2</Type>
+<ID>203</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>2</Type>
 <ID>212</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
@@ -2833,7 +2835,7 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>204</ID>
+<ID>211</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
@@ -2841,7 +2843,7 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>211</ID>
+<ID>204</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
@@ -3323,7 +3325,7 @@ Screen.Next();
 <Args/>
 <Script>-- These actions are performed when the Next button is clicked.
 
-postExit();
+cleanTemp();
 Screen.Next();</Script>
 <BookMarks count="0">
 </BookMarks>
@@ -4727,6 +4729,14 @@ g_HandleSystemReboot();
 <Cfg>All</Cfg>
 </BuildConfigs>
 </PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\nircmdc.exe</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
 </PrimerFiles>
 <Events>
 <Event>
@@ -4954,64 +4964,6 @@ function makeDataImg(sizeMb, sizeGb)
 	sizeBytes = sizeMb * 1048576;
 	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", " -l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder%\\data.img"), _TempLaunchFolder, SW_HIDE, true);
 	
-end
-
-function postExit()
-
-	-- Install program files
-	Folder.Create("C:\\Program Files\\"..NAME);
-	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Boot.bat"), "C:\\Program Files\\"..NAME.."\\Boot.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
-	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Run.bat"), "C:\\Program Files\\"..NAME.."\\Run.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
-	File.Install(SessionVar.Expand("%TempLaunchFolder%\\src"), "C:\\Program Files\\"..NAME.."\\src", FILE_INSTALL_ALWAYS, false, false, nil, nil);
-	File.Install(LOGO_ICON, "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", FILE_INSTALL_ALWAYS, false, false, nil, nil);
-
-	-- Update NAME in shortcut source bat files
-	TextFile.WriteFromString("C:\\Program Files\\"..NAME.."\\Run.bat", String.Replace(TextFile.ReadToString("C:\\Program Files\\"..NAME.."\\Run.bat"), "Android-x86-ASG", NAME, true), false);
-	TextFile.WriteFromString("C:\\Program Files\\"..NAME.."\\Boot.bat", String.Replace(TextFile.ReadToString("C:\\Program Files\\"..NAME.."\\Boot.bat"), "Android-x86-ASG", NAME, true), false);
-	
-	-- Cleate shortcuts
-	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Grub2Win", "C:\\grub2\\grub2win.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_DEFAULT);
-	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot "..NAME, "C:\\Program Files\\"..NAME.."\\Run.bat", "", "", "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
-	
-	-- Define variables
-	datadir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data"));
-	pkgdir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\gearload"));
-	systemDir = Folder.DoesExist(SessionVar.Expand("%AppFolder%\\system"));
-	
-	-- Create common dirs
-	if ( is_ntfs == false ) then
-		
-		File.Delete(SessionVar.Expand("%AppFolder%\\data.img"), false, false, false, nil);
-		--File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\fixfs_firstboot", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
-		
-		if ( datadir == false ) then
-			Folder.Create(SessionVar.Expand("%AppFolder%\\data"));
-		end
-		
-	else
-		
-		if ( datadir == true ) then
-			Folder.DeleteTree(SessionVar.Expand("%AppFolder%\\data\\"));
-		end
-	
-	end
-	
-	if ( pkgdir == false ) then
-		Folder.Create(SessionVar.Expand("%AppFolder%\\gearload"));
-	end
-	
-	
-	if ( systemDir == true ) then
-		Dialog.Message("Notice", "An earlier version of "..NAME.." detected, your system folder has been renamed to old.system", MB_OK, MB_ICONNONE);
-		Folder.Rename(SessionVar.Expand("%AppFolder%\\system"), SessionVar.Expand("%AppFolder%\\old.system"));
-	end
-	
-	-- Create placeholder file for grub2win detection
-	File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), SessionVar.Expand("%AppFolder%\\findme"), FILE_INSTALL_ALWAYS, false, false, nil, nil);
-		
-	-- Clean %temp% and unMount
-	cleanTemp();
-
 end
 
 
