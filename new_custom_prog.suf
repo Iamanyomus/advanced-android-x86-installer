@@ -4892,7 +4892,7 @@ function installParagon()
 	new_au_script = String.Replace(orig_au_script, "changeme", _TempLaunchFolder, true);
 	TextFile.WriteFromString(SessionVar.Expand("%TempLaunchFolder%\\run.me"), new_au_script, false);
 	Shell.Execute(_TempLaunchFolder.."\\au3.exe", "open", _TempLaunchFolder.."\\run.me", _TempFolder, SW_MINIMIZE, true);
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config DokanMounter start=demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config ParagonMounter start=demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config DokanMounter start= demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config ParagonMounter start= demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 
 end
 
