@@ -4782,6 +4782,7 @@ reinitSessionVars(); -- Re-initialize session vars
 function cleanTemp()
 	
 	umountExt();
+	killProcess("partitionwizard.exe"); -- In case the partition tool is still running
 	Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C for /d %G in (\"%temp%\\_ir_sf_temp_*\") do rd /s /q \"%~G\"", "", SW_HIDE, true);
 	Folder.DeleteTree(SessionVar.Expand("%TempFolder%\\grub2win\\"), nil);
 	Folder.DeleteTree(SessionVar.Expand("%TempLaunchFolder%\\"), nil);
@@ -4910,9 +4911,9 @@ end
 
 function runPartitionTool()
 
-	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil)
-	Dialog.TimedMessage("Hol Up !", "Loading the Partition Tool", 5000, MB_ICONINFORMATION);
-	Shell.Execute(_TempLaunchFolder.."\\parttool\\MiniTool Partition Wizard.exe", "open", "", "", SW_MAXIMIZE, true);
+	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
+	Shell.Execute(_TempLaunchFolder.."\\parttool\\MiniTool Partition Wizard.exe", "open", "", "", SW_MAXIMIZE, false);
+	Dialog.TimedMessage("Hol Up !", "Loading the Partition Tool", 10000, MB_ICONINFORMATION);
 
 end
 
@@ -5087,7 +5088,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>Beta 0.9</Value>
+<Value>Beta 1.0</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5130,7 +5131,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_Beta_v0.9.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_Beta_v1.0.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
