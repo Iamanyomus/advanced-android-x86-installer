@@ -1029,7 +1029,7 @@ end
 </Language>
 <Messages>
 <IDS_WINDOW_TITLE>Installation Configuation</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Configure your installation opions</IDS_HEADER_TEXT>
+<IDS_HEADER_TEXT>Configure your installation options</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT/>
 <IDS_CTRL_BUTTON_NEXT>&lt; &amp;Back</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
