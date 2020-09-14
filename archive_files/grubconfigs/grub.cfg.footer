@@ -4,7 +4,7 @@
 #
 #  Menu Entry       Android-x86-ASG
 #
-menuentry   'Android-x86-ASG                                        Hotkey=a'   --hotkey=a    --class submenu   --class icon-asg  {
+menuentry   'Android-x86-ASG'  --class submenu --class icon-asg {
      #
      source $prefix/windata/customconfigs/Android-x86-ASG.cfg
      #
