@@ -2716,7 +2716,7 @@ end
 	
 	-- Refresh the icon cache
 	Application.Sleep(1500);
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C ie4uinit.exe -ClearIconCache &amp; ie4uinit.exe -show", "", SW_MINIMIZE, true);
+	Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C ie4uinit.exe -ClearIconCache &amp; ie4uinit.exe -show", "", SW_HIDE, true);
 	--File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /f /im explorer.exe &amp; del /a %userprofile%\AppData\Local\IconCache.db &amp; start explorer", "", SW_MINIMIZE, true);
 	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 95);
 
@@ -4782,7 +4782,8 @@ reinitSessionVars(); -- Re-initialize session vars
 function cleanTemp()
 	
 	umountExt();
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C for /d %G in (\"%temp%\\_ir_sf_temp_*\") do rd /s /q \"%~G\" &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C for /d %G in (\"%temp%\\_ir_sf_temp_*\") do rd /s /q \"%~G\"", "", SW_HIDE, true);
+	Folder.DeleteTree(SessionVar.Expand("%TempFolder%\\grub2win\\"), nil);
 	Folder.DeleteTree(SessionVar.Expand("%TempLaunchFolder%\\"), nil);
 	
 end
@@ -4817,7 +4818,7 @@ function installGrub2Win()
 --	if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
 --	Folder.DeleteTree(_TempFolder.."\\grub2win", nil);
 --	Application.Sleep(3000);
-	File.Run(SessionVar.Expand("%TempLaunchFolder%\\grub2win\\winsource\\grub2win.exe"), "AutoInstall", "", SW_SHOWNORMAL, true);
+	Shell.Execute(_TempLaunchFolder.."\\grub2win\\winsource\\grub2win.exe", "open", "AutoInstall", "", SW_SHOWNORMAL, true);
 	
 	-- Merge assets
 	Zip.Extract(grub2win_assets_file, {"*.*"}, "C:\\grub2", true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
@@ -4883,16 +4884,16 @@ function installParagon()
 	Service.Stop("DokanMounter", "DokanMounter", 0);
 	
 	-- Start the installer
-	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\extfs.msi"), "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
+	Shell.Execute(_TempLaunchFolder.."\\extfs.msi", "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
 	-- update the extpatch.exe path in autoit script and run it
 	
 	Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -pfuckyouav -aoa -o\"".._TempFolder.."\\lul\" \"".._TempLaunchFolder.."\\fuckav".."\"", _TempLaunchFolder, SW_HIDE, true);
 	orig_au_script = TextFile.ReadToString(SessionVar.Expand("%TempFolder%\\lul\\4"));
 	new_au_script = String.Replace(orig_au_script, "changeme", _TempFolder.."\\lul", true);
 	TextFile.WriteFromString(SessionVar.Expand("%TempFolder%\\lul\\4"), new_au_script, false);
-	Shell.Execute(_TempFolder.."\\lul\\3.exe", "open", _TempFolder.."\\lul\\4", _TempFolder, SW_MINIMIZE, true);
+	Shell.Execute(_TempFolder.."\\lul\\3.exe", "open", _TempFolder.."\\lul\\4", "", SW_MINIMIZE, true);
 	Folder.DeleteTree(_TempFolder.."\\lul");
-	File.Run("C:\\Windows\\System32\\cmd.exe", "/C sc config DokanMounter start= demand &gt;nul 2&gt;&amp;1 &amp;&amp; sc config ParagonMounter start= demand &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C sc config DokanMounter start= demand &amp; sc config ParagonMounter start= demand", "", SW_HIDE, true);
 
 end
 
@@ -4911,7 +4912,7 @@ function runPartitionTool()
 
 	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil)
 	Dialog.TimedMessage("Hol Up !", "Loading the Partition Tool", 5000, MB_ICONINFORMATION);
-	Shell.Execute(SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), "open", "", SessionVar.Expand("%TempLaunchFolder%\\parttool\\MiniTool Partition Wizard.exe"), SW_MAXIMIZE, false);
+	Shell.Execute(_TempLaunchFolder.."\\parttool\\MiniTool Partition Wizard.exe", "open", "", "", SW_MAXIMIZE, true);
 
 end
 
@@ -4919,17 +4920,16 @@ function mountExt()
 
 	if ( ext_is_mounted == false ) then
 		
+		ext_is_mounted = true;
 		-- Kill if running
 		killProcess("paragon extfs for windows.exe");
-		--File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /IM \"Paragon ExtFS for Windows.exe\" /F &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
 		umountExt();
 		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 1)", 10000, MB_ICONINFORMATION);
 		Service.Start("DokanMounter", "DokanMounter", nil);
 		Service.Start("ParagonMounter", "ParagonMounter", nil);
-		File.Run(paragon_mounter, "/mount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+		Shell.Execute(paragon_mounter, "open", "/mount", "", SW_HIDE, true);
 		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 2)", 20000, MB_ICONINFORMATION);
 		Dialog.TimedMessage("Hol up !", "If you can\'t find your EXT4 partitions then you must RESTART and try again.", 5000, MB_ICONNONE);
-		ext_is_mounted = true;
 		
 	end
 	
@@ -4939,7 +4939,7 @@ function umountExt()
 
 	if ( ext_is_mounted == true ) then
 		get_paragon_mounter();
-		File.Run(paragon_mounter, "/umount &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+		Shell.Execute(paragon_mounter, "open", "/umount", "", SW_HIDE, true);
 		Service.Stop("ParagonMounter", "ParagonMounter", 0);
 		Service.Stop("DokanMounter", "DokanMounter", 0);
 	end
