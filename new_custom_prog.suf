@@ -4720,7 +4720,8 @@ g_HandleSystemReboot();
 <Name>Global Functions</Name>
 <Args/>
 <Script>-- Initialize global variables
-----Booleans
+----Booleans and tables
+display = System.GetDisplayInfo();
 always_make_data_image = false;
 make_gearload_folder = true;
 is_x64 = System.Is64BitOS();
@@ -4827,11 +4828,16 @@ function installGrub2Win()
 	-- Install grub entry
 	GRUB_CFG = "C:\\grub2\\grub.cfg"
 	grubcfg_orig_contents = TextFile.ReadToString(GRUB_CFG);
+	
+	-- Update grub.cfg.footer OS names
 	if ( File.DoesExist(_SourceFolder.."\\windows\\grub.cfg.footer") == true ) then
 		grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_SourceFolder.."\\windows\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
 	else
 		grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_TempLaunchFolder.."\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
 	end
+	
+	-- Update gfx payload value
+	grubcfg_new_footer_contents = String.Replace(grubcfg_new_footer_contents, "screenResolution", display.Height.."x"..display.Width, true);
 	
 	-- Check if entry already exists and append entry as required
 	check_entry_existence = String.Find(grubcfg_orig_contents, NAME.."-"..VERSION, 1, true);
