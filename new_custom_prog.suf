@@ -2616,7 +2616,11 @@ function installFile(inputFile)
 		end
 		
 		-- Verify if file was successfully installed for ISO also
-		verifyInstallSource(SessionVar.Expand("%AppFolder%\\")..inputFile, inputFile);
+		if ( inputFile == "gearlock" ) or ( inputFile == "ramdisk.img" ) then
+			return 0
+		else
+			verifyInstallSource(SessionVar.Expand("%AppFolder%\\")..inputFile, inputFile);
+		end
 		
 	else
 	
@@ -2629,7 +2633,7 @@ function installFile(inputFile)
 		-- Check if the user ignored it on missing
 		if ( FILE_IGNORED == true ) then
 			FILE_IGNORED = false;
-			return 1;
+			return 0;
 		end
 		
 		if ( File.Install(from, to, FILE_INSTALL_ALWAYS, false, false, nil, nil) == false ) then
