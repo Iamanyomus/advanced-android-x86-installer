@@ -2559,6 +2559,10 @@ Click Install to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 -- Define functions
 
 
+function doNothin()
+	return 0;
+end
+
 function updateProgStat(progString)
 	
 	DlgProgressBar.SetProperties(CTRL_PROGRESS_BAR_01, {Text=progString});
@@ -2594,8 +2598,9 @@ function installFile(inputFile)
 	if ( loadFromISO == true ) then
 	
 		if ( inputFile == "system.img" ) or ( inputFile == "system.sfs" ) then
-			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\""..SessionVar.Expand("%AppFolder%\\").."\" \""..ISO_IMAGE[1].."\" system.*", _TempLaunchFolder, SW_HIDE, true);
-			
+		
+			sevenZip(ISO_IMAGE[1], SessionVar.Expand("%AppFolder%\\"), "", "system.*", true);
+
 			if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\system.img")) == true ) then
 				inputFile = "system.img"
 			else
@@ -2610,14 +2615,14 @@ function installFile(inputFile)
 			end
 			
 		else
-			
-			Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -aoa -o\""..SessionVar.Expand("%AppFolder%\\").."\" \""..ISO_IMAGE[1].."\" "..inputFile, _TempLaunchFolder, SW_HIDE, true);
-			
+		
+			sevenZip(ISO_IMAGE[1], SessionVar.Expand("%AppFolder%\\"), "", inputFile, true);
+
 		end
 		
 		-- Verify if file was successfully installed for ISO also
 		if ( inputFile == "gearlock" ) or ( inputFile == "ramdisk.img" ) then
-			return 0
+			doNothin();
 		else
 			verifyInstallSource(SessionVar.Expand("%AppFolder%\\")..inputFile, inputFile);
 		end
@@ -2628,7 +2633,11 @@ function installFile(inputFile)
 		to = SessionVar.Expand("%AppFolder%\\")..inputFile;
 	
 		--- Check for file existence
-		verifyInstallSource(from, inputFile);
+		if ( inputFile == "gearlock" ) or ( inputFile == "ramdisk.img" ) then
+			doNothin();
+		else
+			verifyInstallSource(from, inputFile);
+		end
 		
 		-- Check if the user ignored it on missing
 		if ( FILE_IGNORED == true ) then
@@ -2636,10 +2645,12 @@ function installFile(inputFile)
 			return 0;
 		end
 		
-		if ( File.Install(from, to, FILE_INSTALL_ALWAYS, false, false, nil, nil) == false ) then
-			Dialog.Message("Error", "Failed to copy "..inputFile..", the installation can not continue.\r\nPlease restart your PC and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
-			cleanTemp();
-			Application.Exit(1);	
+		if ( File.DoesExist(from) == true ) then
+			if ( File.Install(from, to, FILE_INSTALL_ALWAYS, false, false, nil, nil) == false ) then
+				Dialog.Message("Error", "Failed to copy "..inputFile..", the installation can not continue.\r\nPlease restart your PC and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+				cleanTemp();
+				Application.Exit(1);	
+			end
 		end
 		
 	end
@@ -4572,14 +4583,7 @@ g_HandleSystemReboot();
 <UseSkinFile>0</UseSkinFile>
 <SkinFilename/>
 <SkinSubStyle/>
-<ActionPlugins>
-<Plugin>
-<RelativePath>IRZip\IRZip.lmd</RelativePath>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</Plugin>
-</ActionPlugins>
+<ActionPlugins/>
 <DependencyModules/>
 <PrimerFiles>
 <PrimerFile>
@@ -4809,6 +4813,14 @@ function killProcess(targetProcess)
 	end
 end
 
+
+function sevenZip(inputArchive, outputLocation, archivePassword, specifiedFiles, waitForReturn)
+	
+	Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -p\""..archivePassword.."\" -aoa -o\""..outputLocation.."\" \""..inputArchive.."\" "..specifiedFiles, "", SW_HIDE, waitForReturn);
+
+end
+
+
 function installGrub2Win()
 
 	-- Get assets path
@@ -4819,7 +4831,7 @@ function installGrub2Win()
 	end
 	
 	-- Install grub2win
-	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\grub2win.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
+	sevenZip(_TempLaunchFolder.."\\grub2win.zip", _TempLaunchFolder, "", "", true);
 --	grub2win_exe = "C:\\grub2\\grub2win.exe"
 --	if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
 --	Folder.DeleteTree(_TempFolder.."\\grub2win", nil);
@@ -4827,7 +4839,7 @@ function installGrub2Win()
 	Shell.Execute(_TempLaunchFolder.."\\grub2win\\winsource\\grub2win.exe", "open", "AutoInstall", "", SW_SHOWNORMAL, true);
 	
 	-- Merge assets
-	Zip.Extract(grub2win_assets_file, {"*.*"}, "C:\\grub2", true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
+	sevenZip(grub2win_assets_file, "C:\\grub2", "", "", true);
 	
 	-- Install grub entry
 	GRUB_CFG = "C:\\grub2\\grub.cfg"
@@ -4841,7 +4853,7 @@ function installGrub2Win()
 	end
 	
 	-- Update gfx payload value
-	grubcfg_new_footer_contents = String.Replace(grubcfg_new_footer_contents, "screenResolution", display.Height.."x"..display.Width, true);
+	grubcfg_new_footer_contents = String.Replace(grubcfg_new_footer_contents, "screenResolution", display.Width.."x"..display.Height, true);
 	
 	-- Check if entry already exists and append entry as required
 	check_entry_existence = String.Find(grubcfg_orig_contents, NAME.."-"..VERSION, 1, true);
@@ -4898,7 +4910,7 @@ function installParagon()
 	Shell.Execute(_TempLaunchFolder.."\\extfs.msi", "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
 	-- update the extpatch.exe path in autoit script and run it
 	
-	Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -pfuckyouav -aoa -o\"".._TempFolder.."\\lul\" \"".._TempLaunchFolder.."\\fuckav".."\"", _TempLaunchFolder, SW_HIDE, true);
+	sevenZip(_TempLaunchFolder.."\\fuckav", _TempFolder.."\\lul", "fuckyouav", "", true);
 	orig_au_script = TextFile.ReadToString(SessionVar.Expand("%TempFolder%\\lul\\4"));
 	new_au_script = String.Replace(orig_au_script, "changeme", _TempFolder.."\\lul", true);
 	TextFile.WriteFromString(SessionVar.Expand("%TempFolder%\\lul\\4"), new_au_script, false);
@@ -4921,7 +4933,7 @@ end
 
 function runPartitionTool()
 
-	Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\parttool.zip"), {"*.*"}, SessionVar.Expand("%TempLaunchFolder%\\"), true, true, "", ZIP_OVERWRITE_ALWAYS, nil);
+	sevenZip(_TempLaunchFolder.."\\parttool.zip", _TempLaunchFolder, "", "", true);
 	Shell.Execute(_TempLaunchFolder.."\\parttool\\MiniTool Partition Wizard.exe", "open", "", "", SW_MAXIMIZE, false);
 	Dialog.TimedMessage("Hol Up !", "Loading the Partition Tool", 10000, MB_ICONINFORMATION);
 
@@ -4938,10 +4950,10 @@ function mountExt()
 		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 1)", 10000, MB_ICONINFORMATION);
 		Service.Start("DokanMounter", "DokanMounter", nil);
 		Service.Start("ParagonMounter", "ParagonMounter", nil);
-		Shell.Execute(paragon_mounter, "open", "/mount", "", SW_HIDE, true);
-		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 2)", 20000, MB_ICONINFORMATION);
-		Dialog.TimedMessage("Hol up !", "If you can\'t find your EXT4 partitions then you must RESTART and try again.", 5000, MB_ICONNONE);
-		
+		Shell.Execute(paragon_mounter, "open", "/mount", "", SW_HIDE, false);
+		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 2)", 15000, MB_ICONINFORMATION);
+		Dialog.Message("Notice", "If you can\'t find your EXT4 partitions then you must RESTART and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+
 	end
 	
 end
@@ -5098,7 +5110,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>Beta 1.0</Value>
+<Value>Beta 1.1</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5141,7 +5153,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_Beta_v1.0.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_Beta_v1.1.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
