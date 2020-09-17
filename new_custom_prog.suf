@@ -752,8 +752,9 @@ end
 <CustomCtrlInfo Left="73" Top="218" Width="191" Height="20" ID="822"/>
 <CustomCtrlInfo Left="18" Top="219" Width="42" Height="16" ID="213"/>
 <CustomCtrlInfo Left="19" Top="279" Width="189" Height="42" ID="214"/>
-<CustomCtrlInfo Left="296" Top="221" Width="179" Height="18" ID="1300"/>
-<CustomCtrlInfo Left="296" Top="247" Width="178" Height="18" ID="1301"/>
+<CustomCtrlInfo Left="296" Top="216" Width="179" Height="18" ID="1300"/>
+<CustomCtrlInfo Left="296" Top="242" Width="178" Height="18" ID="1301"/>
+<CustomCtrlInfo Left="297" Top="268" Width="170" Height="19" ID="1302"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -820,6 +821,7 @@ function updateConfig()
 	always_make_data_imageProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "ALWAYS_MAKE_DATA_IMAGE");
 	install_grub2winProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "INSTALL_GRUB2WIN");
 	make_gearload_folderProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "MAKE_GEARLOAD_FOLDER");
+	gearlock_bootinstallProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "GEARLOCK_BOOTINSTALL");
 	
 	if not ( always_make_data_imageProp == "" ) then
 		if ( always_make_data_imageProp == "true" ) then always_make_data_image = true; else always_make_data_image = false; end
@@ -831,6 +833,12 @@ function updateConfig()
 		if ( install_grub2winProp == "true" ) then install_grub2win = true; else install_grub2win = false; end
 	else
 		install_grub2win = install_grub2win_btn;
+	end
+	
+	if not ( gearlock_bootinstallProp == "" ) then
+		if ( gearlock_bootinstallProp == "true" ) then gearlock_bootinstall = true; else gearlock_bootinstall = false; end
+	else
+		gearlock_bootinstall = gearlock_bootinstall_btn;
 	end
 	
 	if not ( make_gearload_folderProp == "" ) then if ( make_gearload_folderProp == "true" ) then make_gearload_folder = true; else make_gearload_folder = false; end; end
@@ -989,6 +997,15 @@ end
 <Variable>always_make_data_image_btn</Variable>
 </Control>
 <Control>
+<Type>10</Type>
+<ID>1302</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>11</TabOrder>
+<Checked>0</Checked>
+<Variable>gearlock_bootinstall_btn</Variable>
+</Control>
+<Control>
 <Type>1</Type>
 <ID>103</ID>
 <Visible>0</Visible>
@@ -1051,6 +1068,7 @@ end
 <IDS_CTRL_STATICTEXT_LABEL_04>You can change these for creating multiple boot instances</IDS_CTRL_STATICTEXT_LABEL_04>
 <IDS_CTRL_CHECK_BOX_01>Install/Update Grub2Win</IDS_CTRL_CHECK_BOX_01>
 <IDS_CTRL_CHECK_BOX_02>Always Make Data Image</IDS_CTRL_CHECK_BOX_02>
+<IDS_CTRL_CHECK_BOX_03>GearLock Boot Installer</IDS_CTRL_CHECK_BOX_03>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -2657,8 +2675,6 @@ function installFile(inputFile)
 
 end
 
-
-
 -- Set total range
 	DlgProgressBar.SetRange(CTRL_PROGRESS_BAR_01, 1, 100);
 	
@@ -2684,8 +2700,32 @@ end
 	FILE_IGNORED = false; -- Initialize ignored variable.
 	installFile("initrd.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 30);
 	installFile("ramdisk.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 40);
-	installFile("gearlock"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 45);
 	installFile("kernel"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 50);
+
+
+------- Install GearLock
+	installFile("gearlock");
+	-- Check for bootinstall
+	if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\gearlock")) == false ) and ( gearlock_bootinstall == true ) then
+		
+		-- Get initrd.img of bootinstaller
+		downloadFile("https://gitlab.com/AXIM0S/vendor-gearlock/-/raw/master/bootinstall-initrd.img?inline=false", _TempLaunchFolder.."\\bootinstall-initrd.img", "GearLock BootInstaller Helper");
+		
+		-- Get actual gearlock installer binary
+		if ( downloadFileFailed == false ) then
+			downloadFile("https://gitlab.com/AXIM0S/vendor-gearlock/-/raw/master/gearlock?inline=false", _TempLaunchFolder.."\\bootinstall-gearlock", "GearLock Installer Binary");
+		end
+		
+		-- Finally process files
+		if ( downloadFileFailed == false ) then
+			File.Rename(SessionVar.Expand("%AppFolder%\\initrd.img"), SessionVar.Expand("%AppFolder%\\bootinstall-initrd.img")); -- Rename original initrd.img for bootinstaller
+			File.Move(_TempLaunchFolder.."\\bootinstall-initrd.img", SessionVar.Expand("%AppFolder%\\initrd.img"), true, true, false, false, nil);
+			File.Move(_TempLaunchFolder.."\\bootinstall-gearlock", SessionVar.Expand("%AppFolder%\\bootinstall-gearlock"), true, true, false, false, nil);
+		end
+
+	end
+	
+	Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 45);
 
 
 
@@ -2823,6 +2863,14 @@ end
 <FTButton>1</FTButton>
 </Control>
 <Control>
+<Type>2</Type>
+<ID>203</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
 <Type>7</Type>
 <ID>900</ID>
 <Visible>1</Visible>
@@ -2835,14 +2883,6 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>203</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
-<Type>2</Type>
 <ID>212</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
@@ -2851,7 +2891,7 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>211</ID>
+<ID>204</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
@@ -2859,7 +2899,7 @@ end
 </Control>
 <Control>
 <Type>2</Type>
-<ID>204</ID>
+<ID>211</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
@@ -4731,6 +4771,7 @@ g_HandleSystemReboot();
 ----Booleans and tables
 display = System.GetDisplayInfo();
 always_make_data_image = false;
+gearlock_bootinstall = false;
 make_gearload_folder = true;
 is_x64 = System.Is64BitOS();
 paragon_installed = false;
@@ -4975,6 +5016,60 @@ function makeDataImg(sizeMb, sizeGb)
 	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", " -l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder%\\data.img"), _TempLaunchFolder, SW_HIDE, true);
 	
 end
+
+
+
+
+---- HTTPS Download functions
+
+-- Callback function for HTTP.DownloadSecure
+function DownloadCallback(nDownloaded, nTotal, TransferRate, SecondLeft, SecondsLeftFormat, Message)
+    -- Convert total and downloaded bytes into formatted strings
+    sDownloaded = String.GetFormattedSize(nDownloaded, FMTSIZE_AUTOMATIC, true);
+    sTotal = String.GetFormattedSize(nTotal, FMTSIZE_AUTOMATIC, true);
+
+    -- Output time left, formatted.
+    StatusDlg.SetMessage("Downloading "..dwFileName);
+    
+    -- Output formatted sizes to user through statusdlg status text
+    StatusDlg.SetStatusText("Downloaded: " .. sDownloaded .. " / " .. sTotal.."   Time Left: "..SecondsLeftFormat);
+
+    -- Set meter position (fraction downloaded * max meter range)
+    StatusDlg.SetMeterPos((nDownloaded / nTotal) * 65534);
+
+    -- Continue with the download.
+    return true;
+end
+	
+function downloadFile(dwUrl, localFile, name)
+	downloadFileFailed = false -- reinitialize the check var
+	while ( 1 == 1 )
+	do
+		-- Set statusdlg title and message
+		--StatusDlg.SetTitle("Downloading");
+		--StatusDlg.SetMessage("Currently downloading file . . . ");
+		
+		-- Set meter range (max range = 65534)
+		StatusDlg.SetMeterRange(0, 65534);
+		
+		-- Show the StatusDlg
+		StatusDlg.Show(0, false);
+		
+		-- Set status file name
+		dwFileName = name
+		
+		-- Download a file from the internet to the user's computer
+		-- Uses DownloadCallback() as the callback function
+	
+		HTTP.DownloadSecure(dwUrl, localFile, MODE_BINARY, 20, 443, nil, nil, DownloadCallback);
+		error = Application.GetLastError();
+		if ( error ~= 0 ) then choice = Dialog.Message("Error during download", _tblErrorMessages[error].."\r\n\r\nDo you want to retry ?", MB_YESNO, MB_ICONEXCLAMATION, MB_DEFBUTTON1); else break; end
+		if ( choice == IDNO ) then downloadFileFailed = true; break; end	
+		-- Hide the StatusDlg
+		StatusDlg.Hide();
+	end
+end
+		
 
 
 
