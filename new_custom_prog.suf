@@ -281,7 +281,7 @@ Screen.Jump("HelpPage");</Script>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Exit</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help-Utils</IDS_CTRL_BUTTON_HELP>
+<IDS_CTRL_BUTTON_HELP>&amp;Utils</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_BODY>You are using %ProductName%.
 
 It is strongly recommended that you exit all Windows programs before continuing with this installation.
@@ -637,7 +637,7 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>%ProductName% Help</IDS_WINDOW_TITLE>
+<IDS_WINDOW_TITLE>Advanced Android-x86 Utilities</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Heading text</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>Subheading text</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&lt; &amp;Back</IDS_CTRL_BUTTON_NEXT>
@@ -4979,11 +4979,15 @@ end
 function install_gearlock(OS_SOURCE, prompt)
 
 	-- Get initrd.img of bootinstaller
-	downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("bootinstall-initrd.img").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-initrd.img", "GearLock BootInstaller Helper");
+	downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("bootinstall-initrd.img").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-initrd.img", "GearLock BootInstall Helper");
 	
 	-- Get actual gearlock installer binary
 	if ( downloadFileFailed == false ) then
-		downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/gearlock").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-gearlock", "GearLock Installer Binary");
+		-- Get gearlock version
+		HTTP.DownloadSecure("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/version").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\gearlock_version", MODE_BINARY, 20, 443, nil, nil, nil);
+		gearlock_version = TextFile.ReadToString(_TempLaunchFolder.."\\gearlock_version"); File.Delete(_TempLaunchFolder.."\\gearlock_version", false, false, false, nil);
+		-- Start downloading the installer binary
+		downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/gearlock").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-gearlock", "GearLock "..gearlock_version.." Installer Binary");
 	end
 	
 	-- Finally process files
