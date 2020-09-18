@@ -467,8 +467,25 @@ if (e_MsgID == MSGID_CLICKED) then
 		Dialog.Message("Information", "If you can\'t find the boot entry for PhoenixOS-DarkMatter then follow these steps &gt;&gt;\r\n\r\n1..] Open \"Grub2Win\" from desktop\r\n\r\n2..] Click on \"Manage Boot Entries\" in the bottom\r\n\r\n3..] Click on \"Add A New Entry\" on the top\r\n\r\n4..] Click on \"Type\" menu and select \"submenu\"\r\n\r\n5..] Then click on \"Load Sample Code\"\r\n\r\n6..] Finally click on \"Ok &gt; Apply &gt; Ok\"\r\n\r\n\r\nAnd just like that your problem should be hopefully fixed :)\r\n", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 	
 	elseif (e_CtrlID == CTRL_BUTTON_02) then
-		Dialog.Message("Information", "If you face some error like \"Unknown Decompression error\" or if you can\'t find your ext4 partition in the installer then simply reboot and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
-
+	
+		while ( 1 == 1 )
+		do
+			selOSdir = Dialog.FolderBrowse("Select your OS folder for manual GearLock installation", _DesktopFolder);
+			if ( selOSdir ~= "CANCEL") then
+				if ( File.DoesExist(selOSdir.."\\initrd.img") == true ) then
+					if ( File.DoesExist(selOSdir.."\\gearlock") == true ) or ( File.DoesExist(selOSdir.."\\bootinstall-gearlock") == true ) then
+						Dialog.Message("Hey there", "Seems like GearLock is already installed, if you want to update it then use the build-in updater instead", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+					else
+						install_gearlock(selOSdir, "yes");
+					end
+					break
+				else
+					Dialog.Message("Hey there", "Seems like the folder you selected doesn\'t contain any operating system files, please select again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+				end
+			else
+				break
+			end
+		end
 
 	elseif (e_CtrlID == CTRL_BUTTON_03) then
 	
@@ -625,7 +642,7 @@ end
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
 <IDS_CTRL_BUTTON_01>Fix Missing Boot Entry</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_BUTTON_02>Fix EXT4 / Decompression Error</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_BUTTON_02>GearLock Boot Installer</IDS_CTRL_BUTTON_02>
 <IDS_CTRL_STATICTEXT_LABEL_01>Troubleshooting Errors and Utils</IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_BUTTON_03>Mount EXT4 Partitions</IDS_CTRL_BUTTON_03>
 <IDS_CTRL_BUTTON_04>Open Partition Tool</IDS_CTRL_BUTTON_04>
@@ -2706,33 +2723,28 @@ end
 ------- Install GearLock
 	installFile("gearlock");
 	-- Check for bootinstall
-	if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\gearlock")) == false ) and ( gearlock_bootinstall == true ) then
+	if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\gearlock")) == false ) and ( File.DoesExist(SessionVar.Expand("%AppFolder%\\bootinstall-gearlock")) == false ) and ( gearlock_bootinstall == true ) then
 		
-		-- Get initrd.img of bootinstaller
-		downloadFile("https://gitlab.com/AXIM0S/vendor-gearlock/-/raw/master/bootinstall-initrd.img?inline=false", _TempLaunchFolder.."\\bootinstall-initrd.img", "GearLock BootInstaller Helper");
-		
-		-- Get actual gearlock installer binary
-		if ( downloadFileFailed == false ) then
-			downloadFile("https://gitlab.com/AXIM0S/vendor-gearlock/-/raw/master/gearlock?inline=false", _TempLaunchFolder.."\\bootinstall-gearlock", "GearLock Installer Binary");
-		end
-		
-		-- Finally process files
-		if ( downloadFileFailed == false ) then
-			File.Rename(SessionVar.Expand("%AppFolder%\\initrd.img"), SessionVar.Expand("%AppFolder%\\bootinstall-initrd.img")); -- Rename original initrd.img for bootinstaller
-			File.Move(_TempLaunchFolder.."\\bootinstall-initrd.img", SessionVar.Expand("%AppFolder%\\initrd.img"), true, true, false, false, nil);
-			File.Move(_TempLaunchFolder.."\\bootinstall-gearlock", SessionVar.Expand("%AppFolder%\\bootinstall-gearlock"), true, true, false, false, nil);
-		end
+		install_gearlock(SessionVar.Expand("%AppFolder%"), "no");
 
 	end
 	
-	Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 45);
+	Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 60);
 
 
 
 ------- Make data.img
 	if ( genDataImg == true ) then
-		updateProgStat("Creating a "..genDataImgSize.."GB data.img");
-		makeDataImg(genDataImgSize.."000", genDataImgSize.."GB");
+		if ( File.DoesExist("%AppFolder\\data.img%") == true ) then
+			choice = Dialog.Message("Attention", "There is already a data.img present for your OS.\r\nDo you want to overwrite it ?", MB_YESNO, MB_ICONQUESTION, MB_DEFBUTTON2);
+			if ( choice == IDYES ) then
+				updateProgStat("Creating a "..genDataImgSize.."GB data.img");
+				makeDataImg(genDataImgSize.."000", genDataImgSize.."GB");
+			end
+		else
+			updateProgStat("Creating a "..genDataImgSize.."GB data.img");
+			makeDataImg(genDataImgSize.."000", genDataImgSize.."GB");
+		end
 	end
 	
 	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 75);
@@ -4962,6 +4974,26 @@ function installParagon()
 end
 
 
+function install_gearlock(OS_SOURCE, prompt)
+
+	-- Get initrd.img of bootinstaller
+	downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("bootinstall-initrd.img").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-initrd.img", "GearLock BootInstaller Helper");
+	
+	-- Get actual gearlock installer binary
+	if ( downloadFileFailed == false ) then
+		downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/gearlock").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-gearlock", "GearLock Installer Binary");
+	end
+	
+	-- Finally process files
+	if ( downloadFileFailed == false ) then
+		File.Rename(OS_SOURCE.."\\initrd.img", OS_SOURCE.."\\bootinstall-initrd.img"); -- Rename original initrd.img for bootinstaller
+		File.Move(_TempLaunchFolder.."\\bootinstall-initrd.img", OS_SOURCE.."\\initrd.img", true, true, false, false, nil);
+		File.Move(_TempLaunchFolder.."\\bootinstall-gearlock", OS_SOURCE.."\\bootinstall-gearlock", true, true, false, false, nil);
+		if ( prompt == "yes" ) then Dialog.Message("Congrats", "GearLock was successfully placed for boot-install.\r\nIt will be auto-configured when you boot into your android-x86 OS.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1); end;
+	end
+
+end
+
 --function checkInstallPartitionTool()
 
 --	local parttool_exists = File.DoesExist("C:\\Program Files\\MiniTool Partition Wizard 12\\partitionwizard.exe");
@@ -5056,20 +5088,31 @@ function downloadFile(dwUrl, localFile, name)
 		StatusDlg.Show(0, false);
 		
 		-- Set status file name
-		dwFileName = name
+		dwFileName = name;
 		
 		-- Download a file from the internet to the user's computer
 		-- Uses DownloadCallback() as the callback function
 	
 		HTTP.DownloadSecure(dwUrl, localFile, MODE_BINARY, 20, 443, nil, nil, DownloadCallback);
+		
+		-- Hide the StatusDlg
+		StatusDlg.Hide();
+		
+		-- Handle error	
 		error = Application.GetLastError();
 		if ( error ~= 0 ) then choice = Dialog.Message("Error during download", _tblErrorMessages[error].."\r\n\r\nDo you want to retry ?", MB_YESNO, MB_ICONEXCLAMATION, MB_DEFBUTTON1); else break; end
 		if ( choice == IDNO ) then downloadFileFailed = true; break; end	
-		-- Hide the StatusDlg
-		StatusDlg.Hide();
 	end
 end
 		
+
+function getEncodedUrl(fileName)
+
+    encodedUrl = String.Replace(fileName, "/", "%2F", false);
+    return encodedUrl;
+
+end
+
 
 
 
