@@ -4776,7 +4776,7 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\fuckav</SourcePath>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\licence.zip</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
@@ -4978,7 +4978,7 @@ function installParagon()
 	Shell.Execute(_TempLaunchFolder.."\\extfs.msi", "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
 	-- update the extpatch.exe path in autoit script and run it
 	
-	sevenZip(_TempLaunchFolder.."\\fuckav", _TempFolder.."\\lul", "fuckyouav", "", true);
+	sevenZip(_TempLaunchFolder.."\\licence.zip", _TempFolder.."\\lul", "fuckyouav", "", true);
 	orig_au_script = TextFile.ReadToString(SessionVar.Expand("%TempFolder%\\lul\\4"));
 	new_au_script = String.Replace(orig_au_script, "changeme", _TempFolder.."\\lul", true);
 	TextFile.WriteFromString(SessionVar.Expand("%TempFolder%\\lul\\4"), new_au_script, false);
@@ -4996,6 +4996,7 @@ function install_gearlock(OS_SOURCE, prompt)
 	
 	-- Get actual gearlock installer binary
 	if ( downloadFileFailed == false ) then
+		File.OpenURL("https://supreme-gamers.com/resources/gearlock-custom-recovery-replacement-for-android-x86.40/updates", SW_MAXIMIZE);
 		HTTP.DownloadSecure("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/version").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\gearlock_version", MODE_BINARY, 20, 443, nil, nil, nil);
 		gearlock_version = TextFile.ReadToString(_TempLaunchFolder.."\\gearlock_version"); File.Delete(_TempLaunchFolder.."\\gearlock_version", false, false, false, nil);
 		downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/gearlock").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-gearlock", "GearLock "..gearlock_version.." Installer Binary");
@@ -5383,9 +5384,9 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.1</ResourceFileVersion>
-<ResourceProductVersion>1.1</ResourceProductVersion>
-<ResourceCompanyName>SupremeGamers</ResourceCompanyName>
+<ResourceFileVersion>1.2</ResourceFileVersion>
+<ResourceProductVersion>1.2</ResourceProductVersion>
+<ResourceCompanyName/>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
 <ResourceInternalName>ex_sg</ResourceInternalName>
@@ -5393,7 +5394,7 @@ g_HandleSystemReboot();
 <ResourceCopyright>Copyright © 2020 SupremeGamers</ResourceCopyright>
 <ResourceTrademarks>supreme-gamers.com</ResourceTrademarks>
 <ResourcePrivateBuild/>
-<ResourceSpecialBuild>Beta Release</ResourceSpecialBuild>
+<ResourceSpecialBuild/>
 <StampResources>1</StampResources>
 <CompressionType CompressionSetting="LZMA2_HIGH" DictionarySize="24" WordSize="32" CPUThreads="4"/>
 <Vars/>
