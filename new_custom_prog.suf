@@ -494,22 +494,34 @@ if (e_MsgID == MSGID_CLICKED) then
 
 	elseif (e_CtrlID == CTRL_BUTTON_03) then
 	
-		if ( paragon_installed == false ) then
-			installParagon();
+		if ( pirate == true ) then
+			if ( paragon_installed == false ) then
+				installParagon();
+			end
+			
+			mountExt();
+		else
+			Dialog.Message("Info", "Not available for non-proprietary version of this installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 		end
-		
-		mountExt();
 	
 	elseif (e_CtrlID == CTRL_BUTTON_04) then
-		
-		runPartitionTool();
+	
+		if ( pirate == true ) then
+			runPartitionTool();
+		else
+			Dialog.Message("Info", "Not available for non-proprietary version of this installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		end	
 		
 	elseif (e_CtrlID == CTRL_BUTTON_05) then
-	
-		if ( paragon_installed == true ) then
-			Dialog.Message("Notice", "EXT4 drivers are already installed", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		
+		if ( pirate == true ) then
+			if ( paragon_installed == true ) then
+				Dialog.Message("Notice", "EXT4 drivers are already installed", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			else
+				installParagon();
+			end
 		else
-			installParagon();
+			Dialog.Message("Info", "Not available for non-proprietary version of this installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 		end
 		
 	elseif (e_CtrlID == CTRL_BUTTON_06) then
@@ -878,19 +890,19 @@ if (e_MsgID == MSGID_CLICKED) then
 	if (e_CtrlID == CTRL_BUTTON_01) or (e_CtrlID == CTRL_BUTTON_02) then
 
 		if (e_CtrlID == CTRL_BUTTON_01) then
-			is_ntfs = false; SessionVar.Set("%InsType%","EXT4");
+			if ( pirate == true ) then
+				is_ntfs = false; SessionVar.Set("%InsType%","EXT4");
+				updateConfig(); 
+				if ( paragon_installed == false ) then installParagon(); end;
+				Screen.Next();
+			else
+				Dialog.Message("Info", "Not available for non-proprietary version of this installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			end
+
 		elseif (e_CtrlID == CTRL_BUTTON_02) then
 			is_ntfs = true; SessionVar.Set("%InsType%","NTFS");
-		end
-		
-		-- Update Default values from UserInput
-		updateConfig();
-	
-		if( is_ntfs == true ) then
+			updateConfig();
 			Screen.Jump("Data Image");
-		else
-			if ( paragon_installed == false ) then installParagon(); end;
-			Screen.Next();
 		end
 		
 	end
@@ -4640,7 +4652,7 @@ g_HandleSystemReboot();
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
-<Cfg>All</Cfg>
+<Cfg>Default</Cfg>
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
@@ -4672,7 +4684,7 @@ g_HandleSystemReboot();
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
-<Cfg>All</Cfg>
+<Cfg>Default</Cfg>
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
@@ -4768,7 +4780,7 @@ g_HandleSystemReboot();
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
-<Cfg>All</Cfg>
+<Cfg>Default</Cfg>
 </BuildConfigs>
 </PrimerFile>
 </PrimerFiles>
@@ -4791,6 +4803,7 @@ is_portable = false;
 loadFromISO = false;
 genDataImg = false;
 is_ntfs = false;
+if ( File.DoesExist(_TempLaunchFolder.."\\parttool.zip") == true ) then pirate = true; else pirate = false; end;
 ----Strings
 NAME = "Android-x86";
 VERSION = "ASG";
@@ -4983,10 +4996,8 @@ function install_gearlock(OS_SOURCE, prompt)
 	
 	-- Get actual gearlock installer binary
 	if ( downloadFileFailed == false ) then
-		-- Get gearlock version
 		HTTP.DownloadSecure("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/version").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\gearlock_version", MODE_BINARY, 20, 443, nil, nil, nil);
 		gearlock_version = TextFile.ReadToString(_TempLaunchFolder.."\\gearlock_version"); File.Delete(_TempLaunchFolder.."\\gearlock_version", false, false, false, nil);
-		-- Start downloading the installer binary
 		downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/gearlock").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-gearlock", "GearLock "..gearlock_version.." Installer Binary");
 	end
 	
@@ -5254,7 +5265,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>Beta 1.1</Value>
+<Value>Beta 1.2</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5298,6 +5309,55 @@ g_HandleSystemReboot();
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
 <Filename>Advanced_Android-x86_Installer_Beta_v1.1.exe</Filename>
+<OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
+<SegmentSizeMode>0</SegmentSizeMode>
+<CustomSegSize>0</CustomSegSize>
+<CustomSegSizeMode>0</CustomSegSizeMode>
+<Platform>0</Platform>
+<CollectLaunchUserInfo>0</CollectLaunchUserInfo>
+<CodeSignSetups>0</CodeSignSetups>
+<CodeSignLocation/>
+<CodeSignWithSHA256>1</CodeSignWithSHA256>
+<CodeSignCertificateFileSHA256/>
+<CodeSignCertificatePasswordSHA256>
+</CodeSignCertificatePasswordSHA256>
+<CodeSignTimeStampURLSHA256/>
+<CodeSignArgumentsSHA256/>
+<CodeSignWithSHA1>1</CodeSignWithSHA1>
+<CodeSignTimeStampURLSHA1/>
+<CodeSignArgumentsSHA1/>
+<CodeSignSHA1CertificateToUse>0</CodeSignSHA1CertificateToUse>
+<CodeSignCertificateFileSHA1/>
+<CodeSignCertificatePasswordSHA1>
+</CodeSignCertificatePasswordSHA1>
+<CodeSignDescription/>
+<CodeSignDescriptionURL/>
+<UseCustomIcon>1</UseCustomIcon>
+<CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
+<ResourceFileVersion>1.1</ResourceFileVersion>
+<ResourceProductVersion>1.1</ResourceProductVersion>
+<ResourceCompanyName>SupremeGamers</ResourceCompanyName>
+<ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
+<ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
+<ResourceInternalName>ex_sg</ResourceInternalName>
+<ResourceFileDescription>Advanced Android-x86 Installer</ResourceFileDescription>
+<ResourceCopyright>Copyright © 2020 SupremeGamers</ResourceCopyright>
+<ResourceTrademarks>supreme-gamers.com</ResourceTrademarks>
+<ResourcePrivateBuild/>
+<ResourceSpecialBuild>Beta Release</ResourceSpecialBuild>
+<StampResources>1</StampResources>
+<CompressionType CompressionSetting="LZMA2_HIGH" DictionarySize="24" WordSize="32" CPUThreads="4"/>
+<Vars/>
+</BuildConfig>
+<BuildConfig>
+<Name>NoPirate</Name>
+<PreBuildProg/>
+<PreBuildCmdLine/>
+<PreBuildWait>0</PreBuildWait>
+<PostBuildProg/>
+<PostBuildCmdLine/>
+<PostBuildWait>0</PostBuildWait>
+<Filename>Advanced_Android-x86_Installer_Beta_v1.2.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
