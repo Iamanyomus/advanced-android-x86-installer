@@ -4930,8 +4930,8 @@ function installGrub2Win()
 	
 		TextFile.WriteFromString(GRUB_CFG, grubcfg_new_footer_contents, true);
 		
-		if ( File.DoesExist(_SourceFolder.."\\windows\\"..NAME.."-"..VERSION..".cfg") == true ) then
-			GRUB_CFG_CUSTOM = _SourceFolder.."\\windows\\"..NAME.."-"..VERSION..".cfg"
+		if ( File.DoesExist(_SourceFolder.."\\windows\\Android-x86-ASG.cfg") == true ) then
+			GRUB_CFG_CUSTOM = _SourceFolder.."\\windows\\Android-x86-ASG.cfg"
 		else
 			GRUB_CFG_CUSTOM = SessionVar.Expand("%TempLaunchFolder%\\Android-x86-ASG.cfg")
 		end
@@ -4953,7 +4953,7 @@ function get_paragon_mounter()
 		paragon_mounter = "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extmounter.exe";
 		paragon_mounter_ui = "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe";
 	else
-		paragon_mounter = "C:\\Program Files\\Paragon Software\ExtFS for Windows\\extmounter.exe";
+		paragon_mounter = "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\extmounter.exe";
 		paragon_mounter_ui = "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe";
 	end
 	
@@ -5265,7 +5265,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>Beta 1.2</Value>
+<Value>1.2</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5308,7 +5308,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_Beta_v1.1.exe</Filename>
+<Filename>AAAndroid-x86_Installer_v1.2_Proprietary-Edition.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5334,9 +5334,9 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.1</ResourceFileVersion>
-<ResourceProductVersion>1.1</ResourceProductVersion>
-<ResourceCompanyName>SupremeGamers</ResourceCompanyName>
+<ResourceFileVersion>1.2</ResourceFileVersion>
+<ResourceProductVersion>1.2</ResourceProductVersion>
+<ResourceCompanyName/>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
 <ResourceInternalName>ex_sg</ResourceInternalName>
@@ -5344,7 +5344,7 @@ g_HandleSystemReboot();
 <ResourceCopyright>Copyright © 2020 SupremeGamers</ResourceCopyright>
 <ResourceTrademarks>supreme-gamers.com</ResourceTrademarks>
 <ResourcePrivateBuild/>
-<ResourceSpecialBuild>Beta Release</ResourceSpecialBuild>
+<ResourceSpecialBuild/>
 <StampResources>1</StampResources>
 <CompressionType CompressionSetting="LZMA2_HIGH" DictionarySize="24" WordSize="32" CPUThreads="4"/>
 <Vars/>
@@ -5357,7 +5357,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_Beta_v1.2.exe</Filename>
+<Filename>AAAndroid-x86_Installer_v1.2_Lite-Edition.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
