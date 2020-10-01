@@ -469,10 +469,12 @@ if (e_MsgID == MSGID_CLICKED) then
 
 	if (e_CtrlID == CTRL_BUTTON_01) then
 	
-		Dialog.Message("Information", "If you can\'t find the boot entry for PhoenixOS-DarkMatter then follow these steps &gt;&gt;\r\n\r\n1..] Open \"Grub2Win\" from desktop\r\n\r\n2..] Click on \"Manage Boot Entries\" in the bottom\r\n\r\n3..] Click on \"Add A New Entry\" on the top\r\n\r\n4..] Click on \"Type\" menu and select \"submenu\"\r\n\r\n5..] Then click on \"Load Sample Code\"\r\n\r\n6..] Finally click on \"Ok &gt; Apply &gt; Ok\"\r\n\r\n\r\nAnd just like that your problem should be hopefully fixed :)\r\n", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		Dialog.Message("Information", "If you can\'t find the boot entry for Android-x86 then follow these steps &gt;&gt;\r\n\r\n1..] Open \"Grub2Win\" from desktop\r\n\r\n2..] Click on \"Manage Boot Entries\" in the bottom\r\n\r\n3..] Click on \"Add A New Entry\" on the top\r\n\r\n4..] Click on \"Type\" menu and select \"submenu\"\r\n\r\n5..] Then click on \"Load Sample Code\"\r\n\r\n6..] Finally click on \"Ok &gt; Apply &gt; Ok\"\r\n\r\n\r\nAnd just like that your problem should be hopefully fixed :)\r\n", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 	
 	elseif (e_CtrlID == CTRL_BUTTON_02) then
 	
+		Dialog.Message("Warning", "Manually installing GearLock from here is not recommended.\r\n\r\nIt will fail if your some of your OS files reside in the EFI partition.\r\n\r\nProceed at your own risk.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+
 		while ( 1 == 1 )
 		do
 			selOSdir = Dialog.FolderBrowse("Select your OS folder for manual GearLock installation", _DesktopFolder);
@@ -859,7 +861,7 @@ function updateConfig()
 	else
 		if ( loadFromISO == true ) then
 			sevenZip(ISO_IMAGE[1], _TempLaunchFolder, "", "ramdisk.img", true);
-			if ( File.DoesExist(_TempLaunchFolder.."\\ramdisk.img") == false ) then always_make_data_image = true; File.Delete(_TempLaunchFolder.."\\ramdisk.img", false, false, false, nil); end;
+			if ( File.DoesExist(_TempLaunchFolder.."\\ramdisk.img") == false ) then always_make_data_image = true; else File.Delete(_TempLaunchFolder.."\\ramdisk.img", false, false, false, nil); end;
 		else
 			if ( File.DoesExist("%AppFolder%\\ramdisk.img") == false ) then always_make_data_image = true; end;
 		end
@@ -3389,7 +3391,7 @@ end
 <Name>On Back</Name>
 <Args/>
 <Script>-- These actions are performed when the Back button is clicked.
-postExit();
+cleanTemp();
 Shell.Execute("C:\\Program Files\\DarkMatter\\Boot.bat", "open", "", "C:\\Program Files\\DarkMatter\\", SW_SHOWNORMAL, false);
 Screen.Next();
 
@@ -4507,10 +4509,10 @@ g_HandleSystemReboot();
 </UninstallData>
 <ProjectData>
 <LogFile>
-<Create>0</Create>
+<Create>1</Create>
 <Filename>%TempFolder%\%ProductName% Log.txt</Filename>
 <WriteMode>0</WriteMode>
-<ActionDetailLevel>1</ActionDetailLevel>
+<ActionDetailLevel>2</ActionDetailLevel>
 </LogFile>
 <EnableSilentMode>0</EnableSilentMode>
 <StartInSilentMode>0</StartInSilentMode>
@@ -4652,7 +4654,7 @@ g_HandleSystemReboot();
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
-<Cfg>Default</Cfg>
+<Cfg>Full</Cfg>
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
@@ -4684,7 +4686,7 @@ g_HandleSystemReboot();
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
-<Cfg>Default</Cfg>
+<Cfg>Full</Cfg>
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
@@ -4780,7 +4782,7 @@ g_HandleSystemReboot();
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
-<Cfg>Default</Cfg>
+<Cfg>Full</Cfg>
 </BuildConfigs>
 </PrimerFile>
 </PrimerFiles>
@@ -5024,9 +5026,15 @@ end
 
 function runPartitionTool()
 
+		-- Start showing status dlg
+	StatusDlg.Show(MB_ICONNONE, false);
+	StatusDlg.SetTitle("Partition Tool");
+	StatusDlg.SetMessage("Starting the Partitioning Tool");
+	StatusDlg.SetStatusText("It may take a while, wait patiently");
 	sevenZip(_TempLaunchFolder.."\\parttool.zip", _TempLaunchFolder, "", "", true);
-	Shell.Execute(_TempLaunchFolder.."\\parttool\\MiniTool Partition Wizard.exe", "open", "", "", SW_MAXIMIZE, false);
-	Dialog.TimedMessage("Hol Up !", "Loading the Partition Tool", 10000, MB_ICONINFORMATION);
+	Shell.Execute(_TempLaunchFolder.."\\parttool\\MiniTool Partition Wizard.exe", "open", "", "", SW_MAXIMIZE, true);
+	Application.Sleep(10000);
+	StatusDlg.Hide();
 
 end
 
@@ -5035,16 +5043,31 @@ function mountExt()
 	if ( ext_is_mounted == false ) then
 		
 		ext_is_mounted = true;
+		
+		-- Start showing status dlg
+		StatusDlg.Show(MB_ICONNONE, false);
+		StatusDlg.SetTitle("Probing EXT4 Driver");
+		StatusDlg.SetMessage("Trying to autoMount your EXT4 partitions ...");
+		
 		-- Kill if running
-		killProcess("paragon extfs for windows.exe");
+		StatusDlg.SetStatusText("Current Status: Killing GUI ExtFS handler");
+		killProcess("paragon extfs for windows.exe"); Application.Sleep(1000);
+		
+		-- Force unMount to cleanly reMount
+		StatusDlg.SetStatusText("Current Status: Force unMounting if is already mounted");
 		umountExt();
-		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 1)", 10000, MB_ICONINFORMATION);
-		Service.Start("DokanMounter", "DokanMounter", nil);
-		Service.Start("ParagonMounter", "ParagonMounter", nil);
-		Shell.Execute(paragon_mounter, "open", "/mount", "", SW_HIDE, false);
-		Dialog.TimedMessage("Hol up !", "Trying to mount your ext4 partitions ... (phase 2)", 15000, MB_ICONINFORMATION);
+		
+		-- Start services
+		StatusDlg.SetStatusText("Current Status: Starting services");
+		Service.Start("DokanMounter", "DokanMounter", nil); Application.Sleep(3000);
+		Service.Start("ParagonMounter", "ParagonMounter", nil); Application.Sleep(3000);
+		StatusDlg.SetStatusText("Current Status: Final mountCall to System");
+		Shell.Execute(paragon_mounter, "open", "/mount", "", SW_HIDE, false); Application.Sleep(9000);
+		
+		-- Finally hide statusDlg
+		StatusDlg.Hide();
 		Dialog.Message("Notice", "If you can\'t find your EXT4 partitions then you must RESTART and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
-
+		
 	end
 	
 end
@@ -5054,8 +5077,8 @@ function umountExt()
 	if ( ext_is_mounted == true ) then
 		get_paragon_mounter();
 		Shell.Execute(paragon_mounter, "open", "/umount", "", SW_HIDE, true);
-		Service.Stop("ParagonMounter", "ParagonMounter", 0);
-		Service.Stop("DokanMounter", "DokanMounter", 0);
+		Service.Stop("ParagonMounter", "ParagonMounter", 5);
+		Service.Stop("DokanMounter", "DokanMounter", 5);
 	end
 
 end
@@ -5266,7 +5289,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>1.2</Value>
+<Value>1.3</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5302,14 +5325,14 @@ g_HandleSystemReboot();
 </SUF7SessionVars>
 <BuildConfigurations>
 <BuildConfig>
-<Name>Default</Name>
+<Name>Full</Name>
 <PreBuildProg/>
 <PreBuildCmdLine/>
 <PreBuildWait>0</PreBuildWait>
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>AAAndroid-x86_Installer_v1.2_Proprietary-Edition.exe</Filename>
+<Filename>AAAndroid-x86_Installer_v1.3_Full-Edition.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5335,8 +5358,8 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.2</ResourceFileVersion>
-<ResourceProductVersion>1.2</ResourceProductVersion>
+<ResourceFileVersion>1.3</ResourceFileVersion>
+<ResourceProductVersion>1.3</ResourceProductVersion>
 <ResourceCompanyName/>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
@@ -5351,14 +5374,14 @@ g_HandleSystemReboot();
 <Vars/>
 </BuildConfig>
 <BuildConfig>
-<Name>NoPirate</Name>
+<Name>Lite</Name>
 <PreBuildProg/>
 <PreBuildCmdLine/>
 <PreBuildWait>0</PreBuildWait>
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>AAAndroid-x86_Installer_v1.2_Lite-Edition.exe</Filename>
+<Filename>AAAndroid-x86_Installer_v1.3_Lite-Edition.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5384,8 +5407,8 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.2</ResourceFileVersion>
-<ResourceProductVersion>1.2</ResourceProductVersion>
+<ResourceFileVersion>1.3</ResourceFileVersion>
+<ResourceProductVersion>1.3</ResourceProductVersion>
 <ResourceCompanyName/>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
