@@ -5332,7 +5332,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>AAAndroid-x86_Installer_v1.3_Full-Edition.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_v1.3_Full.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5360,7 +5360,7 @@ g_HandleSystemReboot();
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
 <ResourceFileVersion>1.3</ResourceFileVersion>
 <ResourceProductVersion>1.3</ResourceProductVersion>
-<ResourceCompanyName/>
+<ResourceCompanyName>SupremeGamers</ResourceCompanyName>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
 <ResourceInternalName>ex_sg</ResourceInternalName>
@@ -5381,7 +5381,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>AAAndroid-x86_Installer_v1.3_Lite-Edition.exe</Filename>
+<Filename>AdvancedAndroid-x86_Installer_v1.3_Lite.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5409,7 +5409,7 @@ g_HandleSystemReboot();
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
 <ResourceFileVersion>1.3</ResourceFileVersion>
 <ResourceProductVersion>1.3</ResourceProductVersion>
-<ResourceCompanyName/>
+<ResourceCompanyName>SupremeGamers</ResourceCompanyName>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
 <ResourceInternalName>ex_sg</ResourceInternalName>
