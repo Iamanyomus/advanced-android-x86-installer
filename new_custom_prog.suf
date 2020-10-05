@@ -4926,7 +4926,7 @@ end
 
 function sevenZip(inputArchive, outputLocation, archivePassword, specifiedFiles, waitForReturn)
 	
-	Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -p\""..archivePassword.."\" -aoa -o\""..outputLocation.."\" \""..inputArchive.."\" "..specifiedFiles, "", SW_HIDE, waitForReturn);
+	Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -p\""..archivePassword.."\" -bd -aoa -o\""..outputLocation.."\" \""..inputArchive.."\" "..specifiedFiles, "", SW_HIDE, waitForReturn);
 
 end
 
