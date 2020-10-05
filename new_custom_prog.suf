@@ -402,13 +402,15 @@ It is advised that you don't run this installer in the same partition where you 
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="20" Top="84" Width="209" Height="45" ID="121"/>
-<CustomCtrlInfo Left="258" Top="84" Width="213" Height="45" ID="122"/>
+<CustomCtrlInfo Left="20" Top="78" Width="210" Height="39" ID="121"/>
+<CustomCtrlInfo Left="260" Top="78" Width="210" Height="39" ID="122"/>
 <CustomCtrlInfo Left="51" Top="20" Width="390" Height="41" ID="211"/>
-<CustomCtrlInfo Left="19" Top="158" Width="211" Height="39" ID="123"/>
-<CustomCtrlInfo Left="260" Top="157" Width="211" Height="40" ID="124"/>
-<CustomCtrlInfo Left="21" Top="222" Width="209" Height="39" ID="125"/>
-<CustomCtrlInfo Left="262" Top="223" Width="209" Height="37" ID="126"/>
+<CustomCtrlInfo Left="20" Top="141" Width="210" Height="39" ID="123"/>
+<CustomCtrlInfo Left="260" Top="141" Width="210" Height="39" ID="124"/>
+<CustomCtrlInfo Left="20" Top="202" Width="210" Height="39" ID="125"/>
+<CustomCtrlInfo Left="260" Top="202" Width="210" Height="39" ID="126"/>
+<CustomCtrlInfo Left="20" Top="263" Width="210" Height="39" ID="127"/>
+<CustomCtrlInfo Left="260" Top="263" Width="210" Height="39" ID="128"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -613,6 +615,22 @@ end
 </Control>
 <Control>
 <Type>1</Type>
+<ID>127</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>8</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>128</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>9</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
 <ID>103</ID>
 <Visible>0</Visible>
 <Enabled>0</Enabled>
@@ -667,6 +685,8 @@ end
 <IDS_CTRL_BUTTON_04>Open Partition Tool</IDS_CTRL_BUTTON_04>
 <IDS_CTRL_BUTTON_05>Install EXT4 Drivers</IDS_CTRL_BUTTON_05>
 <IDS_CTRL_BUTTON_06>Install Grub2Win Bootloader</IDS_CTRL_BUTTON_06>
+<IDS_CTRL_BUTTON_07>Create data image</IDS_CTRL_BUTTON_07>
+<IDS_CTRL_BUTTON_08>Flash ISO in USB</IDS_CTRL_BUTTON_08>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -5381,7 +5401,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>AdvancedAndroid-x86_Installer_v1.3_Lite.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_v1.3_Lite.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
