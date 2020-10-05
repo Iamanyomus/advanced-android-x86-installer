@@ -4713,7 +4713,7 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grub2win.zip</SourcePath>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grub2win.7z</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
@@ -4721,7 +4721,7 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\parttool</SourcePath>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\parttool.7z</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
@@ -4817,7 +4817,7 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\licence</SourcePath>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\licence.7z</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
@@ -4845,7 +4845,7 @@ is_portable = false;
 loadFromISO = false;
 genDataImg = false;
 is_ntfs = false;
-if ( File.DoesExist(_TempLaunchFolder.."\\parttool") == true ) then pirate = true; else pirate = false; end;
+if ( File.DoesExist(_TempLaunchFolder.."\\parttool.7z") == true ) then pirate = true; else pirate = false; end;
 ----Strings
 NAME = "Android-x86";
 VERSION = "ASG";
@@ -4950,11 +4950,11 @@ function installGrub2Win()
 			sevenZip(_TempLaunchFolder.."\\grub2win.latest", _TempLaunchFolder.."\\grub2win", "", "", true);
 		else
 			Dialog.Message("Notice", "Okay, since online version can\'t be fetched, so local version will be used.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
-			sevenZip(_TempLaunchFolder.."\\grub2win.zip", _TempLaunchFolder.."\\grub2win", "", "", true);
+			sevenZip(_TempLaunchFolder.."\\grub2win.7z", _TempLaunchFolder.."\\grub2win", "", "", true);
 		end
 		
 	else
-		sevenZip(_TempLaunchFolder.."\\grub2win.zip", _TempLaunchFolder.."\\grub2win", "", "", true);
+		sevenZip(_TempLaunchFolder.."\\grub2win.7z", _TempLaunchFolder.."\\grub2win", "", "", true);
 	end
 	
 	
@@ -5037,7 +5037,7 @@ function installParagon()
 	Shell.Execute(_TempLaunchFolder.."\\extfs.msi", "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
 	-- update the extpatch.exe path in autoit script and run it
 	
-	sevenZip(_TempLaunchFolder.."\\licence", _TempFolder.."\\lul", "fuckyouav", "", true);
+	sevenZip(_TempLaunchFolder.."\\licence.7z", _TempFolder.."\\lul", "fuckyouav", "", true);
 	orig_au_script = TextFile.ReadToString(SessionVar.Expand("%TempFolder%\\lul\\4"));
 	new_au_script = String.Replace(orig_au_script, "changeme", _TempFolder.."\\lul", true);
 	TextFile.WriteFromString(SessionVar.Expand("%TempFolder%\\lul\\4"), new_au_script, false);
@@ -5086,11 +5086,10 @@ function runPartitionTool()
 		-- Start showing status dlg
 	StatusDlg.Show(MB_ICONNONE, false);
 	StatusDlg.SetTitle("Partition Tool");
-	StatusDlg.SetMessage("Starting the Partitioning Tool");
+	StatusDlg.SetMessage("Running the Partitioning Tool");
 	StatusDlg.SetStatusText("It may take a while, wait patiently");
-	sevenZip(_TempLaunchFolder.."\\parttool", _TempLaunchFolder.."\\parttool_run", "", "", true);
-	Shell.Execute(_TempLaunchFolder.."\\parttool_run\\MiniTool Partition Wizard.exe", "open", "", "", SW_MAXIMIZE, true);
-	Application.Sleep(10000);
+	sevenZip(_TempLaunchFolder.."\\parttool.7z", _TempLaunchFolder.."\\parttool", "", "", true);
+	Shell.Execute(_TempLaunchFolder.."\\parttool\\partitionwizard.exe", "open", "", "", SW_MAXIMIZE, true);
 	StatusDlg.Hide();
 
 end
