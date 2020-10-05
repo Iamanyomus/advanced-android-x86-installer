@@ -531,9 +531,17 @@ if (e_MsgID == MSGID_CLICKED) then
 	elseif (e_CtrlID == CTRL_BUTTON_06) then
 
 		installGrub2Win();
-
+		
+	elseif (e_CtrlID == CTRL_BUTTON_07) then
+	
+		Dialog.Message("Notice", "This manual data.img creation will be implemented in the next update", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		
+	elseif (e_CtrlID == CTRL_BUTTON_08) then
+	
+		Dialog.Message("Notice", "This feature is to be implemented in the next update", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		
 	end
-
+	
 end
 </Script>
 <BookMarks count="0">
