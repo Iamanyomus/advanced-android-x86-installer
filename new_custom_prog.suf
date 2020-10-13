@@ -892,7 +892,7 @@ function updateConfig()
 			sevenZip(ISO_IMAGE[1], _TempLaunchFolder, "", "ramdisk.img", true);
 			if ( File.DoesExist(_TempLaunchFolder.."\\ramdisk.img") == false ) then always_make_data_image = true; else File.Delete(_TempLaunchFolder.."\\ramdisk.img", false, false, false, nil); end;
 		else
-			if ( File.DoesExist("%AppFolder%\\ramdisk.img") == false ) then always_make_data_image = true; end;
+			if ( File.DoesExist(_SourceFolder.."\\ramdisk.img") == false ) then always_make_data_image = true; end;
 		end
 	end
 	
@@ -4849,7 +4849,7 @@ if ( File.DoesExist(_TempLaunchFolder.."\\parttool.7z") == true ) then pirate = 
 ----Strings
 NAME = "Android-x86";
 VERSION = "ASG";
-END_CREDITS = "Did you know :?                                                                                                                  DarkMatter is the most popular and advanced custom version developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project"
+END_CREDITS = "Did you know :?                                                                                                                  DarkMatter is the most customizable and advanced version of android-x86 developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project"
 CONFIG_INI = _SourceFolder.."\\windows\\config.ini"
 
 
