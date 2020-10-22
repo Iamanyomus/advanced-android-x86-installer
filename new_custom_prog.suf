@@ -2659,10 +2659,10 @@ function verifyInstallSource(toCheck, basename)
 
 	 while ( File.DoesExist(toCheck) == false )
 	 do
-		if ( is_ntfs == true ) then
-			local err_msg = basename.." is missing, things can go wrong. Sometimes it is because your EXT type partition is not mounted as r/w, you should RESTART and try again but skip partitioning step."
+		if ( is_ntfs == false ) then
+			local err_msg = basename.." is missing or failed to copy. Sometimes it is because your EXT type partition is not mounted as r/w or in panic-mode, you should RESTART and try again but skip partitioning step."
 		else
-			local err_msg = basename.." is missing, things can go wrong ..."
+			local err_msg = basename.." is missing or failed to copy."
 		end
 		choice = Dialog.Message("Notice", err_msg, MB_ABORTRETRYIGNORE, MB_ICONINFORMATION, MB_DEFBUTTON1);
 		
@@ -2698,7 +2698,7 @@ function installFile(inputFile)
 			
 			-- A workaround to verify if the OS files we're acutally installed in AppFolder from ISO by only verifying system image. (Check existence and.or file size &lt; 100MB)
 			if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\")..inputFile) == false ) or ( File.GetSize(SessionVar.Expand("%AppFolder%\\")..inputFile) &lt; 104857600 ) then
-				Dialog.Message("Error", "Failed to properly install files from your ISO, the installation can not continue.\r\nPlease restart your PC and try again and make sure everything is fine.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+				Dialog.Message("Error", "Failed to properly install files from your ISO, the installation can not continue.\r\nMake sure the installation partition has enough space and is writable.\r\nSometimes RESTARTING also resolves some weird issues.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 				cleanTemp();
 				Application.Exit(1);
 			end
