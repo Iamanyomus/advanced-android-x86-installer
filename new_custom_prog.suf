@@ -2689,7 +2689,8 @@ function installFile(inputFile)
 		if ( inputFile == "system.img" ) or ( inputFile == "system.sfs" ) then
 		
 			sevenZip(ISO_IMAGE[1], SessionVar.Expand("%AppFolder%\\"), "", "system.*", true);
-
+			
+			-- State actual system image name after extraction
 			if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\system.img")) == true ) then
 				inputFile = "system.img"
 			else
@@ -2735,8 +2736,10 @@ function installFile(inputFile)
 		end
 		
 		if ( File.DoesExist(from) == true ) then
-			if ( File.Install(from, to, FILE_INSTALL_ALWAYS, false, false, nil, nil) == false ) then
-				Dialog.Message("Error", "Failed to copy "..inputFile..", the installation can not continue.\r\nPlease restart your PC and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			retcode = Shell.Execute("C:\\Windows\\System32\\xcopy.exe", "open", from.." "..SessionVar.Expand("%AppFolder%\\").." /Y /Q", "", SW_HIDE, true);
+			-- If an error occurred, display the error message.
+			if (retcode ~= 0) then
+				Dialog.Message("Error", "Failed to install "..inputFile..", the installation can not continue.\r\nMake sure the installation partition has enough space and is writable.\r\nSometimes RESTARTING also resolves some weird issues.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 				cleanTemp();
 				Application.Exit(1);	
 			end
@@ -4930,8 +4933,9 @@ end
 
 function sevenZip(inputArchive, outputLocation, archivePassword, specifiedFiles, waitForReturn)
 	
-	Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -p\""..archivePassword.."\" -bd -aoa -o\""..outputLocation.."\" \""..inputArchive.."\" "..specifiedFiles, "", SW_HIDE, waitForReturn);
-
+	sevenRetCode = Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -p\""..archivePassword.."\" -bd -aoa -o\""..outputLocation.."\" \""..inputArchive.."\" "..specifiedFiles, "", SW_HIDE, waitForReturn);
+	return sevenRetCode;
+	
 end
 
 
@@ -5099,7 +5103,8 @@ function runPartitionTool()
 	StatusDlg.SetStatusText("It may take a while, wait patiently");
 	ext_is_mounted = true; umountExt(); ext_is_mounted = false; -- Make sure to force unMount
 	sevenZip(_TempLaunchFolder.."\\parttool.7z", _TempLaunchFolder.."\\parttool", "", "", true);
-	Shell.Execute(_TempLaunchFolder.."\\parttool\\start.bat", "open", "", _TempLaunchFolder.."\\parttool", SW_HIDE, true);
+	--Shell.Execute(_TempLaunchFolder.."\\parttool\\start.bat", "open", "", _TempLaunchFolder.."\\parttool", SW_HIDE, true);
+	Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C ".._TempLaunchFolder.."\\parttool\\DiskGenius.exe", "", SW_HIDE, true);
 	StatusDlg.Hide();
 
 end
@@ -5117,7 +5122,7 @@ function mountExt()
 		
 		-- Kill if running
 		StatusDlg.SetStatusText("Current Status: Killing GUI ExtFS handler");
-		killProcess("paragon extfs for windows.exe"); Application.Sleep(1000);
+		killProcess("ExtFS By SupremeGamers.exe"); Application.Sleep(1000);
 		
 		-- Force unMount to cleanly reMount
 		StatusDlg.SetStatusText("Current Status: Force unMounting if is already mounted");
