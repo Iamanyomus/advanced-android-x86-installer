@@ -5359,7 +5359,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>1.3</Value>
+<Value>1.5</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5402,7 +5402,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_v1.4_Full.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_v1.5_Full.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5428,8 +5428,8 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.4</ResourceFileVersion>
-<ResourceProductVersion>1.4</ResourceProductVersion>
+<ResourceFileVersion>1.5</ResourceFileVersion>
+<ResourceProductVersion>1.5</ResourceProductVersion>
 <ResourceCompanyName>SupremeGamers</ResourceCompanyName>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
@@ -5451,7 +5451,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_v1.4_Lite.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_v1.5_Lite.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5477,8 +5477,8 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.4</ResourceFileVersion>
-<ResourceProductVersion>1.4</ResourceProductVersion>
+<ResourceFileVersion>1.5</ResourceFileVersion>
+<ResourceProductVersion>1.5</ResourceProductVersion>
 <ResourceCompanyName>SupremeGamers</ResourceCompanyName>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
