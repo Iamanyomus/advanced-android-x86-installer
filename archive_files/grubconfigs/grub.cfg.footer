@@ -5,8 +5,6 @@
 #  Sub Menu Entry       Android-x86-ASG
 #
 submenu   'Android-x86-ASG'  --class submenu --class icon-asg {
-     set gfxpayload=screenResolution
-     export gfxpayload
      #
      source $prefix/windata/customconfigs/Android-x86-ASG.cfg
      #

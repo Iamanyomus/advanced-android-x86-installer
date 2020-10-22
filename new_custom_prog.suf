@@ -2659,8 +2659,12 @@ function verifyInstallSource(toCheck, basename)
 
 	 while ( File.DoesExist(toCheck) == false )
 	 do
-	
-		choice = Dialog.Message("Notice", basename.." is missing, things can go wrong ...", MB_ABORTRETRYIGNORE, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		if ( is_ntfs == true ) then
+			local err_msg = basename.." is missing, things can go wrong. Sometimes it is because your EXT type partition is not mounted as r/w, you should RESTART and try again but skip partitioning step."
+		else
+			local err_msg = basename.." is missing, things can go wrong ..."
+		end
+		choice = Dialog.Message("Notice", err_msg, MB_ABORTRETRYIGNORE, MB_ICONINFORMATION, MB_DEFBUTTON1);
 		
 		if ( choice == IDABORT ) then
 			cleanTemp();
@@ -4932,14 +4936,6 @@ end
 
 
 function installGrub2Win()
-
-	-- Get assets path
-	if ( File.DoesExist(_SourceFolder.."\\grub2win_assets.zip") == true ) then
-		grub2win_assets_file = _SourceFolder.."\\windows\\grub2win_assets.zip";
-	else 
-		grub2win_assets_file = _TempLaunchFolder.."\\grub2win_assets.zip";
-	end
-	
 	
 	if ( download_latest_grub2win == true ) then
 		-- Get grub2win package
@@ -4963,45 +4959,58 @@ function installGrub2Win()
 --	if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
 --	Folder.DeleteTree(_TempFolder.."\\grub2win", nil);
 --	Application.Sleep(3000);
+
+	---- Install grub2win
 	Shell.Execute(_TempLaunchFolder.."\\grub2win\\install\\winsource\\grub2win.exe", "open", "AutoInstall", "", SW_SHOWNORMAL, true);
 	
-	-- Merge assets
+	
+	
+	---- Merge assets
+	-- Get assets path
+	if ( File.DoesExist(_SourceFolder.."\\grub2win_assets.zip") == true ) then
+		grub2win_assets_file = _SourceFolder.."\\windows\\grub2win_assets.zip";
+	else 
+		grub2win_assets_file = _TempLaunchFolder.."\\grub2win_assets.zip";
+	end
 	sevenZip(grub2win_assets_file, "C:\\grub2", "", "", true);
 	
-	-- Install grub entry
+	
+	
+	---- Install grub.cfg entry
 	GRUB_CFG = "C:\\grub2\\grub.cfg"
 	grubcfg_orig_contents = TextFile.ReadToString(GRUB_CFG);
 	
-	-- Update grub.cfg.footer OS names
-	if ( File.DoesExist(_SourceFolder.."\\windows\\grub.cfg.footer") == true ) then
-		grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_SourceFolder.."\\windows\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
-	else
-		grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_TempLaunchFolder.."\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
-	end
-	
-	-- Update gfx payload value
-	grubcfg_new_footer_contents = String.Replace(grubcfg_new_footer_contents, "screenResolution", display.Width.."x"..display.Height, true);
-	
-	-- Check if entry already exists and append entry as required
+	-- Check if entry already exists in C:\grub2\grub.cfg and append entry as required
 	check_entry_existence = String.Find(grubcfg_orig_contents, NAME.."-"..VERSION, 1, true);
 
 	if ( check_entry_existence == -1 ) then
 	
-		TextFile.WriteFromString(GRUB_CFG, grubcfg_new_footer_contents, true);
-		
-		if ( File.DoesExist(_SourceFolder.."\\windows\\Android-x86-ASG.cfg") == true ) then
-			GRUB_CFG_CUSTOM = _SourceFolder.."\\windows\\Android-x86-ASG.cfg"
+		-- Update grub.cfg.footer OS names
+		if ( File.DoesExist(_SourceFolder.."\\windows\\grub.cfg.footer") == true ) then
+			grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_SourceFolder.."\\windows\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
 		else
-			GRUB_CFG_CUSTOM = SessionVar.Expand("%TempLaunchFolder%\\Android-x86-ASG.cfg")
+			grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_TempLaunchFolder.."\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
 		end
 		
-		-- Replace default NAME with new ones
-		GRUB_CFG_CUSTOM_CONTENTS = String.Replace(TextFile.ReadToString(GRUB_CFG_CUSTOM), "Android-x86-ASG", NAME.."-"..VERSION, true);
-		
-		TextFile.WriteFromString("C:\\grub2\\windata\\customconfigs\\"..NAME.."-"..VERSION..".cfg", GRUB_CFG_CUSTOM_CONTENTS, false);
-		TextFile.WriteFromString("C:\\grub2\\winsource\\sample.submenu.txt", GRUB_CFG_CUSTOM_CONTENTS, false);
+		TextFile.WriteFromString(GRUB_CFG, grubcfg_new_footer_contents, true);
 		
 	end
+	
+	
+	
+	---- Merge custom configs
+	if ( File.DoesExist(_SourceFolder.."\\windows\\Android-x86-ASG.cfg") == true ) then
+		GRUB_CFG_CUSTOM = _SourceFolder.."\\windows\\Android-x86-ASG.cfg";
+	else
+		GRUB_CFG_CUSTOM = SessionVar.Expand("%TempLaunchFolder%\\Android-x86-ASG.cfg");
+	end
+	-- Replace default NAME with new ones
+	GRUB_CFG_CUSTOM_CONTENTS = String.Replace(TextFile.ReadToString(GRUB_CFG_CUSTOM), "Android-x86-ASG", NAME.."-"..VERSION, true);
+	-- Update gfx payload value
+	GRUB_CFG_CUSTOM_CONTENTS = String.Replace(GRUB_CFG_CUSTOM_CONTENTS, "SCREENxRESOLUTION", display.Width.."x"..display.Height, true);
+	
+	TextFile.WriteFromString("C:\\grub2\\windata\\customconfigs\\"..NAME.."-"..VERSION..".cfg", GRUB_CFG_CUSTOM_CONTENTS, false);
+	TextFile.WriteFromString("C:\\grub2\\winsource\\sample.submenu.txt", GRUB_CFG_CUSTOM_CONTENTS, false);
 
 end
 
@@ -5088,7 +5097,7 @@ function runPartitionTool()
 	StatusDlg.SetTitle("Partition Tool");
 	StatusDlg.SetMessage("Running the Partitioning Tool");
 	StatusDlg.SetStatusText("It may take a while, wait patiently");
-	umountExt(); -- Make sure to force unMount
+	ext_is_mounted = true; umountExt(); ext_is_mounted = false; -- Make sure to force unMount
 	sevenZip(_TempLaunchFolder.."\\parttool.7z", _TempLaunchFolder.."\\parttool", "", "", true);
 	Shell.Execute(_TempLaunchFolder.."\\parttool\\start.bat", "open", "", _TempLaunchFolder.."\\parttool", SW_HIDE, true);
 	StatusDlg.Hide();
@@ -5123,7 +5132,7 @@ function mountExt()
 		
 		-- Finally hide statusDlg
 		StatusDlg.Hide();
-		Dialog.Message("Notice", "If you can\'t find your EXT4 partitions then you must RESTART and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		Dialog.Message("Information", "If you can\'t find your EXT4 partitions then you must RESTART and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 		
 	end
 	
