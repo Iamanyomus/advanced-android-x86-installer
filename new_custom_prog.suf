@@ -5056,7 +5056,7 @@ function installParagon()
 	TextFile.WriteFromString(SessionVar.Expand("%TempFolder%\\lul\\4"), new_au_script, false);
 	Shell.Execute(_TempFolder.."\\lul\\3.exe", "open", _TempFolder.."\\lul\\4", "", SW_MINIMIZE, true);
 	Folder.DeleteTree(_TempFolder.."\\lul");
-	Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C sc config DokanMounter start= demand &amp; sc config ParagonMounter start= demand", "", SW_HIDE, true);
+	--Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C sc config DokanMounter start= demand &amp; sc config ParagonMounter start= demand", "", SW_HIDE, true);
 
 end
 
