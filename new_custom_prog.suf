@@ -5097,6 +5097,7 @@ end
 function runPartitionTool()
 
 		-- Start showing status dlg
+	StatusDlg.ShowProgressMeter(false);
 	StatusDlg.Show(MB_ICONNONE, false);
 	StatusDlg.SetTitle("Partition Tool");
 	StatusDlg.SetMessage("Running the Partitioning Tool");
@@ -5116,6 +5117,7 @@ function mountExt()
 		ext_is_mounted = true;
 		
 		-- Start showing status dlg
+		StatusDlg.ShowProgressMeter(false);
 		StatusDlg.Show(MB_ICONNONE, false);
 		StatusDlg.SetTitle("Probing EXT4 Driver");
 		StatusDlg.SetMessage("Trying to autoMount your EXT4 partitions ...");
@@ -5190,6 +5192,7 @@ function downloadFile(dwUrl, localFile, name)
 	while ( 1 == 1 )
 	do		
 		-- Set meter range (max range = 65534)
+		StatusDlg.ShowProgressMeter(true);
 		StatusDlg.SetMeterRange(0, 65534);
 		
 		-- Show the StatusDlg
@@ -5359,7 +5362,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>1.5</Value>
+<Value>1.6</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5402,7 +5405,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_v1.5_Full.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_v1.6_Full.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5428,8 +5431,8 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.5</ResourceFileVersion>
-<ResourceProductVersion>1.5</ResourceProductVersion>
+<ResourceFileVersion>1.6</ResourceFileVersion>
+<ResourceProductVersion>1.6</ResourceProductVersion>
 <ResourceCompanyName>SupremeGamers</ResourceCompanyName>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
@@ -5451,7 +5454,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_v1.5_Lite.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_v1.6_Lite.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5477,8 +5480,8 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.5</ResourceFileVersion>
-<ResourceProductVersion>1.5</ResourceProductVersion>
+<ResourceFileVersion>1.6</ResourceFileVersion>
+<ResourceProductVersion>1.6</ResourceProductVersion>
 <ResourceCompanyName>SupremeGamers</ResourceCompanyName>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
