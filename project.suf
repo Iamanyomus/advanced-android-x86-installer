@@ -3,748 +3,8 @@
 <ProductID>{AFB904C4-C255-4540-B97E-A75A34F1FFB0}</ProductID>
 <ProductVersion>9.5.3.0</ProductVersion>
 <ProductType/>
-<ArchiveFiles>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\os_system_files\initrd.img</FullName>
-<FileName>initrd.img</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild\os_system_files</Source>
-<Ext>img</Ext>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>%AppFolder%</Dest>
-<Overwrite>2</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>initrd-stock</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages>
-<Pack>initrd</Pack>
-</Packages>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\os_system_files\kernel</FullName>
-<FileName>kernel</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild\os_system_files</Source>
-<Ext/>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>%AppFolder%</Dest>
-<Overwrite>2</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>kernel41415</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages>
-<Pack>kernel</Pack>
-</Packages>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\os_system_files\ramdisk.img</FullName>
-<FileName>ramdisk.img</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild\os_system_files</Source>
-<Ext>img</Ext>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>%AppFolder%</Dest>
-<Overwrite>2</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>ramdisk</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages>
-<Pack>ramdisk</Pack>
-</Packages>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\dark.matter</FullName>
-<FileName>dark.matter</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild</Source>
-<Ext>matter</Ext>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>%AppFolder%</Dest>
-<Overwrite>2</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>dark</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\os_system_files\kernel41992</FullName>
-<FileName>kernel41992</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild\os_system_files</Source>
-<Ext/>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>%AppFolder%</Dest>
-<Overwrite>1</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>kernel41992</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages>
-<Pack>kernel41992</Pack>
-</Packages>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grubconfigs\PhoenixOSDarkMatter.cfg</FullName>
-<FileName>PhoenixOSDarkMatter.cfg</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grubconfigs</Source>
-<Ext>cfg</Ext>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>C:\grub2\windata\customconfigs</Dest>
-<Overwrite>2</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>PhoenixOSDarkMatter-PrimaryInitrd</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\Boot.bat</FullName>
-<FileName>Boot.bat</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild</Source>
-<Ext>bat</Ext>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>C:\Program Files\DarkMatter</Dest>
-<Overwrite>1</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>1</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>Boot</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\src</FullName>
-<FileName>src</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild</Source>
-<Ext/>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>C:\Program Files\DarkMatter</Dest>
-<Overwrite>1</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc/>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>D:\ProjectBase\DarkMatter\WinInstallerBuild\Run.bat</FullName>
-<FileName>Run.bat</FileName>
-<Source>D:\ProjectBase\DarkMatter\WinInstallerBuild</Source>
-<Ext>bat</Ext>
-<RTSource>Archive</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>C:\Program Files\DarkMatter</Dest>
-<Overwrite>1</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>1</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>Run</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>1</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>0</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-</ArchiveFiles>
-<ExternalFiles>
-<FileData>
-<FldRef>0</FldRef>
-<FullName>C:\gen_data\data.img</FullName>
-<FileName>data.img</FileName>
-<Source>C:\gen_data</Source>
-<Ext>img</Ext>
-<RTSource>%SourceDrive%\gen_data</RTSource>
-<Desc/>
-<Recurse>1</Recurse>
-<MatchMode>0</MatchMode>
-<Dest>%AppFolder%</Dest>
-<Overwrite>4</Overwrite>
-<Backup>0</Backup>
-<Protect>0</Protect>
-<InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
-<SCAppFld>0</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
-<SCStartPinOption>0</SCStartPinOption>
-<SCCust>0</SCCust>
-<CustSCPath/>
-<SCDesc>data</SCDesc>
-<SCComment/>
-<SCArgs/>
-<SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
-<IcoIdx>0</IcoIdx>
-<IcoShowMd>0</IcoShowMd>
-<IcoHK>0</IcoHK>
-<RegTTF>0</RegTTF>
-<TTFName/>
-<RegOCX>0</RegOCX>
-<RegTLB>0</RegTLB>
-<SupInUse>0</SupInUse>
-<Compress>0</Compress>
-<UseOrigAttr>1</UseOrigAttr>
-<Attr>0</Attr>
-<NoCRC>1</NoCRC>
-<NoRemove>0</NoRemove>
-<Shared>0</Shared>
-<OSCond>
-<OS>32768</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-<OS>65535</OS>
-</OSCond>
-<RTCond/>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-<Package>None</Package>
-<Packages/>
-<Notes/>
-<CompSize>0</CompSize>
-<CRC>0</CRC>
-<StoreOnly>0</StoreOnly>
-</FileData>
-</ExternalFiles>
+<ArchiveFiles/>
+<ExternalFiles/>
 <BeforeInstallingScreens>
 <Screen>
 <Type>100</Type>
@@ -757,40 +17,50 @@
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -798,17 +68,7 @@
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -818,7 +78,7 @@
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -858,58 +118,7 @@
 <Event>
 <Name>On Preload</Name>
 <Args/>
-<Script>-- These actions are performed before the screen is shown.
---Programe temp dir already exists
-extempexist = Folder.DoesExist("%TempFolder%\\_ir_sf_temp_1\\");
-if( extempexist == true ) then
-Folder.DeleteTree("%TempFolder%\\_ir_sf_temp_0\\", nil);
-Folder.DeleteTree("%TempFolder%\\_ir_sf_temp_1\\", nil);
-Folder.DeleteTree("%TempFolder%\\_ir_sf_temp_2\\", nil);
-result = Dialog.Message("Notice", "Your %temp% folder seems to be broken. Please open the installer again to fix this.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
-Application.Exit(0);
-end
---External software already early exists
-external_software1_exist = Folder.DoesExist("%TempFolder%\\grub2win\\");
-if( external_software1_exist == true ) then
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\pre_cleanup.bat"), "", "", SW_MINIMIZE, true);
-end
-external_software2_exist = Folder.DoesExist("%TempFolder%\\mtpw\\");
-if( external_software2_exist == true ) then
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\pre_cleanup.bat"), "", "", SW_MINIMIZE, false);
-end
-
---Conflicting programes warning
----Ext2Fsd
-ext2fsd_ex = File.DoesExist("C:\\Program Files\\Ext2Fsd\\Ext2Mgr.exe");
-if( ext2fsd_ex == true ) then
-result = Dialog.Message("Error", "Seems like you have *Ext2Fsd installed on your system. Please *unins\'tall it and reboot before proceeding as it can conflict with the installation process!", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
-File.ExploreFolder("C:\\Program Files\\Ext2Fsd", SW_SHOWNORMAL);
---Application.Exit(0);
-end
----ParagonLinuxFS
-x64found = System.Is64BitOS();
-if( x64found == true ) then
-paragon_linuxfs_ex = File.DoesExist("C:\\Program Files (x86)\\Paragon Software\\LinuxFS for Windows\\extmounter.exe");
-if( paragon_linuxfs_ex == true ) then
-result = Dialog.Message("Error", "Seems like you have *ParagonLinuxFS installed on your system. Please *unins\'tall it and reboot before proceeding as it can conflict with the installation process!", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
---Application.Exit(0);
-end
-end
-if( x64found == false ) then
-paragon_linuxfs_ex32 = File.DoesExist("C:\\Program Files\\Paragon Software\\LinuxFS for Windows\\extmounter.exe");
-if( paragon_linuxfs_ex32 == true ) then
-result = Dialog.Message("Error", "Seems like you have *ParagonLinuxFS installed on your system. Please *unins\'tall it and reboot before proceeding as it can conflict with the installation process!", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
---Application.Exit(0);
-end
-end
-grub_disable_ex = File.DoesExist("%TempFolder%\\grub.disable");
-if( grub_disable_ex == true ) then
-File.Delete("%TempFolder%\\grub.disable", false, false, false, nil);
-end
-is_ntfs = File.DoesExist("%TempFolder%\\is.ntfs");
-if( is_ntfs == true ) then
-File.Delete("%TempFolder%\\is.ntfs", false, false, false, nil);
-end
+<Script>
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -930,7 +139,33 @@ Screen.Back();
 <Args/>
 <Script>-- These actions are performed when the Next button is clicked.
 -- advance to the next screen
-Screen.Next();
+
+--Check for system files in SourceFolder
+if ( File.DoesExist(_SourceFolder.."\\initrd.img") == false ) then
+	answer = Dialog.Message("Attention", "No Android-x86 OS files were found in this folder.\r\nDo you want to select an OS-PACKAGE to load from it ?", MB_YESNO, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	if ( answer == IDYES ) then
+		ISO_IMAGE = Dialog.FileBrowse(true, "Select Operating System Image / Archive", _SourceFolder, "ISO &amp; Archives (.iso, .zip, .7z, .rar)|*.iso;*.zip;*.7z;*.rar", "", "", false, true);
+		
+		if (ISO_IMAGE[1] ~= "CANCEL") and (ISO_IMAGE ~= nil) then
+			loadFromISO = true;
+			---- Try to load windows config even from ISO
+			if (File.DoesExist(_SourceFolder.."\\windows\\config.ini")) then Folder.DeleteTree(_SourceFolder.."\\windows", nil); end;
+			sevenZip(ISO_IMAGE[1], _SourceFolder, "", "windows", true);
+			initWindowsConfig(); -- Re-initialize windows config
+			initSessionVars(); -- Re-initialize session vars
+		else
+			Dialog.Message("Notice", "No valid input was provided, the installer will exit", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			Application.Exit(1);
+		end
+		
+	else
+		Dialog.TimedMessage("Notice", "Okay, then the installer has nothing to work with, thus it will exit", 2000, MB_ICONEXCLAMATION);
+		Application.Exit(1);
+	end
+end
+
+
+Screen.Jump("InstallationConfig");
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -943,6 +178,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -953,7 +189,7 @@ end
 <Name>On Help</Name>
 <Args/>
 <Script>-- These actions are performed when the Help button is clicked.
-</Script>
+Screen.Jump("HelpPage");</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -970,15 +206,15 @@ end
 <Control>
 <Type>1</Type>
 <ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>75</TabOrder>
 <FTButton>1</FTButton>
 </Control>
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>1</Visible>
+<Visible>0</Visible>
 <Enabled>0</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
@@ -1039,18 +275,18 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>%ProductName%</IDS_WINDOW_TITLE>
+<IDS_WINDOW_TITLE>%ProductName% %ProductVer%</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Welcome</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>Welcome to the installer for %ProductName% %ProductVer%</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_BODY>You are about to install %ProductName% %ProductVer%
+<IDS_CTRL_BUTTON_CANCEL>&amp;Exit</IDS_CTRL_BUTTON_CANCEL>
+<IDS_CTRL_BUTTON_HELP>&amp;Utils</IDS_CTRL_BUTTON_HELP>
+<IDS_CTRL_STATICTEXT_BODY>You are using %ProductName%.
 
 It is strongly recommended that you exit all Windows programs before continuing with this installation.
 
-Make sure that you run this installer from the C: drive.
+It is advised that you don't run this installer in the same partition where you will be installing it.
 </IDS_CTRL_STATICTEXT_BODY>
 <IDS_CTRL_HEADINGTEXT_BODY>Welcome</IDS_CTRL_HEADINGTEXT_BODY>
 </Messages>
@@ -1059,287 +295,7 @@ Make sure that you run this installer from the C: drive.
 </Screen>
 <Screen>
 <Type>170</Type>
-<Name>InstallationType</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>Custom</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
-<StyleData>
-<CstClrs>1</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
-<CPRGRS format="hex">66728f</CPRGRS>
-<C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-19</Height>
-<Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>21</L>
-<T>35</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>1</L>
-<T>95</T>
-<R>15</R>
-<B>-1</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>21</L>
-<T>92</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<TBTXTX>10</TBTXTX>
-<TBTXTY>10</TBTXTY>
-<ScreenW>497</ScreenW>
-<ScreenH>362</ScreenH>
-</StyleData>
-<CustomCtrlList>
-<CustomCtrlInfo Left="114" Top="155" Width="111" Height="67" ID="121"/>
-<CustomCtrlInfo Left="264" Top="155" Width="107" Height="68" ID="122"/>
-</CustomCtrlList>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
-Zip.Extract(SessionVar.Expand("%TempLaunchFolder%\\grub2win.zip"), {"*.*"}, "%TempFolder%", true, true, "01727717723xasif", ZIP_OVERWRITE_ALWAYS, nil);
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
-
--- advance to the next screen
-Screen.Next();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-if (e_MsgID == MSGID_CLICKED) then
-	-- a control was clicked...
-
-	if (e_CtrlID == CTRL_BUTTON_01) then
-
-		-- Insert your button handling code here		
-		
-		Screen.Jump("InstallationMode");
-	end
-	
-	if (e_CtrlID == CTRL_BUTTON_02) then
-		result = File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%TempLaunchFolder%\\is.ntfs", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);		
-		Screen.Jump("License Agreement");
-	end
-
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>121</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>122</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>Installation Type</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Select your installation type</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>It is recommended that you use the *Ext4 option for maximum performance and compatibility.</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_BUTTON_01>Ext4</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_BUTTON_02>Ntfs</IDS_CTRL_BUTTON_02>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
-<Type>170</Type>
-<Name>InstallationMode</Name>
+<Name>HelpPage</Name>
 <BannerStyle>1</BannerStyle>
 <TemplateName>Custom</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
@@ -1348,40 +304,50 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -1389,17 +355,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1409,7 +365,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -1446,9 +402,15 @@ end
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="53" Top="102" Width="386" Height="31" ID="211"/>
-<CustomCtrlInfo Left="114" Top="154" Width="111" Height="67" ID="121"/>
-<CustomCtrlInfo Left="264" Top="155" Width="107" Height="68" ID="122"/>
+<CustomCtrlInfo Left="20" Top="78" Width="210" Height="39" ID="121"/>
+<CustomCtrlInfo Left="260" Top="78" Width="210" Height="39" ID="122"/>
+<CustomCtrlInfo Left="51" Top="20" Width="390" Height="41" ID="211"/>
+<CustomCtrlInfo Left="20" Top="141" Width="210" Height="39" ID="123"/>
+<CustomCtrlInfo Left="260" Top="141" Width="210" Height="39" ID="124"/>
+<CustomCtrlInfo Left="20" Top="202" Width="210" Height="39" ID="125"/>
+<CustomCtrlInfo Left="260" Top="202" Width="210" Height="39" ID="126"/>
+<CustomCtrlInfo Left="20" Top="263" Width="210" Height="39" ID="127"/>
+<CustomCtrlInfo Left="260" Top="263" Width="210" Height="39" ID="128"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -1462,21 +424,17 @@ end
 <Event>
 <Name>On Back</Name>
 <Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
+<Script/>
 <BookMarks count="0">
 </BookMarks>
 </Event>
 <Event>
 <Name>On Next</Name>
 <Args/>
-<Script>-- These actions are performed when the Next button is clicked.
+<Script>-- These actions are performed when the Back button is clicked.
 
--- advance to the next screen
-Screen.Next();
+-- go back to the previous screen
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -1489,6 +447,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -1509,23 +468,80 @@ end
 <Script>-- These actions are triggered by the controls on the screen.
 
 if (e_MsgID == MSGID_CLICKED) then
-	-- a control was clicked...
 
 	if (e_CtrlID == CTRL_BUTTON_01) then
+	
+		Dialog.Message("Information", "If you can\'t find the boot entry for Android-x86 then follow these steps &gt;&gt;\r\n\r\n1..] Open \"Grub2Win\" from desktop\r\n\r\n2..] Click on \"Manage Boot Entries\" in the bottom\r\n\r\n3..] Click on \"Add A New Entry\" on the top\r\n\r\n4..] Click on \"Type\" menu and select \"submenu\"\r\n\r\n5..] Then click on \"Load Sample Code\"\r\n\r\n6..] Finally click on \"Ok &gt; Apply &gt; Ok\"\r\n\r\n\r\nAnd just like that your problem should be hopefully fixed :)\r\n", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	
+	elseif (e_CtrlID == CTRL_BUTTON_02) then
+	
+		Dialog.Message("Warning", "Manually installing GearLock from here is not recommended.\r\n\r\nIt will fail if your some of your OS files reside in the EFI partition.\r\n\r\nProceed at your own risk.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
 
-		-- Insert your button handling code here
+		while ( 1 == 1 )
+		do
+			selOSdir = Dialog.FolderBrowse("Select your OS folder for manual GearLock installation", _DesktopFolder);
+			if ( selOSdir ~= "CANCEL") then
+				if ( File.DoesExist(selOSdir.."\\initrd.img") == true ) then
+					if ( File.DoesExist(selOSdir.."\\gearlock") == true ) or ( File.DoesExist(selOSdir.."\\bootinstall-gearlock") == true ) then
+						Dialog.Message("Hey there", "Seems like GearLock is already installed, if you want to update it then use the build-in updater instead", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+					else
+						install_gearlock(selOSdir, "yes");
+					end
+					break
+				else
+					Dialog.Message("Hey there", "Seems like the folder you selected doesn\'t contain any operating system files, please select again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+				end
+			else
+				break
+			end
+		end
+
+	elseif (e_CtrlID == CTRL_BUTTON_03) then
+	
+		if ( pirate == true ) then
+			if ( paragon_installed == false ) then
+				installParagon();
+			end
+			
+			mountExt();
+		else
+			Dialog.Message("Info", "Not available for non-proprietary version of this installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		end
+	
+	elseif (e_CtrlID == CTRL_BUTTON_04) then
+	
+		if ( pirate == true ) then
+			runPartitionTool();
+		else
+			Dialog.Message("Info", "Not available for non-proprietary version of this installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		end	
 		
-		Screen.Jump("License Agreement");
+	elseif (e_CtrlID == CTRL_BUTTON_05) then
+		
+		if ( pirate == true ) then
+			if ( paragon_installed == true ) then
+				Dialog.Message("Notice", "EXT4 drivers are already installed", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			else
+				installParagon();
+			end
+		else
+			Dialog.Message("Info", "Not available for non-proprietary version of this installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		end
+		
+	elseif (e_CtrlID == CTRL_BUTTON_06) then
+
+		installGrub2Win();
+		
+	elseif (e_CtrlID == CTRL_BUTTON_07) then
+	
+		Dialog.Message("Notice", "This manual data.img creation will be implemented in the next update", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		
+	elseif (e_CtrlID == CTRL_BUTTON_08) then
+	
+		Dialog.Message("Notice", "This feature is to be implemented in the next update", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		
 	end
 	
-	if (e_CtrlID == CTRL_BUTTON_02) then
-
-		-- Insert your button handling code here
-		
-		Dialog.TimedMessage("Warning...!", "This is not for ultra noobs! Step back if you are one!", 5000, MB_ICONINFORMATION);
-		Screen.Jump("MAN_License Agreement");
-	end
-
 end
 </Script>
 <BookMarks count="0">
@@ -1536,8 +552,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>100</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>-10</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -1550,19 +566,11 @@ end
 <FTButton>1</FTButton>
 </Control>
 <Control>
-<Type>2</Type>
-<ID>211</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<IsHeading>1</IsHeading>
-</Control>
-<Control>
 <Type>1</Type>
 <ID>121</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
+<TabOrder>1</TabOrder>
 <FTButton>0</FTButton>
 </Control>
 <Control>
@@ -1570,7 +578,63 @@ end
 <ID>122</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
+<TabOrder>2</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>211</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
+<IsHeading>1</IsHeading>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>123</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>4</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>124</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>5</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>125</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>6</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>126</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>7</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>127</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>8</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>128</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>9</TabOrder>
 <FTButton>0</FTButton>
 </Control>
 <Control>
@@ -1584,8 +648,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -1613,333 +677,31 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>Installation Mode</IDS_WINDOW_TITLE>
+<IDS_WINDOW_TITLE>Advanced Android-x86 Utilities</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Heading text</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>Subheading text</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_NEXT>&lt; &amp;Back</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
+<IDS_CTRL_BUTTON_CANCEL>&amp;Exit</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_LABEL_01>Select your installation mode</IDS_CTRL_STATICTEXT_LABEL_01>
-<IDS_CTRL_BUTTON_01>Auto</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_BUTTON_02>Manual</IDS_CTRL_BUTTON_02>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
-<Type>125</Type>
-<Name>MAN_License Agreement</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>License Agreement</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
-<StyleData>
-<CstClrs>1</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
-<CPRGRS format="hex">66728f</CPRGRS>
-<C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-19</Height>
-<Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>21</L>
-<T>35</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>1</L>
-<T>95</T>
-<R>15</R>
-<B>-1</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>21</L>
-<T>92</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<TBTXTX>10</TBTXTX>
-<TBTXTY>10</TBTXTY>
-<ScreenW>497</ScreenW>
-<ScreenH>362</ScreenH>
-</StyleData>
-<Checked>1</Checked>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
--- from _SUF70_Global_Functions.lua:
--- disable the Next button unless 'I agree' is selected
-g_LicenseAgreementScreen_UpdateNextButton();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
--- Tip: this is where you could add actions to validate the
---      user's input before proceeding
-
--- advance to the next screen
-
---DiskGenius Install
-dg_ex = File.DoesExist("C:\\Program Files\\DiskGenius\\DiskGenius.exe");
-if( dg_ex == false ) then
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\dg_ins.bat"), "", "", SW_SHOWNORMAL, true);
-end
-Screen.Next();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-if (e_CtrlID == CTRL_RADIOBTN_AGREE or e_CtrlID == CTRL_RADIOBTN_DISAGREE) then
-	-- the control message is from one of the radio buttons
-	-- if it's a click message, update the Next button
-	if (e_MsgID == MSGID_CLICKED) then
-		-- from _SUF70_Global_Functions.lua:
-		-- disable the Next button unless 'I agree' is selected
-		g_LicenseAgreementScreen_UpdateNextButton();
-	end
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>3</Type>
-<ID>400</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>0</TabOrder>
-<IsHTML>0</IsHTML>
-<TextAlign>0</TextAlign>
-<VertScroll>1</VertScroll>
-<HorizScroll>0</HorizScroll>
-<RTLReadingOrder>0</RTLReadingOrder>
-<Style>1</Style>
-<ReadOnly>1</ReadOnly>
-<SpecifyType>0</SpecifyType>
-<Variable/>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>602</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>35</TabOrder>
-<Group>1</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>603</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>40</TabOrder>
-<Group>0</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>License Agreement</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>License Agreement</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>Please read the following license agreement carefully.</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_SCROLLTEXT_BODY>POS DarkMatter is just a modified version of the Official PhoenixOS. So, all the credits goes to the android_x86roject and Chaozhuo  devs. No such changes were made which would potentially harm the original devs in any means.
-
-
-Lastly, I want to request you guys that please share this project as that would encourage me more over the development. So that others could also be benefited by it.
-There are some rats active over stealing our work and sharing with their own names.
-Some additional system components such as *GearLock are copyrighted by us and you're not permitted to redistrubute them since these are not opensource yet, but will be soon.
-
-Currently active thieves are : Woltrex, TipsLab etc.
-Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly over his new ROC versions 2019-2020</IDS_CTRL_SCROLLTEXT_BODY>
-<IDS_CTRL_RADIOBTN_AGREE>Okay</IDS_CTRL_RADIOBTN_AGREE>
-<IDS_CTRL_RADIOBTN_DISAGREE>Nope</IDS_CTRL_RADIOBTN_DISAGREE>
-<IDS_CTRL_SCROLLTEXT_FILE>D:\ProjectBase\DarkMatter\WinInstallerBuild\licence.txt</IDS_CTRL_SCROLLTEXT_FILE>
+<IDS_CTRL_BUTTON_01>Fix Missing Boot Entry</IDS_CTRL_BUTTON_01>
+<IDS_CTRL_BUTTON_02>GearLock Boot Installer</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_STATICTEXT_LABEL_01>Troubleshooting Errors and Utils</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_BUTTON_03>Mount EXT4 Partitions</IDS_CTRL_BUTTON_03>
+<IDS_CTRL_BUTTON_04>Open Partition Tool</IDS_CTRL_BUTTON_04>
+<IDS_CTRL_BUTTON_05>Install EXT4 Drivers</IDS_CTRL_BUTTON_05>
+<IDS_CTRL_BUTTON_06>Install Grub2Win Bootloader</IDS_CTRL_BUTTON_06>
+<IDS_CTRL_BUTTON_07>Create data image</IDS_CTRL_BUTTON_07>
+<IDS_CTRL_BUTTON_08>Flash ISO in USB</IDS_CTRL_BUTTON_08>
 </Messages>
 </SUF70Messages>
 </Languages>
 </Screen>
 <Screen>
 <Type>170</Type>
-<Name>MAN_Grub2Win</Name>
+<Name>InstallationConfig</Name>
 <BannerStyle>2</BannerStyle>
 <TemplateName>Custom</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
@@ -1948,40 +710,50 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -1989,17 +761,7 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -2009,7 +771,7 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -2046,37 +808,40 @@ Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly 
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="164" Top="168" Width="148" Height="57" ID="121"/>
-<CustomCtrlInfo Left="32" Top="100" Width="442" Height="41" ID="212"/>
+<CustomCtrlInfo Left="79" Top="110" Width="150" Height="68" ID="121"/>
+<CustomCtrlInfo Left="264" Top="110" Width="150" Height="68" ID="122"/>
+<CustomCtrlInfo Left="11" Top="38" Width="434" Height="17" ID="211"/>
+<CustomCtrlInfo Left="73" Top="246" Width="191" Height="20" ID="821"/>
+<CustomCtrlInfo Left="18" Top="247" Width="52" Height="17" ID="212"/>
+<CustomCtrlInfo Left="73" Top="218" Width="191" Height="20" ID="822"/>
+<CustomCtrlInfo Left="18" Top="219" Width="42" Height="16" ID="213"/>
+<CustomCtrlInfo Left="19" Top="279" Width="189" Height="42" ID="214"/>
+<CustomCtrlInfo Left="296" Top="216" Width="179" Height="18" ID="1300"/>
+<CustomCtrlInfo Left="296" Top="242" Width="179" Height="18" ID="1301"/>
+<CustomCtrlInfo Left="296" Top="269" Width="185" Height="18" ID="1302"/>
 </CustomCtrlList>
 <Events>
 <Event>
 <Name>On Preload</Name>
 <Args/>
-<Script>-- These actions are performed before the screen is shown.
-</Script>
+<Script/>
 <BookMarks count="0">
 </BookMarks>
 </Event>
 <Event>
 <Name>On Back</Name>
 <Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
+<Script/>
 <BookMarks count="0">
 </BookMarks>
 </Event>
 <Event>
 <Name>On Next</Name>
 <Args/>
-<Script>-- These actions are performed when the Next button is clicked.
+<Script>-- These actions are performed when the Back button is clicked.
 
--- advance to the next screen
-result = File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%TempLaunchFolder%\\grub.disable", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
-Screen.Next();
+-- go back to the previous screen
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -2089,6 +854,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -2108,927 +874,71 @@ end
 <Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
 <Script>-- These actions are triggered by the controls on the screen.
 
-if (e_MsgID == MSGID_CLICKED) then
-	-- a control was clicked...
+function updateConfig()
 
-	if (e_CtrlID == CTRL_BUTTON_01) then
+	NAME = String.Replace(SessionVar.Expand("%UserProductName%"), " ", "-", true);
+	VERSION = String.Replace(SessionVar.Expand("%UserProductVer%"), " ", "-", true);
 
-		-- Insert your button handling code here
+	-- ReSet vendor FUNCTION values to the checklists since they overwrite em.
+	always_make_data_imageProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "ALWAYS_MAKE_DATA_IMAGE");
+	install_grub2winProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "INSTALL_GRUB2WIN");
+	make_gearload_folderProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "MAKE_GEARLOAD_FOLDER");
+	gearlock_bootinstallProp = INIFile.GetValue(CONFIG_INI, "FUNCTIONS", "GEARLOCK_BOOTINSTALL");
 	
-		result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\man_grub2win_ins.bat"), "", "", SW_SHOWNORMAL, true);
-		Screen.Jump("Partition Wizard");
-
-	end
-	
-
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>121</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>2</Type>
-<ID>212</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>%ProductName% Grub2Win</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Grub2Win Bootloader</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>For Multibooting</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_BUTTON_01>Install</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_STATICTEXT_LABEL_02>Grub2Win is a port of the original gnu-grub2 which allows you to multiboot between different OS while using the pure grub over messy-windows !</IDS_CTRL_STATICTEXT_LABEL_02>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
-<Type>170</Type>
-<Name>MAN_ExtFs</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>Custom</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
-<StyleData>
-<CstClrs>1</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
-<CPRGRS format="hex">66728f</CPRGRS>
-<C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-19</Height>
-<Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>21</L>
-<T>35</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>1</L>
-<T>95</T>
-<R>15</R>
-<B>-1</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>21</L>
-<T>92</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<TBTXTX>10</TBTXTX>
-<TBTXTY>10</TBTXTY>
-<ScreenW>497</ScreenW>
-<ScreenH>362</ScreenH>
-</StyleData>
-<CustomCtrlList>
-<CustomCtrlInfo Left="168" Top="183" Width="139" Height="44" ID="121"/>
-<CustomCtrlInfo Left="108" Top="110" Width="270" Height="48" ID="212"/>
-</CustomCtrlList>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
-
--- advance to the next screen
-
-Screen.Next();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-if (e_MsgID == MSGID_CLICKED) then
-	-- a control was clicked...
-
-	if (e_CtrlID == CTRL_BUTTON_01) then
-
-		-- Insert your button handling code here
-		
-		result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extfs_ins.bat"), "", "", SW_SHOWNORMAL, true);
-		Screen.Next();
-
-	end
-	
-
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>121</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>2</Type>
-<ID>212</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
-<IsHeading>0</IsHeading>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>%ProductName% ExtFS</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>ExtFS Drivers</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>For mounting Ext4</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_BUTTON_01>Install</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_STATICTEXT_LABEL_02>You will need ext4 filesystem drivers. So that you can mount ext type partitions on windows.</IDS_CTRL_STATICTEXT_LABEL_02>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
-<Type>125</Type>
-<Name>License Agreement</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>License Agreement</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
-<StyleData>
-<CstClrs>1</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
-<CPRGRS format="hex">66728f</CPRGRS>
-<C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-19</Height>
-<Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>21</L>
-<T>35</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>1</L>
-<T>95</T>
-<R>15</R>
-<B>-1</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>21</L>
-<T>92</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<TBTXTX>10</TBTXTX>
-<TBTXTY>10</TBTXTY>
-<ScreenW>497</ScreenW>
-<ScreenH>362</ScreenH>
-</StyleData>
-<Checked>1</Checked>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
--- from _SUF70_Global_Functions.lua:
--- disable the Next button unless 'I agree' is selected
-g_LicenseAgreementScreen_UpdateNextButton();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
--- Tip: this is where you could add actions to validate the
---      user's input before proceeding
-
-
-is_ntfs = File.DoesExist("%TempLaunchFolder%\\is.ntfs");
-
-if( is_ntfs == true ) then
-Screen.Jump("Select Packages");
-else
-x64found = System.Is64BitOS();
---DiskGenius Install
-dg_ex = File.DoesExist("C:\\Program Files\\DiskGenius\\DiskGenius.exe");
-if( dg_ex == false ) then
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\dg_ins.bat"), "", "", SW_SHOWNORMAL, true);
-end
-
---ExtFS Install
-if( x64found == true ) then
-para64ex = File.DoesExist("C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extservice.exe");
-if( para64ex == false ) then
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extfs_ins.bat"), "", "", SW_SHOWNORMAL, true);
-end
-end
-
-if( x64found == false ) then
-para32ex = File.DoesExist("C:\\Program Files\\Paragon Software\\ExtFS for Windows\\extservice.exe");
-if( para32ex == false ) then
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extfs_ins.bat"), "", "", SW_SHOWNORMAL, true);
-end
-end
-
--- These actions are performed before the screen is shown.
-
-Screen.Next();
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-if (e_CtrlID == CTRL_RADIOBTN_AGREE or e_CtrlID == CTRL_RADIOBTN_DISAGREE) then
-	-- the control message is from one of the radio buttons
-	-- if it's a click message, update the Next button
-	if (e_MsgID == MSGID_CLICKED) then
-		-- from _SUF70_Global_Functions.lua:
-		-- disable the Next button unless 'I agree' is selected
-		g_LicenseAgreementScreen_UpdateNextButton();
-	end
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>3</Type>
-<ID>400</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>0</TabOrder>
-<IsHTML>0</IsHTML>
-<TextAlign>0</TextAlign>
-<VertScroll>1</VertScroll>
-<HorizScroll>0</HorizScroll>
-<RTLReadingOrder>0</RTLReadingOrder>
-<Style>1</Style>
-<ReadOnly>1</ReadOnly>
-<SpecifyType>0</SpecifyType>
-<Variable/>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>602</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>35</TabOrder>
-<Group>1</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>603</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>40</TabOrder>
-<Group>0</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>License Agreement</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>License Agreement</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>Please read the following license agreement carefully.</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_SCROLLTEXT_BODY>POS DarkMatter is just a modified version of the Official PhoenixOS. So, all the credits goes to the android_x86roject and Chaozhuo  devs. No such changes were made which would potentially harm the original devs in any means.
-
-
-Lastly, I want to request you guys that please share this project as that would encourage me more over the development. So that others could also be benefited by it.
-There are some rats active over stealing our work and sharing with their own names.
-Some additional system components such as *GearLock are copyrighted by us and you're not permitted to redistrubute them since these are not opensource yet, but will be soon.
-
-Currently active thieves are : Woltrex, TipsLab etc.
-Woltrex cloned our full darkmatter-core and gearlock which he calls *PhoenixFly over his new ROC versions 2019-2020</IDS_CTRL_SCROLLTEXT_BODY>
-<IDS_CTRL_RADIOBTN_AGREE>Okay</IDS_CTRL_RADIOBTN_AGREE>
-<IDS_CTRL_RADIOBTN_DISAGREE>Nope</IDS_CTRL_RADIOBTN_DISAGREE>
-<IDS_CTRL_SCROLLTEXT_FILE>D:\ProjectBase\DarkMatter\WinInstallerBuild\licence.txt</IDS_CTRL_SCROLLTEXT_FILE>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
-<Type>170</Type>
-<Name>ExtPatch</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>Custom</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
-<StyleData>
-<CstClrs>1</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
-<CPRGRS format="hex">66728f</CPRGRS>
-<C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-19</Height>
-<Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>21</L>
-<T>35</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>1</L>
-<T>95</T>
-<R>15</R>
-<B>-1</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>21</L>
-<T>92</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<TBTXTX>10</TBTXTX>
-<TBTXTY>10</TBTXTY>
-<ScreenW>497</ScreenW>
-<ScreenH>362</ScreenH>
-</StyleData>
-<CustomCtrlList>
-<CustomCtrlInfo Left="180" Top="167" Width="115" Height="45" ID="121"/>
-<CustomCtrlInfo Left="4" Top="110" Width="189" Height="59" ID="213"/>
-<CustomCtrlInfo Left="319" Top="195" Width="171" Height="84" ID="214"/>
-</CustomCtrlList>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
-x64found = System.Is64BitOS();
-
-if( x64found == true ) then
-para64pex = File.DoesExist("C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extservice.bak");
-if( para64pex == true ) then
-Screen.Next();
-end
-end
-
-if( x64found == false ) then
-para32pex = File.DoesExist("C:\\Program Files\\Paragon Software\\ExtFS for Windows\\extservice.bak");
-if( para32pex == true ) then
-Screen.Next();
-end
-end</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
-
--- advance to the next screen
-Screen.Next();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-if (e_MsgID == MSGID_CLICKED) then
-	-- a control was clicked...
-
-	if (e_CtrlID == CTRL_BUTTON_01) then
-
--- These actions are performed before the screen is shown.
---ExtFS Patch
-x64found = System.Is64BitOS();
-if( x64found == true ) then
-		Shell.CreateShortcut("C:\\", "patch_me1", "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extservice.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
-		Shell.CreateShortcut("C:\\", "patch_me2", "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
-		result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extpatch.exe"), "", "", SW_SHOWNORMAL, false);
+	if not ( always_make_data_imageProp == "" ) then
+		if ( always_make_data_imageProp == "true" ) then always_make_data_image = true; else always_make_data_image = false; end;
 	else
-		Shell.CreateShortcut("C:\\", "patch_me1", "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\extservice.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
-		Shell.CreateShortcut("C:\\", "patch_me2", "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_NO_PIN);
-		result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extpatch.exe"), "", "", SW_SHOWNORMAL, false);
-end
-	end
+		if ( loadFromISO == true ) then
+			sevenZip(ISO_IMAGE[1], _TempLaunchFolder, "", "ramdisk.img", true);
+			if ( File.DoesExist(_TempLaunchFolder.."\\ramdisk.img") == false ) then always_make_data_image = true; else File.Delete(_TempLaunchFolder.."\\ramdisk.img", false, false, false, nil); end;
+		else
+			if ( File.DoesExist(_SourceFolder.."\\ramdisk.img") == false ) then always_make_data_image = true; end;
 		end
+	end
+	
+	if not ( install_grub2winProp == "" ) then
+		if ( install_grub2winProp == "true" ) then install_grub2win = true; else install_grub2win = false; end;
+	else
+		install_grub2win = install_grub2win_btn;
+	end
+	
+	if not ( gearlock_bootinstallProp == "" ) then
+		if ( gearlock_bootinstallProp == "true" ) then gearlock_bootinstall = true; else gearlock_bootinstall = false; end;
+	else
+		gearlock_bootinstall = gearlock_bootinstall_btn;
+	end
+	
+	if not ( make_gearload_folderProp == "" ) then if ( make_gearload_folderProp == "true" ) then make_gearload_folder = true; else make_gearload_folder = false; end; end;
+	
+
+	initSessionVars(); -- Re-initialize session vars
+
+end
+
+if (e_MsgID == MSGID_CLICKED) then
+	-- a control was clicked...
+
+	if (e_CtrlID == CTRL_BUTTON_01) or (e_CtrlID == CTRL_BUTTON_02) then
+
+		if (e_CtrlID == CTRL_BUTTON_01) then
+			if ( pirate == true ) then
+				is_ntfs = false; SessionVar.Set("%InsType%","extFS");
+				updateConfig(); 
+				if ( paragon_installed == false ) then installParagon(); end;
+				Screen.Next();
+			else
+				Dialog.Message("Info", "Not available for non-proprietary version of this installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			end
+
+		elseif (e_CtrlID == CTRL_BUTTON_02) then
+			is_ntfs = true; SessionVar.Set("%InsType%","otherFS");
+			updateConfig();
+			Screen.Jump("Data Image");
+		end
+		
+	end
+
+end
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -3058,13 +968,73 @@ end
 <Enabled>1</Enabled>
 <TabOrder>1</TabOrder>
 <FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>122</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>2</TabOrder>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>211</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>3</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>6</Type>
+<ID>821</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>4</TabOrder>
+<TextAlign>0</TextAlign>
+<VertScroll>1</VertScroll>
+<HorizScroll>0</HorizScroll>
+<RTLReadingOrder>0</RTLReadingOrder>
+<Style>0</Style>
+<Mode>0</Mode>
+<MaskReturnMode>0</MaskReturnMode>
+<ReadOnly>0</ReadOnly>
+<StartNewRow>1</StartNewRow>
+<SizeColumns>4</SizeColumns>
+<Variable>%UserProductVer%</Variable>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>212</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>5</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>6</Type>
+<ID>822</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>6</TabOrder>
+<TextAlign>0</TextAlign>
+<VertScroll>1</VertScroll>
+<HorizScroll>0</HorizScroll>
+<RTLReadingOrder>0</RTLReadingOrder>
+<Style>0</Style>
+<Mode>0</Mode>
+<MaskReturnMode>0</MaskReturnMode>
+<ReadOnly>0</ReadOnly>
+<StartNewRow>1</StartNewRow>
+<SizeColumns>4</SizeColumns>
+<Variable>%UserProductName%</Variable>
 </Control>
 <Control>
 <Type>2</Type>
 <ID>213</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
+<TabOrder>7</TabOrder>
 <IsHeading>0</IsHeading>
 </Control>
 <Control>
@@ -3072,8 +1042,35 @@ end
 <ID>214</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
-<TabOrder>3</TabOrder>
+<TabOrder>8</TabOrder>
 <IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>10</Type>
+<ID>1300</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>9</TabOrder>
+<Checked>1</Checked>
+<Variable>install_grub2win_btn</Variable>
+</Control>
+<Control>
+<Type>10</Type>
+<ID>1301</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>10</TabOrder>
+<Checked>1</Checked>
+<Variable>gearlock_bootinstall_btn</Variable>
+</Control>
+<Control>
+<Type>10</Type>
+<ID>1302</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>11</TabOrder>
+<Checked>0</Checked>
+<Variable>download_latest_grub2win</Variable>
 </Control>
 <Control>
 <Type>1</Type>
@@ -3086,8 +1083,8 @@ end
 <Control>
 <Type>1</Type>
 <ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -3115,18 +1112,30 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>%ProductName% Setup</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Your Ext4 drivers need patching</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>You need to patch two files</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_WINDOW_TITLE>Installation Configuation</IDS_WINDOW_TITLE>
+<IDS_HEADER_TEXT>Configure your installation options</IDS_HEADER_TEXT>
+<IDS_SUBHEADER_TEXT/>
+<IDS_CTRL_BUTTON_NEXT>&lt; &amp;Back</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_BUTTON_01>Patch</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_STATICTEXT_LABEL_03>Step #1&gt;                                  Click on "Patch 2048 RSA" and select "C:\patch_me1"</IDS_CTRL_STATICTEXT_LABEL_03>
-<IDS_CTRL_STATICTEXT_LABEL_04>Step #2&gt;                             Click on "Patch 2048 RSA" again and select "C:\patch_me2". After that Click on "Generate" button.</IDS_CTRL_STATICTEXT_LABEL_04>
+<IDS_CTRL_BUTTON_01>extFS (Recommended)</IDS_CTRL_BUTTON_01>
+<IDS_CTRL_BUTTON_02>otherFS</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_STATICTEXT_LABEL_01>It is recommended that you use the Ext4 option for best user experience</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_EDIT_01>%ProductVer%</IDS_CTRL_EDIT_01>
+<IDS_CTRL_EDIT_MASK_01/>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_01> </IDS_CTRL_EDIT_MASK_PLACE_HOLDER_01>
+<IDS_CTRL_STATICTEXT_LABEL_02>Version:</IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_EDIT_02>%ProductName%</IDS_CTRL_EDIT_02>
+<IDS_CTRL_EDIT_MASK_02/>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_02> </IDS_CTRL_EDIT_MASK_PLACE_HOLDER_02>
+<IDS_CTRL_STATICTEXT_LABEL_03>Name:</IDS_CTRL_STATICTEXT_LABEL_03>
+<IDS_CTRL_STATICTEXT_LABEL_04>You can change these for creating multiple boot instances</IDS_CTRL_STATICTEXT_LABEL_04>
+<IDS_CTRL_CHECK_BOX_01>Install/Update Grub2Win</IDS_CTRL_CHECK_BOX_01>
+<IDS_CTRL_CHECK_BOX_02>GearLock Boot Installer</IDS_CTRL_CHECK_BOX_02>
+<IDS_CTRL_CHECK_BOX_03>Download latest Grub2Win</IDS_CTRL_CHECK_BOX_03>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -3142,40 +1151,50 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -3183,17 +1202,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3203,7 +1212,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3240,12 +1249,12 @@ end
 <ScreenH>362</ScreenH>
 </StyleData>
 <CustomCtrlList>
-<CustomCtrlInfo Left="88" Top="99" Width="323" Height="15" ID="211"/>
-<CustomCtrlInfo Left="136" Top="122" Width="225" Height="19" ID="213"/>
+<CustomCtrlInfo Left="120" Top="99" Width="240" Height="17" ID="211"/>
+<CustomCtrlInfo Left="137" Top="123" Width="225" Height="19" ID="213"/>
 <CustomCtrlInfo Left="191" Top="151" Width="104" Height="35" ID="121"/>
-<CustomCtrlInfo Left="110" Top="197" Width="294" Height="19" ID="214"/>
-<CustomCtrlInfo Left="11" Top="277" Width="241" Height="43" ID="216"/>
-<CustomCtrlInfo Left="74" Top="227" Width="366" Height="17" ID="212"/>
+<CustomCtrlInfo Left="69" Top="197" Width="354" Height="19" ID="214"/>
+<CustomCtrlInfo Left="10" Top="273" Width="247" Height="42" ID="216"/>
+<CustomCtrlInfo Left="65" Top="225" Width="370" Height="20" ID="212"/>
 </CustomCtrlList>
 <Events>
 <Event>
@@ -3271,8 +1280,17 @@ Screen.Back();
 <Args/>
 <Script>-- These actions are performed when the Next button is clicked.
 
--- advance to the next screen
-Screen.Next();</Script>
+-- Mount ext4 partitions
+mountExt();
+
+
+if( is_ntfs == false ) and ( always_make_data_image == false ) then
+	genDataImg = false;
+	Screen.Jump("Select Drive");
+else
+	Screen.Next();
+end
+</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -3284,6 +1302,7 @@ Screen.Next();</Script>
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -3307,11 +1326,9 @@ Screen.Next();</Script>
 
 if (e_MsgID == MSGID_CLICKED) then
 	-- a control was clicked...
-
 	if (e_CtrlID == CTRL_BUTTON_01) then
-	Dialog.Message("Attention!","Make an EXT4 partiton by resizing an existing partition then close the partition tool, you will not lose your data", MB_OK, MB_ICONNONE);
-	result = File.Run(SessionVar.Expand("C:\\Program Files\\DiskGenius\\DiskGenius.exe"), "", "", SW_MAXIMIZE, false);
-end
+		runPartitionTool();
+	end
 end</Script>
 <BookMarks count="0">
 </BookMarks>
@@ -3431,7 +1448,7 @@ end</Script>
 <IDS_CTRL_BUTTON_HELP>&amp;Skip &gt;</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_LABEL_01>To install POS DarkMatter you need a EXT4 partition on your pc.</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_STATICTEXT_LABEL_01>To install this you need an EXT4 partition</IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_STATICTEXT_LABEL_03>Use the disk-partitioning tool below to do that.</IDS_CTRL_STATICTEXT_LABEL_03>
 <IDS_CTRL_BUTTON_01>Partition Tool</IDS_CTRL_BUTTON_01>
 <IDS_CTRL_STATICTEXT_LABEL_04>Resize an existing partition and format the new one as EXT4</IDS_CTRL_STATICTEXT_LABEL_04>
@@ -3442,50 +1459,60 @@ end</Script>
 </Languages>
 </Screen>
 <Screen>
-<Type>145</Type>
-<Name>Select Packages</Name>
+<Type>170</Type>
+<Name>Data Image</Name>
 <BannerStyle>2</BannerStyle>
-<TemplateName>Select Packages</TemplateName>
+<TemplateName>Custom</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
 <CstClrs>1</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -3493,17 +1520,7 @@ end</Script>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3513,7 +1530,7 @@ end</Script>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3549,93 +1566,17 @@ end</Script>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
-<Descriptions>1</Descriptions>
-<TotalSize>1</TotalSize>
-<PackageShowType>1</PackageShowType>
-<NumCategories>0</NumCategories>
-<packages>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>initrd</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>1</node_sibling>
-</ptr_node>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>ramdisk</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>1</node_sibling>
-</ptr_node>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>system</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>1</node_sibling>
-</ptr_node>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>kernel</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>1</node_sibling>
-</ptr_node>
-<ptr_node>
-<pck_data>
-<type>1</type>
-<nCtrlID>0</nCtrlID>
-<CtrlID>kernel41992</CtrlID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<Expanded>0</Expanded>
-</pck_data>
-<node_sibling>0</node_sibling>
-</ptr_node>
-</packages>
+<CustomCtrlList>
+<CustomCtrlInfo Left="30" Top="144" Width="92" Height="78" ID="121"/>
+<CustomCtrlInfo Left="143" Top="144" Width="92" Height="78" ID="122"/>
+<CustomCtrlInfo Left="256" Top="144" Width="92" Height="78" ID="123"/>
+<CustomCtrlInfo Left="370" Top="144" Width="92" Height="78" ID="124"/>
+</CustomCtrlList>
 <Events>
 <Event>
 <Name>On Preload</Name>
 <Args/>
 <Script>-- These actions are performed before the screen is shown.
-is_ntfs = File.DoesExist("%TempLaunchFolder%\\is.ntfs");
-if( is_ntfs == false ) then
-x64found = System.Is64BitOS();
-if( x64found == true ) then
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extm64.bat"), "", "", SW_SHOWNORMAL, true);
-else
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\extm32.bat"), "", "", SW_SHOWNORMAL, true);
-end
-end
--- calculate the amount of space required for the installation
-_SpaceRequired = SetupData.CalculateRequiredSpace();
-
--- format it as a string with an appropriate unit of measurement (e.g. "0 bytes")
-local strSpaceRequired = String.GetFormattedSize(_SpaceRequired);
-
--- store the string in a session variable so it can be used in the screen text
-SessionVar.Set("%SpaceRequired%", strSpaceRequired);
-
--- from _SUF70_Global_Functions.lua:
--- update the 'Total space required:' message (expands any session variables in it)
-g_UpdateStaticTextCtrl(CTRL_STATICTEXT_SPACEREQUIRED, "IDS_CTRL_STATICTEXT_SPACEREQUIRED");
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -3643,24 +1584,17 @@ g_UpdateStaticTextCtrl(CTRL_STATICTEXT_SPACEREQUIRED, "IDS_CTRL_STATICTEXT_SPACE
 <Event>
 <Name>On Back</Name>
 <Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Previous();
-</Script>
+<Script/>
 <BookMarks count="0">
 </BookMarks>
 </Event>
 <Event>
 <Name>On Next</Name>
 <Args/>
-<Script>-- These actions are performed when the Next button is clicked.
--- Tip: this is where you could add actions to validate the
---      user's input before proceeding
+<Script>-- These actions are performed when the Back button is clicked.
 
--- advance to the next screen
---result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\mount_extfs.bat"), "", "", SW_SHOWNORMAL, true);
-Screen.Next();
+-- go back to the previous screen
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -3673,6 +1607,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -3692,40 +1627,31 @@ end
 <Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
 <Script>-- These actions are triggered by the controls on the screen.
 
-if(e_CtrlID == CTRL_SELECT_PACKAGE_TREE) then
-	-- the control message is from the select packages tree...
+if (e_MsgID == MSGID_CLICKED) then
+	-- a control was clicked...
+	
+	genDataImg = true;
 
-	-- if the current selection changed (i.e. a different package was selected),
-	-- update the description field
-	if(e_MsgID == MSGID_ONSELCHANGED) then
+	if (e_CtrlID == CTRL_BUTTON_01) then
+		
+		genDataImgSize = 4;
+	
+	elseif (e_CtrlID == CTRL_BUTTON_02) then
 
-		-- get the selected item's description
-		local strText = e_Details.Description;
-		
-		-- if the selected item is a package, add its size to the description
-		if(e_Details.Type == 1) then
-			strText = strText.."\n( "..String.GetFormattedSize(e_Details.Size).." )";
-		end
-		
-		-- update the description field
-		DlgStaticText.SetProperties(CTRL_STATICTEXT_BODY, {Text=strText});
+		genDataImgSize = 8;
+	
+	elseif (e_CtrlID == CTRL_BUTTON_03) then
+
+		genDataImgSize = 16;
+	
+	elseif (e_CtrlID == CTRL_BUTTON_04) then
+	
+		genDataImgSize = 32;
+
 	end
+	
+	Screen.Next();
 
-
-	-- if an item's state changed (i.e. a package was turned on or off),
-	-- update the 'Total space required:' message
-	if(e_MsgID == MSGID_ONSTATECHANGED) then
-
-		-- calculate the amount of space required for the installation
-		_SpaceRequired = SetupData.CalculateRequiredSpace();
-		
-		-- set %SpaceRequired% to a string with an appropriate unit of measurement (e.g. "0 bytes")
-		SessionVar.Set("%SpaceRequired%", String.GetFormattedSize(_SpaceRequired) );
-
-		-- from _SUF70_Global_Functions.lua:
-		-- update the 'Total space required:' message (expands any session variables in it)
-		g_UpdateStaticTextCtrl(CTRL_STATICTEXT_SPACEREQUIRED, "IDS_CTRL_STATICTEXT_SPACEREQUIRED");
-	end
 end
 </Script>
 <BookMarks count="0">
@@ -3733,22 +1659,6 @@ end
 </Event>
 </Events>
 <Controls>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
 <Control>
 <Type>1</Type>
 <ID>100</ID>
@@ -3766,35 +1676,52 @@ end
 <FTButton>1</FTButton>
 </Control>
 <Control>
-<Type>2</Type>
-<ID>203</ID>
+<Type>1</Type>
+<ID>121</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>1</TabOrder>
-<IsHeading>0</IsHeading>
+<FTButton>0</FTButton>
 </Control>
 <Control>
-<Type>8</Type>
-<ID>1000</ID>
+<Type>1</Type>
+<ID>122</ID>
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>2</TabOrder>
+<FTButton>0</FTButton>
 </Control>
 <Control>
-<Type>2</Type>
-<ID>200</ID>
-<Visible>0</Visible>
+<Type>1</Type>
+<ID>123</ID>
+<Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
-<IsHeading>0</IsHeading>
+<FTButton>0</FTButton>
 </Control>
 <Control>
-<Type>2</Type>
-<ID>208</ID>
-<Visible>0</Visible>
+<Type>1</Type>
+<ID>124</ID>
+<Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>4</TabOrder>
-<IsHeading>0</IsHeading>
+<FTButton>0</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>103</ID>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
+<TabOrder>75</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>101</ID>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
+<TabOrder>76</TabOrder>
+<FTButton>1</FTButton>
 </Control>
 </Controls>
 <Languages>
@@ -3820,16 +1747,19 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>Packages</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Select Packages</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>Please select the program features that you want to install.</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
+<IDS_WINDOW_TITLE>Data size</IDS_WINDOW_TITLE>
+<IDS_HEADER_TEXT>Select your data.img size</IDS_HEADER_TEXT>
+<IDS_SUBHEADER_TEXT>Yout will need a data.img for storing your runtime data                       Ideally 8GB should be enough for general purposes</IDS_SUBHEADER_TEXT>
+<IDS_CTRL_BUTTON_NEXT>&lt; &amp;Back</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_BACK/>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>Packages to supply: (You can leave these as is unless you want to specify your needs)</IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
-<IDS_CTRL_STATICTEXT_SPACEREQUIRED>Total space required: %SpaceRequired%</IDS_CTRL_STATICTEXT_SPACEREQUIRED>
-<IDS_CTRL_STATICTEXT_BODY/>
+<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
+<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
+<IDS_CTRL_BUTTON_01>4 GB</IDS_CTRL_BUTTON_01>
+<IDS_CTRL_BUTTON_02>8 GB</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_BUTTON_03>16 GB</IDS_CTRL_BUTTON_03>
+<IDS_CTRL_BUTTON_04>32 GB</IDS_CTRL_BUTTON_04>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -3845,40 +1775,50 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -3886,17 +1826,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3906,7 +1836,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -3950,12 +1880,67 @@ end
 <Args/>
 <Script>-- These actions are performed before the screen is shown.
 
+
+
+function addSize(myFile2Calc)
+
+if ( File.DoesExist(myFile2Calc) == true ) then total_size_of_files = total_size_of_files + File.GetSize(_SourceFolder.."\\"..myFile2Calc); end
+
+end
+
+-- Update required size
+if ( loadFromISO == true ) then
+
+	total_size_of_files = File.GetSize(ISO_IMAGE[1]);
+	
+else
+
+	total_size_of_files = 0;
+	addSize("initrd.img");
+	addSize("ramdisk.img");
+	addSize("gearlock");
+	addSize("kernel");
+	
+	-- Calc system.*
+	if ( File.DoesExist(_SourceFolder.."\\system.img") == true ) then
+		addSize("system.img");
+	else
+		addSize("system.sfs");
+	end
+		
+end
+
+-- Calc data.img size when needed
+if ( is_ntfs == true ) or ( always_make_data_image == true ) then
+	genDataImgSizeBytes = genDataImgSize * 1073741824;
+	total_size_of_files = total_size_of_files + genDataImgSizeBytes;
+end
+
+---- Finally update the size in session variable
+-- format it as a string with an appropriate unit of measurement (e.g. "0 bytes")
+strSpaceRequired = String.GetFormattedSize(total_size_of_files);
+
+-- store the string in a session variable so it can be used in the screen text
+SessionVar.Set("%SpaceRequired%", strSpaceRequired);
+
+
+
+
+
 -- set up a table to contain this screen's functions (this is a nice way to avoid naming conflicts)
 if not SelectDriveScreen then SelectDriveScreen = {}; end
 
 -- This function calculates the free space on the currently selected drive 
 -- and updates the 'Space required:' and 'Space available on selected drive:' messages
 function SelectDriveScreen.UpdateSizeMessages()
+
+		-- from _SUF70_Global_Functions.lua:
+		-- fill a table with all fixed and remote drives
+		tbDrives = g_GetDriveLetters(DRIVE_FIXED, DRIVE_REMOTE);
+		
+		-- from _SUF70_Global_Functions.lua:
+		-- add all of the drives in tbDrives to the combo box
+		g_FillComboBoxWithDriveDisplayNames(CTRL_COMBOBOX_01, tbDrives);
 
 	-- get the index of the selected item
 	local nSelectedIndex = DlgComboBox.GetProperties(CTRL_COMBOBOX_01).Selected;
@@ -3977,21 +1962,13 @@ function SelectDriveScreen.UpdateSizeMessages()
 end
 
 -- calculate the amount of space required for the installation
-_SpaceRequired = SetupData.CalculateRequiredSpace();
+--_SpaceRequired = SetupData.CalculateRequiredSpace();
 
 -- format it as a string with an appropriate unit of measurement (e.g. "0 bytes")
-local strSpaceRequired = String.GetFormattedSize(_SpaceRequired);
+--local strSpaceRequired = String.GetFormattedSize(_SpaceRequired);
 
 -- store the string in a session variable so it can be used in the screen text
-SessionVar.Set("%SpaceRequired%", strSpaceRequired);
-
--- from _SUF70_Global_Functions.lua:
--- fill a table with all fixed and remote drives
-tbDrives = g_GetDriveLetters(DRIVE_FIXED, DRIVE_REMOTE);
-
--- from _SUF70_Global_Functions.lua:
--- add all of the drives in tbDrives to the combo box
-g_FillComboBoxWithDriveDisplayNames(CTRL_COMBOBOX_01, tbDrives);
+--SessionVar.Set("%SpaceRequired%", strSpaceRequired);
 
 -- call our function to calculate the free space on the selected drive and update the size messages
 SelectDriveScreen.UpdateSizeMessages();
@@ -4005,7 +1982,7 @@ SelectDriveScreen.UpdateSizeMessages();
 <Script>-- These actions are performed when the Back button is clicked.
 
 -- go back to the previous screen
-Screen.Jump("Select Packages");
+Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -4024,19 +2001,12 @@ local strDrive = DlgComboBox.GetItemData(CTRL_COMBOBOX_01, nSelected);
 SessionVar.Set("%SelectedDrive%", strDrive);
 
 -- advance to the next screen
-dmup = File.DoesExist(("%AppFolder%\\system.img"));
-if( dmup == true ) then
-Dialog.Message("Notice", "An earlier version of darkmatter detected, your system.img will be updated!", MB_OK, MB_ICONNONE);
---Folder.Rename("%AppFolder%\\system", "%AppFolder%\\old.system");
+if( File.DoesExist("%AppFolder%\\system.img") == true ) then
+	Dialog.Message("Notice", "An earlier version of "..SessionVar.Expand("%ProductName%").." detected, your system.img will be updated !", MB_OK, MB_ICONNONE);
+	--Folder.Rename("%AppFolder%\\system", "%AppFolder%\\old.system");
 end
 
-is_ntfs = File.DoesExist("%TempLaunchFolder%\\is.ntfs");
-if( is_ntfs == true ) then
-Screen.Jump("Data Image");
-else
-Screen.Jump("Ready to Install");
-end
-</Script>
+Screen.Next();</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -4048,6 +2018,7 @@ end
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -4242,24 +2213,24 @@ end
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>Installation Drive</IDS_WINDOW_TITLE>
+<IDS_WINDOW_TITLE>Installation Partition</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Installation Partition</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>On which partition would you like %ProductName% to be installed on?</IDS_SUBHEADER_TEXT>
+<IDS_SUBHEADER_TEXT/>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>You must use a ext4 partition if you had selected the *Ext4 option in *Partition-Type*.
-
-Or if you had selected the *Ntfs option in *Partition-Type* then use a ntfs partition.</IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
-<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS>Space required: %SpaceRequired%
+<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
+<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS>
+Space required: %SpaceRequired%
 
 Space available on selected partition: %SpaceAvailable%
-Type %YoYo%
+
+Installation type: %InsType%
 
 
 </IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS>
-<IDS_CTRL_STATICTEXT_LABEL_01>Select the partition:</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_STATICTEXT_LABEL_01>Select your %InsType% partition:                                                                                                                                                        </IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_COMBOBOX_01_DEFAULT/>
 <IDS_CTRL_COMBOBOX_01_ITEMS/>
 </Messages>
@@ -4267,50 +2238,60 @@ Type %YoYo%
 </Languages>
 </Screen>
 <Screen>
-<Type>170</Type>
-<Name>Data Image</Name>
+<Type>100</Type>
+<Name>Ready to Install</Name>
 <BannerStyle>2</BannerStyle>
-<TemplateName>Custom</TemplateName>
+<TemplateName>Ready to Install</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
 <CstClrs>1</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -4318,17 +2299,7 @@ Type %YoYo%
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4338,7 +2309,7 @@ Type %YoYo%
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4374,12 +2345,6 @@ Type %YoYo%
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
-<CustomCtrlList>
-<CustomCtrlInfo Left="30" Top="144" Width="92" Height="78" ID="121"/>
-<CustomCtrlInfo Left="143" Top="144" Width="92" Height="78" ID="122"/>
-<CustomCtrlInfo Left="256" Top="144" Width="92" Height="78" ID="123"/>
-<CustomCtrlInfo Left="370" Top="144" Width="92" Height="78" ID="124"/>
-</CustomCtrlList>
 <Events>
 <Event>
 <Name>On Preload</Name>
@@ -4406,6 +2371,10 @@ Screen.Back();
 <Script>-- These actions are performed when the Next button is clicked.
 
 -- advance to the next screen
+-- is_ntfs = File.DoesExist("%TempLaunchFolder%\\is.ntfs");
+-- if( is_ntfs == false ) then
+-- 		result = File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "C:\\gen_data\\data.img", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
+--end
 Screen.Next();
 </Script>
 <BookMarks count="0">
@@ -4419,316 +2388,7 @@ Screen.Next();
 -- from _SUF70_Global_Functions.lua:
 -- ask user if they're sure they want to exit
 if g_ConfirmSetupAbort() then
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-if (e_MsgID == MSGID_CLICKED) then
-	-- a control was clicked...
-
-	if (e_CtrlID == CTRL_BUTTON_01) then
-
-	result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\mkdata.bat"), "4 4293918720", "", SW_SHOWNORMAL, true);
-	Screen.Next();
-	end
-	
-	if (e_CtrlID == CTRL_BUTTON_02) then
-
-	result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\mkdata.bat"), "8 8589934592", "", SW_SHOWNORMAL, true);
-	Screen.Next();
-	end
-	if (e_CtrlID == CTRL_BUTTON_03) then
-
-
-	result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\mkdata.bat"), "16 17179869184", "", SW_SHOWNORMAL, true);
-	Screen.Next();
-	end
-	
-	if (e_CtrlID == CTRL_BUTTON_04) then
-	
-	result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\mkdata.bat"), "32 33554432000", "", SW_SHOWNORMAL, true);
-	Screen.Next();
-	end
-
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>0</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>121</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>1</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>122</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>2</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>123</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>3</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>124</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>4</TabOrder>
-<FTButton>0</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>Data size</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Select your data.img size</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>It can take upto 10 minutes on generating your data.img depending on it's size</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_BUTTON_01>4 GB</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_BUTTON_02>8 GB</IDS_CTRL_BUTTON_02>
-<IDS_CTRL_BUTTON_03>16 GB</IDS_CTRL_BUTTON_03>
-<IDS_CTRL_BUTTON_04>32 GB</IDS_CTRL_BUTTON_04>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
-<Type>100</Type>
-<Name>Ready to Install</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>Ready to Install</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
-<StyleData>
-<CstClrs>1</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
-<CPRGRS format="hex">66728f</CPRGRS>
-<C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-19</Height>
-<Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>21</L>
-<T>35</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>1</L>
-<T>95</T>
-<R>15</R>
-<B>-1</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>21</L>
-<T>92</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<TBTXTX>10</TBTXTX>
-<TBTXTY>10</TBTXTY>
-<ScreenW>497</ScreenW>
-<ScreenH>362</ScreenH>
-</StyleData>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Jump("Select Drive");
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
-
--- advance to the next screen
-is_ntfs = File.DoesExist("%TempLaunchFolder%\\is.ntfs");
-if( is_ntfs == false ) then
-result = File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "C:\\gen_data\\data.img", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
-
-end
-Screen.Next();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
+	cleanTemp();
 	Application.Exit(EXIT_REASON_USER_ABORTED);
 end
 </Script>
@@ -4828,24 +2488,536 @@ end
 <IDS_WINDOW_TITLE>Ready to go</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Ready to Install</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>You are now ready to install %ProductName% %ProductVer%</IDS_SUBHEADER_TEXT>
+<IDS_CTRL_BUTTON_NEXT>&amp;Install &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
+<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
+<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
+<IDS_CTRL_STATICTEXT_BODY>
+
+Please review your Installation path to make sure it's correct.
+
+
+Selected %InsType% Partition:        %AppFolder%
+
+
+Click Install to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
+<IDS_CTRL_HEADINGTEXT_BODY>Title</IDS_CTRL_HEADINGTEXT_BODY>
+</Messages>
+</SUF70Messages>
+</Languages>
+</Screen>
+<Screen>
+<Type>175</Type>
+<Name>FinalStage</Name>
+<BannerStyle>2</BannerStyle>
+<TemplateName>Custom Progress</TemplateName>
+<OverrideProjTheme>0</OverrideProjTheme>
+<StyleData>
+<CstClrs>1</CstClrs>
+<TBBG format="hex">ffffff</TBBG>
+<BDYBG format="hex">ffffff</BDYBG>
+<FTBG format="hex">ffffff</FTBG>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
+<CBG format="hex">ffffff</CBG>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
+<CBTNTXT format="hex">ffffff</CBTNTXT>
+<CTEXT format="hex">000000</CTEXT>
+<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CPRGRS format="hex">66728f</CPRGRS>
+<C3DSHDK format="hex">66728f</C3DSHDK>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
+<BDFILL>1</BDFILL>
+<HDSEP>0</HDSEP>
+<FTSEP>0</FTSEP>
+<CstFnts>1</CstFnts>
+<Fonts>
+<FontData>
+<FontName>Android 101</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-19</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Montserrat</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Comic Sans MS</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+</Fonts>
+<CAOff>
+<TP>0</TP>
+<L>21</L>
+<T>35</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<CAOff>
+<TP>1</TP>
+<L>1</L>
+<T>95</T>
+<R>15</R>
+<B>-1</B>
+</CAOff>
+<CAOff>
+<TP>2</TP>
+<L>21</L>
+<T>92</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
+<ScreenW>497</ScreenW>
+<ScreenH>362</ScreenH>
+</StyleData>
+<CustomCtrlList>
+<CustomCtrlInfo Left="22" Top="184" Width="460" Height="31" ID="900"/>
+<CustomCtrlInfo Left="25" Top="105" Width="451" Height="53" ID="212"/>
+<CustomCtrlInfo Left="22" Top="312" Width="279" Height="34" ID="211"/>
+</CustomCtrlList>
+<Events>
+<Event>
+<Name>On Preload</Name>
+<Args/>
+<Script>-- These actions are performed before the screen is shown.</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Start</Name>
+<Args/>
+<Script>-- These actions are performed when the screen is shown.
+
+-- Note: this is normally where you would put the actions
+--       that you want this screen to perform (i.e. the
+--       actions that you want to show the progress of).
+
+-- Tip: use the DlgProgressBar actions (such as SetRange,
+--		SetPos and Step) to make the progress bars reflect
+--		the current status of your actions.
+
+
+-- Define functions
+
+
+function doNothin()
+	return 0;
+end
+
+function updateProgStat(progString)
+	
+	DlgProgressBar.SetProperties(CTRL_PROGRESS_BAR_01, {Text=progString});
+
+end	
+
+
+function verifyInstallSource(toCheck, basename)
+
+	 while ( File.DoesExist(toCheck) == false )
+	 do
+		if ( is_ntfs == false ) then
+			local err_msg = basename.." is missing or failed to copy. Sometimes it is because your EXT type partition is not mounted as r/w or in panic-mode, you should RESTART and try again but skip partitioning step."
+		else
+			local err_msg = basename.." is missing or failed to copy."
+		end
+		choice = Dialog.Message("Notice", err_msg, MB_ABORTRETRYIGNORE, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		
+		if ( choice == IDABORT ) then
+			cleanTemp();
+			Application.Exit(EXIT_REASON_USER_ABORTED);
+			
+		elseif ( choice == IDIGNORE ) then
+			FILE_IGNORED = true;
+			break;
+		end
+		
+	end
+
+end
+
+
+function installFile(inputFile)
+
+	updateProgStat(inputFile);	
+	
+	if ( loadFromISO == true ) then
+	
+		if ( inputFile == "system.img" ) or ( inputFile == "system.sfs" ) then
+		
+			sevenZip(ISO_IMAGE[1], SessionVar.Expand("%AppFolder%\\"), "", "system.*", true);
+			
+			-- State actual system image name after extraction
+			if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\system.img")) == true ) then
+				inputFile = "system.img"
+			else
+				inputFile = "system.sfs"
+			end
+			
+			-- A workaround to verify if the OS files we're acutally installed in AppFolder from ISO by only verifying system image. (Check existence and.or file size &lt; 100MB)
+			if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\")..inputFile) == false ) or ( File.GetSize(SessionVar.Expand("%AppFolder%\\")..inputFile) &lt; 104857600 ) then
+				Dialog.Message("Error", "Failed to properly install files from your ISO, the installation can not continue.\r\nMake sure the installation partition has enough space and is writable.\r\nSometimes RESTARTING also resolves some weird issues.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+				cleanTemp();
+				Application.Exit(1);
+			end
+			
+		else
+		
+			sevenZip(ISO_IMAGE[1], SessionVar.Expand("%AppFolder%\\"), "", inputFile, true);
+
+		end
+		
+		-- Verify if file was successfully installed for ISO also
+		if ( inputFile == "gearlock" ) or ( inputFile == "ramdisk.img" ) then
+			doNothin();
+		else
+			verifyInstallSource(SessionVar.Expand("%AppFolder%\\")..inputFile, inputFile);
+		end
+		
+	else
+	
+		from = _SourceFolder.."\\"..inputFile;
+		to = SessionVar.Expand("%AppFolder%\\")..inputFile;
+	
+		--- Check for file existence
+		if ( inputFile == "gearlock" ) or ( inputFile == "ramdisk.img" ) then
+			doNothin();
+		else
+			verifyInstallSource(from, inputFile);
+		end
+		
+		-- Check if the user ignored it on missing
+		if ( FILE_IGNORED == true ) then
+			FILE_IGNORED = false;
+			return 0;
+		end
+		
+		if ( File.DoesExist(from) == true ) then
+			retcode = Shell.Execute("C:\\Windows\\System32\\xcopy.exe", "open", from.." "..SessionVar.Expand("%AppFolder%\\").." /Y /Q", "", SW_HIDE, true);
+			-- If an error occurred, display the error message.
+			if (retcode ~= 0) then
+				Dialog.Message("Error", "Failed to install "..inputFile..", the installation can not continue.\r\nMake sure the installation partition has enough space and is writable.\r\nSometimes RESTARTING also resolves some weird issues.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+				cleanTemp();
+				Application.Exit(1);	
+			end
+		end
+		
+	end
+
+end
+
+-- Set total range
+	DlgProgressBar.SetRange(CTRL_PROGRESS_BAR_01, 1, 100);
+	
+
+------- Install Grub2Win
+
+	if ( install_grub2win == true ) then
+	
+		if ( File.DoesExist("C:\\grub2\\grub2win.exe") == true ) then updateProgStat("Updating Grub2Win"); else updateProgStat("Installing Grub2Win"); end;
+		DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 10); installGrub2Win(); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 20);
+		
+	else
+	
+		DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 20);
+		
+	end
+
+
+
+
+
+------- Install basic Files
+	FILE_IGNORED = false; -- Initialize ignored variable.
+	installFile("initrd.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 30);
+	installFile("ramdisk.img"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 40);
+	installFile("kernel"); Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 50);
+
+
+------- Install GearLock
+	installFile("gearlock");
+	-- Check for bootinstall
+	if ( File.DoesExist(SessionVar.Expand("%AppFolder%\\gearlock")) == false ) and ( File.DoesExist(SessionVar.Expand("%AppFolder%\\bootinstall-gearlock")) == false ) and ( gearlock_bootinstall == true ) then
+		
+		install_gearlock(SessionVar.Expand("%AppFolder%"), "no");
+
+	end
+	
+	Application.Sleep(1000); DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 60);
+
+
+
+------- Make data.img
+	if ( genDataImg == true ) then
+		if ( File.DoesExist("%AppFolder\\data.img%") == true ) then
+			choice = Dialog.Message("Attention", "There is already a data.img present for your OS.\r\nDo you want to overwrite it ?", MB_YESNO, MB_ICONQUESTION, MB_DEFBUTTON2);
+			if ( choice == IDYES ) then
+				updateProgStat("Creating a "..genDataImgSize.."GB data.img");
+				makeDataImg(genDataImgSize.."000", genDataImgSize.."GB");
+			end
+		else
+			updateProgStat("Creating a "..genDataImgSize.."GB data.img");
+			makeDataImg(genDataImgSize.."000", genDataImgSize.."GB");
+		end
+	end
+	
+	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 75);
+
+
+
+------- Install system image
+	if ( File.DoesExist(_SourceFolder.."\\system.img") == true ) then
+		installFile("system.img");
+	else
+		installFile("system.sfs")
+	end
+	
+	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 90);
+	
+
+
+
+
+------ Install shortcuts
+	updateProgStat("Installing Shortcuts");
+	-- Install program files
+	Folder.Create("C:\\Program Files\\"..NAME);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Boot.bat"), "C:\\Program Files\\"..NAME.."\\Boot.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\Run.bat"), "C:\\Program Files\\"..NAME.."\\Run.bat", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(LOGO_ICON, "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	File.Install(ASCII_ART, "C:\\Program Files\\"..NAME.."\\ascii.art", FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	
+	-- Update NAME in shortcut source bat files
+	TextFile.WriteFromString("C:\\Program Files\\"..NAME.."\\Run.bat", String.Replace(TextFile.ReadToString("C:\\Program Files\\"..NAME.."\\Run.bat"), "Android-x86-ASG", NAME, true), false);
+	TextFile.WriteFromString("C:\\Program Files\\"..NAME.."\\Boot.bat", String.Replace(TextFile.ReadToString("C:\\Program Files\\"..NAME.."\\Boot.bat"), "Android-x86-ASG", NAME, true), false);
+	
+	-- Cleate shortcuts
+	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Grub2Win", "C:\\grub2\\grub2win.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_DEFAULT);
+	Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot "..NAME, "C:\\Program Files\\"..NAME.."\\Run.bat", "", "", "C:\\Program Files\\"..NAME.."\\"..NAME..".ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
+	
+	-- Refresh the icon cache
+	Application.Sleep(1500);
+	Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C ie4uinit.exe -ClearIconCache &amp; ie4uinit.exe -show", "", SW_HIDE, true);
+	--File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /f /im explorer.exe &amp; del /a %userprofile%\AppData\Local\IconCache.db &amp; start explorer", "", SW_MINIMIZE, true);
+	DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 95);
+
+
+
+
+----- Process addtional files
+	updateProgStat("Processing addtional files and folders");
+
+	
+	-- Create common dirs
+	if ( is_ntfs == false ) and ( always_make_data_image == false ) then
+		
+		-- When EXT4
+		File.Delete(SessionVar.Expand("%AppFolder%\\data.img"), false, false, false, nil);
+		--File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), "%AppFolder%\\fixfs_firstboot", FILE_INSTALL_SAMEOLDER, false, false, nil, nil);
+		
+		if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data")) == false ) then
+			Folder.Create(SessionVar.Expand("%AppFolder%\\data"));
+		end
+		
+	else
+		-- When NTFS
+		if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\data")) == true ) then
+			Folder.DeleteTree(SessionVar.Expand("%AppFolder%\\data"));
+		end
+	
+	end
+	
+	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\gearload")) == false ) and ( make_gearload_folder == true ) then
+		Folder.Create(SessionVar.Expand("%AppFolder%\\gearload"));
+	end
+	
+	
+	if ( Folder.DoesExist(SessionVar.Expand("%AppFolder%\\system")) == true ) then
+		Folder.Rename(SessionVar.Expand("%AppFolder%\\system"), SessionVar.Expand("%AppFolder%\\old.system"));
+		Folder.DeleteTree(SessionVar.Expand("%AppFolder%\\old.system"), nil);
+	end
+	
+	-- Create placeholder file for grub2win detection
+	File.Install(SessionVar.Expand("%TempLaunchFolder%\\check.me"), SessionVar.Expand("%AppFolder%\\findme"), FILE_INSTALL_ALWAYS, false, false, nil, nil);
+	
+Application.Sleep(1500);
+DlgProgressBar.SetPos(CTRL_PROGRESS_BAR_01, 100);</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Finish</Name>
+<Args/>
+<Script>-- These actions are performed right after the On Start actions.
+
+-- advance to the next screen
+Screen.Next();
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Cancel</Name>
+<Args/>
+<Script>-- These actions are performed when the Cancel button is clicked.
+
+-- from _SUF70_Global_Functions.lua:
+-- ask user if they're sure they want to exit
+if g_ConfirmSetupAbort() then
+	cleanTemp();
+	Application.Exit(EXIT_REASON_USER_ABORTED);
+end
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Ctrl Message</Name>
+<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
+<Script/>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+</Events>
+<Controls>
+<Control>
+<Type>1</Type>
+<ID>102</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>-10</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>203</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>7</Type>
+<ID>900</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>1</TabOrder>
+<Style>1</Style>
+<Min>0</Min>
+<Max>100</Max>
+<XPStyleBars>0</XPStyleBars>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>212</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>2</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>204</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>3</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+<Control>
+<Type>2</Type>
+<ID>211</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>3</TabOrder>
+<IsHeading>0</IsHeading>
+</Control>
+</Controls>
+<Languages>
+<SUF70Messages>
+<Language>
+<Name>English</Name>
+<Default>1</Default>
+<Primary>9</Primary>
+<Secondary>
+<ID>1</ID>
+<ID>2</ID>
+<ID>3</ID>
+<ID>4</ID>
+<ID>5</ID>
+<ID>6</ID>
+<ID>7</ID>
+<ID>8</ID>
+<ID>9</ID>
+<ID>10</ID>
+<ID>11</ID>
+<ID>12</ID>
+<ID>13</ID>
+</Secondary>
+</Language>
+<Messages>
+<IDS_WINDOW_TITLE>%ProductName% %ProductVer%</IDS_WINDOW_TITLE>
+<IDS_HEADER_TEXT>Installing Your Fav Android-x86 OS</IDS_HEADER_TEXT>
+<IDS_SUBHEADER_TEXT>Hol up !</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
 <IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_BODY>Please review your Installation path to make sure it's correct...!
-
-Selected Ext4/Ntfs Partition:        %AppFolder%
-
-
-Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
-<IDS_CTRL_HEADINGTEXT_BODY>Title</IDS_CTRL_HEADINGTEXT_BODY>
+<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
+<IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
+<IDS_CTRL_PROGRESS_BAR_01>Installing</IDS_CTRL_PROGRESS_BAR_01>
+<IDS_CTRL_STATICTEXT_LABEL_-6>IDS_CTRL_STATICTEXT_LABEL_-6</IDS_CTRL_STATICTEXT_LABEL_-6>
+<IDS_CTRL_STATICTEXT_LABEL_02>%END_CREDITS%</IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_STATICTEXT_LABEL_01>Powered by Advanced Android-x86 Installer Programmed by AXON (supreme-gamers.com)</IDS_CTRL_STATICTEXT_LABEL_01>
 </Messages>
 </SUF70Messages>
 </Languages>
 </Screen>
 </BeforeInstallingScreens>
 <DuringInstScreenData>
-<ShowProgress>1</ShowProgress>
+<ShowProgress>0</ShowProgress>
 <Screens>
 <Screen>
 <Type>130</Type>
@@ -4858,40 +3030,50 @@ Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -4899,17 +3081,7 @@ Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4919,7 +3091,7 @@ Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -4961,10 +3133,6 @@ Click Next to proceed with the installation.</IDS_CTRL_STATICTEXT_BODY>
 <Name>On Preload</Name>
 <Args/>
 <Script>-- These actions are performed before the screen is shown.
-grub_disabled = File.DoesExist("%TempLaunchFolder%\\grub.disable");
-if( grub_disabled == false ) then
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\grub2win_ins.bat"), "", "", SW_SHOWNORMAL, true);
-end
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -4990,7 +3158,6 @@ Note:
 ]]
 
 -- get the appropriate string ID for the current stage's progress message...
-
 local strStringID;
 if(e_Stage == INSTALL_STAGE_PREPARING) then
 	strStringID = "MSG_PROG_PREPARING";
@@ -5064,7 +3231,7 @@ end
 <Control>
 <Type>2</Type>
 <ID>212</ID>
-<Visible>0</Visible>
+<Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>3</TabOrder>
 <IsHeading>0</IsHeading>
@@ -5075,10 +3242,10 @@ end
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>4</TabOrder>
-<Style>1</Style>
+<Style>0</Style>
 <Min>0</Min>
 <Max>100</Max>
-<XPStyleBars>0</XPStyleBars>
+<XPStyleBars>1</XPStyleBars>
 </Control>
 <Control>
 <Type>2</Type>
@@ -5135,10 +3302,10 @@ end
 <IDS_HEADER_TEXT>Installing %ProductName%</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>Please wait...</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>After booting into DarkMatter&gt;&gt;&gt;&gt; Open "GearLock" app, then use option 1</IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS>
+<IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_LABEL_01/>
-<IDS_CTRL_STATICTEXT_LABEL_02>Processing Files...</IDS_CTRL_STATICTEXT_LABEL_02>
-<IDS_CTRL_PROGRESS_BAR_01>Installing...</IDS_CTRL_PROGRESS_BAR_01>
+<IDS_CTRL_STATICTEXT_LABEL_02/>
+<IDS_CTRL_PROGRESS_BAR_01/>
 <IDS_CTRL_STATICTEXT_LABEL_03>Progress Two</IDS_CTRL_STATICTEXT_LABEL_03>
 <IDS_CTRL_STATICTEXT_LABEL_04>Performing Actions...</IDS_CTRL_STATICTEXT_LABEL_04>
 <IDS_CTRL_PROGRESS_BAR_02/>
@@ -5160,40 +3327,50 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5201,17 +3378,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -5221,7 +3388,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -5262,32 +3429,7 @@ end
 <Name>On Preload</Name>
 <Args/>
 <Script>-- These actions are performed before the screen is shown.
-result = File.Install(SessionVar.Expand("%TempLaunchFolder%\\logo.ico"), "C:\\Program Files\\DarkMatter\\PhoenixOS_DarkMatter.ico", FILE_INSTALL_ALWAYS, false, false, nil, nil);
---result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\crt_sht3.bat"), "", "", SW_MINIMIZE, false);
-Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Grub2Win", "C:\\grub2\\grub2win.exe", "", "", "", 0, SW_SHOWNORMAL, nil, "", START_OPTION_DEFAULT);
-Shell.CreateShortcut(Shell.GetFolder(SHF_DESKTOP), "Boot DarkMatter", "C:\\Program Files\\DarkMatter\\Run.bat", "", "", "C:\\Program Files\\DarkMatter\\PhoenixOS_DarkMatter.ico", 0, SW_SHOWNORMAL, nil, "supreme-gamers.com", START_OPTION_DEFAULT);
-
-is_ntfs = File.DoesExist("%TempLaunchFolder%\\is.ntfs");
-if( is_ntfs == false ) then
-File.Delete(SessionVar.Expand("%AppFolder%\\data.img"), false, false, false, nil);
-datadir = Folder.DoesExist("%AppFolder%\\data");
-if( datadir == false ) then
-Folder.Create("%AppFolder%\\data");
-end
-end
-
-pkgdir = Folder.DoesExist("%AppFolder%\\Package_Dir");
-if( pkgdir == false ) then
-Folder.Create("%AppFolder%\\Package_Dir");
-end
-
-dmup = Folder.DoesExist(("%AppFolder%\\system"));
-if( dmup == true ) then
-Dialog.Message("Notice", "An earlier version of darkmatter detected, use gearlock&gt;1 after this!", MB_OK, MB_ICONNONE);
-File.Rename(SessionVar.Expand("%AppFolder%\\system.img"), "%AppFolder%\\new.system.img");
-
---Folder.Rename("%AppFolder%\\system", "%AppFolder%\\old.system");
-end</Script>
+</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -5295,9 +3437,10 @@ end</Script>
 <Name>On Back</Name>
 <Args/>
 <Script>-- These actions are performed when the Back button is clicked.
+cleanTemp();
+Shell.Execute("C:\\Program Files\\DarkMatter\\Boot.bat", "open", "", "C:\\Program Files\\DarkMatter\\", SW_SHOWNORMAL, false);
+Screen.Next();
 
--- go back to the previous screen
-Screen.Back();
 </Script>
 <BookMarks count="0">
 </BookMarks>
@@ -5307,10 +3450,7 @@ Screen.Back();
 <Args/>
 <Script>-- These actions are performed when the Next button is clicked.
 
--- advance to the next screen
---Grub disable file exist
-
-result = File.Run(SessionVar.Expand("%TempLaunchFolder%\\cleanup.bat"), "", "", SW_SHOWNORMAL, true);
+cleanTemp();
 Screen.Next();</Script>
 <BookMarks count="0">
 </BookMarks>
@@ -5359,7 +3499,7 @@ System.Reboot();</Script>
 <Type>1</Type>
 <ID>101</ID>
 <Visible>1</Visible>
-<Enabled>0</Enabled>
+<Enabled>1</Enabled>
 <TabOrder>76</TabOrder>
 <FTButton>1</FTButton>
 </Control>
@@ -5374,7 +3514,7 @@ System.Reboot();</Script>
 <Control>
 <Type>1</Type>
 <ID>102</ID>
-<Visible>1</Visible>
+<Visible>0</Visible>
 <Enabled>0</Enabled>
 <TabOrder>-9</TabOrder>
 <FTButton>1</FTButton>
@@ -5419,197 +3559,24 @@ System.Reboot();</Script>
 </Secondary>
 </Language>
 <Messages>
-<IDS_WINDOW_TITLE>DarkMatter Installation Successful</IDS_WINDOW_TITLE>
+<IDS_WINDOW_TITLE>%ProductName% %ProductVer% Installation Successful</IDS_WINDOW_TITLE>
 <IDS_HEADER_TEXT>Installation Finished</IDS_HEADER_TEXT>
 <IDS_SUBHEADER_TEXT>The installation has completed successfully.</IDS_SUBHEADER_TEXT>
 <IDS_CTRL_BUTTON_NEXT>&amp;Finish</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
+<IDS_CTRL_BUTTON_BACK>&amp;Reboot Now</IDS_CTRL_BUTTON_BACK>
 <IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
 <IDS_CTRL_BUTTON_HELP>&amp;Reboot</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_STATICTEXT_BODY>%ProductName% %ProductVer% installation is complete.
+<IDS_CTRL_STATICTEXT_BODY>Now you can reboot and choose %ProductName% from your new grub2win bootloader.
 
-Now you can reboot and choose PhoenixOS DarkMatter from your new grub2win bootloader.
-
-Important: Once you have booted into DarkMatter. Open "GearLock" app, then use option 1
+If you ever liked our work then please remember to leave your review at supreme-gamers.com :)
 </IDS_CTRL_STATICTEXT_BODY>
-<IDS_CTRL_HEADINGTEXT_BODY>Installation Successful</IDS_CTRL_HEADINGTEXT_BODY>
+<IDS_CTRL_HEADINGTEXT_BODY>                                      Installation Successful</IDS_CTRL_HEADINGTEXT_BODY>
 </Messages>
 </SUF70Messages>
 </Languages>
 </Screen>
 </AfterInstallingScreens>
-<Packages>
-<Package>
-<ID>system</ID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>System</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>It's the system.img</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-<Package>
-<ID>initrd</ID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>Initrd</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>It's the Initial ramdisk image.</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-<Package>
-<ID>ramdisk</ID>
-<Install>1</Install>
-<Enabled>1</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>Ramdisk</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>It's the secondary ramdisk image</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-<Package>
-<ID>kernel</ID>
-<Install>1</Install>
-<Enabled>0</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>Kernel 4.14.15</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>This is the Stock PhoenixOS Kernel</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-<Package>
-<ID>kernel41992</ID>
-<Install>1</Install>
-<Enabled>0</Enabled>
-<AddSpace>0</AddSpace>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>English</Name>
-<Default>1</Default>
-<Primary>9</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_PACKAGE_NAME>Kernel 4.19.92</IDS_PACKAGE_NAME>
-<IDS_PACKAGE_DESCRIPTION>This is the additional secondary multibootable kernel which comes with DarkMatter! Remember, it's the first public android_x86 to have such capability :)</IDS_PACKAGE_DESCRIPTION>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Package>
-</Packages>
+<Packages/>
 <SerialLists>
 <SerialListData>
 <Name>List 1</Name>
@@ -5736,40 +3703,50 @@ Important: Once you have booted into DarkMatter. Open "GearLock" app, then use o
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5777,17 +3754,7 @@ Important: Once you have booted into DarkMatter. Open "GearLock" app, then use o
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -5797,7 +3764,7 @@ Important: Once you have booted into DarkMatter. Open "GearLock" app, then use o
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -6001,40 +3968,50 @@ Otherwise, click Next to continue.
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -6042,17 +4019,7 @@ Otherwise, click Next to continue.
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -6062,7 +4029,7 @@ Otherwise, click Next to continue.
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -6292,40 +4259,50 @@ end
 <TBBG format="hex">ffffff</TBBG>
 <BDYBG format="hex">ffffff</BDYBG>
 <FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
+<TBTXT format="hex">ffffff</TBTXT>
+<BDYTXT format="hex">ffffff</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">66728f</C3DFACE>
-<C3DHLT format="hex">66728f</C3DHLT>
-<C3DLIT format="hex">66728f</C3DLIT>
-<C3DSH format="hex">66728f</C3DSH>
+<C3DFACE format="hex">333333</C3DFACE>
+<C3DHLT format="hex">333399</C3DHLT>
+<C3DLIT format="hex">ffff00</C3DLIT>
+<C3DSH format="hex">333333</C3DSH>
 <CBTNTXT format="hex">ffffff</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">66728f</CPRGRS>
 <C3DSHDK format="hex">66728f</C3DSHDK>
-<TBIMG>Modern_top.jpg</TBIMG>
-<SBIMG>Modern_side.jpg</SBIMG>
-<BDIMG>Modern_body.jpg</BDIMG>
+<TBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</TBIMG>
+<SBIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</SBIMG>
+<BDIMG>D:\ProjectBase\DarkMatter\WinInstallerBuild\installer_bkg.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
 <CstFnts>1</CstFnts>
 <Fonts>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Android 101</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-19</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
+<Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Montserrat</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-11</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Google Sans</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-27</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -6333,17 +4310,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
+<FontName>Google Sans</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -6353,7 +4320,7 @@ end
 <AntiAlias>1</AntiAlias>
 </FontData>
 <FontData>
-<FontName>Arial</FontName>
+<FontName>Comic Sans MS</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>400</Weight>
@@ -6589,9 +4556,9 @@ g_HandleSystemReboot();
 <ProjectData>
 <LogFile>
 <Create>1</Create>
-<Filename>%TempFolder%\%ProductName% Setup Log.txt</Filename>
+<Filename>%TempFolder%\%ProductName% Log.txt</Filename>
 <WriteMode>0</WriteMode>
-<ActionDetailLevel>1</ActionDetailLevel>
+<ActionDetailLevel>2</ActionDetailLevel>
 </LogFile>
 <EnableSilentMode>0</EnableSilentMode>
 <StartInSilentMode>0</StartInSilentMode>
@@ -6710,7 +4677,7 @@ g_HandleSystemReboot();
 <Action>0</Action>
 </SetupRequirements>
 <Launcher/>
-<ProjectTheme>Modern</ProjectTheme>
+<ProjectTheme>DarkMatter</ProjectTheme>
 <ProjFileDesc>New Project</ProjFileDesc>
 <ProjFileAuthor/>
 <ProjFileCompany/>
@@ -6720,19 +4687,12 @@ g_HandleSystemReboot();
 <ProjFileEmail/>
 <ProjFileCreatedVer>9.5.3.0</ProjFileCreatedVer>
 <ProjFileSavedVer>9.5.3.0</ProjFileSavedVer>
-<BaseFolderArchive>D:\ProjectBase\DarkMatter\kernels</BaseFolderArchive>
-<BaseFolderExternal>C:\gen_data</BaseFolderExternal>
+<BaseFolderArchive/>
+<BaseFolderExternal/>
 <UseSkinFile>0</UseSkinFile>
 <SkinFilename/>
 <SkinSubStyle/>
-<ActionPlugins>
-<Plugin>
-<RelativePath>IRZip\IRZip.lmd</RelativePath>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</Plugin>
-</ActionPlugins>
+<ActionPlugins/>
 <DependencyModules/>
 <PrimerFiles>
 <PrimerFile>
@@ -6740,87 +4700,7 @@ g_HandleSystemReboot();
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\cleanup.bat</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\pre_cleanup.bat</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\grub2win_ins.bat</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\extm32.bat</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\dg.exe</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\manual\man_grub2win_ins.bat</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\extpatch.exe</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\extfs_ins.bat</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\dg_ins.bat</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
-</BuildConfigs>
-</PrimerFile>
-<PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\extm64.bat</SourcePath>
-<DeleteOnExit>1</DeleteOnExit>
-<NeededByUninstall>0</NeededByUninstall>
-<BuildConfigs>
-<Cfg>All</Cfg>
+<Cfg>Full</Cfg>
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
@@ -6840,11 +4720,19 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grub2win.zip</SourcePath>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grub2win.7z</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
 <Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\parttool.7z</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>Full</Cfg>
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
@@ -6864,7 +4752,7 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\mkext4fs.exe</SourcePath>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\make_ext4fs.exe</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
@@ -6872,11 +4760,75 @@ g_HandleSystemReboot();
 </BuildConfigs>
 </PrimerFile>
 <PrimerFile>
-<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\batch_scripts\mkdata.bat</SourcePath>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\7z.dll</SourcePath>
 <DeleteOnExit>1</DeleteOnExit>
 <NeededByUninstall>0</NeededByUninstall>
 <BuildConfigs>
 <Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\external_executables\7z.exe</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grubconfigs\Android-x86-ASG.cfg</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grubconfigs\grub.cfg.footer</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\grub2win_assets.zip</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\Boot.bat</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\Run.bat</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\ascii.art</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+<PrimerFile>
+<SourcePath>D:\ProjectBase\DarkMatter\WinInstallerBuild\archive_files\licence.7z</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>Full</Cfg>
 </BuildConfigs>
 </PrimerFile>
 </PrimerFiles>
@@ -6884,7 +4836,449 @@ g_HandleSystemReboot();
 <Event>
 <Name>Global Functions</Name>
 <Args/>
-<Script/>
+<Script>-- Initialize global variables
+----Booleans and tables
+display = System.GetDisplayInfo();
+download_latest_grub2win = false;
+always_make_data_image = false;
+gearlock_bootinstall = true;
+make_gearload_folder = true;
+is_x64 = System.Is64BitOS();
+paragon_installed = false;
+install_grub2win = true;
+ext_is_mounted = false;
+grub_disabled = false;
+is_portable = false;
+loadFromISO = false;
+genDataImg = false;
+is_ntfs = false;
+if ( File.DoesExist(_TempLaunchFolder.."\\licence.7z") == true ) then pirate = true; else pirate = false; end;
+----Strings
+NAME = "Android-x86";
+VERSION = "ASG";
+END_CREDITS = "Did you know :?                                                                                                                  DarkMatter is the most customizable version of android-x86 developed by a group of kiddo homies &gt;_&lt; based on the discontinued PhoenixOS project"
+CONFIG_INI = _SourceFolder.."\\windows\\config.ini"
+
+
+function initWindowsConfig()
+
+	-- Initialize logo and ascii art
+	if ( File.DoesExist(_SourceFolder.."\\windows\\logo.ico") == true ) then
+		LOGO_ICON = _SourceFolder.."\\windows\\logo.ico"
+	else
+		LOGO_ICON = SessionVar.Expand("%TempLaunchFolder%\\logo.ico")
+	end
+	if ( File.DoesExist(_SourceFolder.."\\windows\\ascii.art") == true ) then
+		ASCII_ART = _SourceFolder.."\\windows\\ascii.art"
+	else
+		ASCII_ART = SessionVar.Expand("%TempLaunchFolder%\\ascii.art")
+	end
+	
+	if ( File.DoesExist(CONFIG_INI) == true ) then
+		
+		-- META-DATA
+		nameProp = INIFile.GetValue(CONFIG_INI, "META-DATA", "NAME");
+		versionProp = INIFile.GetValue(CONFIG_INI, "META-DATA", "VERSION");
+		end_creditsProp = INIFile.GetValue(CONFIG_INI, "META-DATA", "END_CREDITS");
+		
+		if not ( nameProp == "" ) then NAME = nameProp; end
+		if not ( versionProp == "" ) then VERSION = versionProp; end
+		if not ( versionProp == "" ) then VERSION = versionProp; end
+		if not ( end_creditsProp == "" ) then END_CREDITS = end_creditsProp;  SessionVar.Set("%END_CREDITS%", END_CREDITS); end	
+		
+	end
+	
+end
+
+initWindowsConfig(); -- Initialize config.ini for the first time
+
+function initSessionVars()
+	
+	SessionVar.Set("%ProductName%", NAME);
+	SessionVar.Set("%ProductVer%", VERSION);
+	SessionVar.Set("%AppFolder%", SessionVar.Expand("%SelectedDrive%\\"..NAME.."-"..VERSION));
+	SessionVar.Set("%END_CREDITS%", END_CREDITS);
+	
+end
+
+initSessionVars(); -- Re-initialize session vars
+
+-- Define global functions
+function cleanTemp()
+	
+	umountExt();
+	killProcess("partitionwizard.exe"); -- In case the partition tool is still running
+	Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C for /d %G in (\"%temp%\\_ir_sf_temp_*\") do rd /s /q \"%~G\"", "", SW_HIDE, true);
+	if ( loadFromISO == true ) and (File.DoesExist(_SourceFolder.."\\windows\\config.ini")) then Folder.DeleteTree(_SourceFolder.."\\windows", nil); end; -- Cleanup windows config dir loaded by ISO
+	Folder.DeleteTree(SessionVar.Expand("%TempFolder%\\grub2win\\"), nil);
+	Folder.DeleteTree(SessionVar.Expand("%TempLaunchFolder%\\"), nil);
+	
+end
+
+
+function killProcess(targetProcess)
+
+	instances_of_file = 0;
+	file_to_check_for = String.Lower(targetProcess); --have all lowercase
+	processes = System.EnumerateProcesses();
+	
+	for j, file_path in pairs(processes) do
+	    file = String.SplitPath(file_path);
+	    if (String.Lower(file.Filename..file.Extension)) == file_to_check_for then
+	        System.TerminateProcess(j);
+	    end
+	end
+end
+
+
+function sevenZip(inputArchive, outputLocation, archivePassword, specifiedFiles, waitForReturn)
+	
+	sevenRetCode = Shell.Execute(_TempLaunchFolder.."\\7z.exe", "open", " x -p\""..archivePassword.."\" -bd -aoa -o\""..outputLocation.."\" \""..inputArchive.."\" "..specifiedFiles, "", SW_HIDE, waitForReturn);
+	return sevenRetCode;
+	
+end
+
+
+function installGrub2Win()
+	
+	if ( download_latest_grub2win == true ) then
+		-- Get grub2win package
+		downloadFile("https://sourceforge.net/projects/subproject.grub2win.p/files/GrubInst/download", _TempLaunchFolder.."\\grub2win.latest", "Grub2Win Latest Package");
+		
+		-- Extract grub2win package
+		if ( downloadFileFailed == false ) then
+			sevenZip(_TempLaunchFolder.."\\grub2win.latest", _TempLaunchFolder.."\\grub2win", "", "", true);
+		else
+			Dialog.Message("Notice", "Okay, since online version can\'t be fetched, so local version will be used.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+			sevenZip(_TempLaunchFolder.."\\grub2win.7z", _TempLaunchFolder.."\\grub2win", "", "", true);
+		end
+		
+	else
+		sevenZip(_TempLaunchFolder.."\\grub2win.7z", _TempLaunchFolder.."\\grub2win", "", "", true);
+	end
+	
+	
+	-- Install grub2win
+--	grub2win_exe = "C:\\grub2\\grub2win.exe"
+--	if ( File.DoesExist(grub2win_exe) == true ) then File.Run(grub2win_exe, "Uninstall", "", SW_SHOWNORMAL, true); end
+--	Folder.DeleteTree(_TempFolder.."\\grub2win", nil);
+--	Application.Sleep(3000);
+
+	---- Install grub2win
+	Shell.Execute(_TempLaunchFolder.."\\grub2win\\install\\winsource\\grub2win.exe", "open", "AutoInstall", "", SW_SHOWNORMAL, true);
+	
+	
+	
+	---- Merge assets
+	-- Get assets path
+	if ( File.DoesExist(_SourceFolder.."\\grub2win_assets.zip") == true ) then
+		grub2win_assets_file = _SourceFolder.."\\windows\\grub2win_assets.zip";
+	else 
+		grub2win_assets_file = _TempLaunchFolder.."\\grub2win_assets.zip";
+	end
+	sevenZip(grub2win_assets_file, "C:\\grub2", "", "", true);
+	
+	
+	
+	---- Install grub.cfg entry
+	GRUB_CFG = "C:\\grub2\\grub.cfg"
+	grubcfg_orig_contents = TextFile.ReadToString(GRUB_CFG);
+	
+	-- Check if entry already exists in C:\grub2\grub.cfg and append entry as required
+	check_entry_existence = String.Find(grubcfg_orig_contents, NAME.."-"..VERSION, 1, true);
+
+	if ( check_entry_existence == -1 ) then
+	
+		-- Update grub.cfg.footer OS names
+		if ( File.DoesExist(_SourceFolder.."\\windows\\grub.cfg.footer") == true ) then
+			grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_SourceFolder.."\\windows\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
+		else
+			grubcfg_new_footer_contents = String.Replace(TextFile.ReadToString(_TempLaunchFolder.."\\grub.cfg.footer"), "Android-x86-ASG", NAME.."-"..VERSION, true);
+		end
+		
+		TextFile.WriteFromString(GRUB_CFG, grubcfg_new_footer_contents, true);
+		
+	end
+	
+	
+	
+	---- Merge custom configs
+	if ( File.DoesExist(_SourceFolder.."\\windows\\Android-x86-ASG.cfg") == true ) then
+		GRUB_CFG_CUSTOM = _SourceFolder.."\\windows\\Android-x86-ASG.cfg";
+	else
+		GRUB_CFG_CUSTOM = SessionVar.Expand("%TempLaunchFolder%\\Android-x86-ASG.cfg");
+	end
+	-- Replace default NAME with new ones
+	GRUB_CFG_CUSTOM_CONTENTS = String.Replace(TextFile.ReadToString(GRUB_CFG_CUSTOM), "Android-x86-ASG", NAME.."-"..VERSION, true);
+	-- Update gfx payload value
+	GRUB_CFG_CUSTOM_CONTENTS = String.Replace(GRUB_CFG_CUSTOM_CONTENTS, "SCREENxRESOLUTION", display.Width.."x"..display.Height, true);
+	
+	TextFile.WriteFromString("C:\\grub2\\windata\\customconfigs\\"..NAME.."-"..VERSION..".cfg", GRUB_CFG_CUSTOM_CONTENTS, false);
+	TextFile.WriteFromString("C:\\grub2\\winsource\\sample.submenu.txt", GRUB_CFG_CUSTOM_CONTENTS, false);
+
+end
+
+
+function get_paragon_mounter()
+
+	if ( is_x64 == true ) then
+		paragon_mounter = "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\extmounter.exe";
+		paragon_mounter_ui = "C:\\Program Files (x86)\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe";
+	else
+		paragon_mounter = "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\extmounter.exe";
+		paragon_mounter_ui = "C:\\Program Files\\Paragon Software\\ExtFS for Windows\\Paragon ExtFS for Windows.exe";
+	end
+	
+end
+
+function installParagon()
+
+	-- Cleanup old paragon registry and tacking file
+	Folder.DeleteTree("C:\\ProgramData\\Paragon\\", nil);
+	Folder.DeleteTree("C:\\Program Files\\Paragon Software\\LinuxFS for Windows\\", nil);
+	Folder.DeleteTree("C:\\Program Files (x86)\\Paragon Software\\LinuxFS for Windows\\", nil);
+	Registry.DeleteKey(HKEY_LOCAL_MACHINE, "SOFTWARE\\Paragon Software\\Linux File Systems for Windows by Paragon Software");
+	--Registry.DeleteKey(HKEY_CURRENT_USER, "Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Compatibility Assistant\\Store");
+	
+	-- Kill if running
+	--File.Run("C:\\Windows\\System32\\cmd.exe", "/C taskkill /IM \"Paragon ExtFS for Windows.exe\" /F &gt;nul 2&gt;&amp;1", "", SW_MINIMIZE, true);
+	killProcess("paragon extfs for windows.exe");
+	Service.Stop("ParagonMounter", "ParagonMounter", 0);
+	Service.Stop("DokanMounter", "DokanMounter", 0);
+	
+	-- Start the installer
+	Shell.Execute(_TempLaunchFolder.."\\extfs.msi", "open", "/passive /norestart", "", SW_SHOWNORMAL, true);
+	-- update the extpatch.exe path in autoit script and run it
+	
+	sevenZip(_TempLaunchFolder.."\\licence.7z", _TempFolder.."\\lul", "fuckyouav", "", true);
+	orig_au_script = TextFile.ReadToString(SessionVar.Expand("%TempFolder%\\lul\\4"));
+	new_au_script = String.Replace(orig_au_script, "changeme", _TempFolder.."\\lul", true);
+	TextFile.WriteFromString(SessionVar.Expand("%TempFolder%\\lul\\4"), new_au_script, false);
+	Shell.Execute(_TempFolder.."\\lul\\3.exe", "open", _TempFolder.."\\lul\\4", "", SW_MINIMIZE, true);
+	Folder.DeleteTree(_TempFolder.."\\lul");
+	--Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C sc config DokanMounter start= demand &amp; sc config ParagonMounter start= demand", "", SW_HIDE, true);
+
+end
+
+
+function install_gearlock(OS_SOURCE, prompt)
+
+	-- Get initrd.img of bootinstaller
+	downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("bootinstall-initrd.img").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-initrd.img", "GearLock BootInstall Helper");
+	
+	-- Get actual gearlock installer binary
+	if ( downloadFileFailed == false ) then
+		File.OpenURL("https://supreme-gamers.com/resources/gearlock-custom-recovery-replacement-for-android-x86.40/updates", SW_MAXIMIZE);
+		HTTP.DownloadSecure("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/version").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\gearlock_version", MODE_BINARY, 20, 443, nil, nil, nil);
+		gearlock_version = TextFile.ReadToString(_TempLaunchFolder.."\\gearlock_version"); File.Delete(_TempLaunchFolder.."\\gearlock_version", false, false, false, nil);
+		downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/gearlock").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-gearlock", "GearLock "..gearlock_version.." Installer Binary");
+	end
+	
+	-- Finally process files
+	if ( downloadFileFailed == false ) then
+		File.Rename(OS_SOURCE.."\\initrd.img", OS_SOURCE.."\\bootinstall-initrd.img"); -- Rename original initrd.img for bootinstaller
+		File.Move(_TempLaunchFolder.."\\bootinstall-initrd.img", OS_SOURCE.."\\initrd.img", true, true, false, false, nil);
+		File.Move(_TempLaunchFolder.."\\bootinstall-gearlock", OS_SOURCE.."\\bootinstall-gearlock", true, true, false, false, nil);
+		if ( prompt == "yes" ) then Dialog.Message("Congrats", "GearLock was successfully placed for boot-install.\r\nIt will be auto-configured when you boot into your android-x86 OS.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1); end;
+	end
+
+end
+
+--function checkInstallPartitionTool()
+
+--	local parttool_exists = File.DoesExist("C:\\Program Files\\MiniTool Partition Wizard 12\\partitionwizard.exe");
+--	if ( parttool_exists == false ) then
+--		File.Run(SessionVar.Expand("%TempLaunchFolder%\\parttool.exe"), "/VERYSILENT /NORESTART", "", SW_SHOWNORMAL, true);
+--	end
+
+--end
+
+
+function runPartitionTool()
+
+		-- Start showing status dlg
+	StatusDlg.ShowProgressMeter(false);
+	StatusDlg.Show(MB_ICONNONE, false);
+	StatusDlg.SetTitle("Partition Tool");
+	StatusDlg.SetMessage("Running the Partitioning Tool");
+	StatusDlg.SetStatusText("It may take a while, wait patiently");
+	ext_is_mounted = true; umountExt(); ext_is_mounted = false; -- Make sure to force unMount
+	sevenZip(_TempLaunchFolder.."\\parttool.7z", _TempLaunchFolder.."\\parttool", "", "", true);
+	--Shell.Execute(_TempLaunchFolder.."\\parttool\\start.bat", "open", "", _TempLaunchFolder.."\\parttool", SW_HIDE, true);
+	Shell.Execute("C:\\Windows\\System32\\cmd.exe", "open", "/C ".._TempLaunchFolder.."\\parttool\\DiskGenius.exe", "", SW_HIDE, true);
+	StatusDlg.Hide();
+
+end
+
+function mountExt()
+
+	if ( ext_is_mounted == false ) then
+		
+		ext_is_mounted = true;
+		
+		-- Start showing status dlg
+		StatusDlg.ShowProgressMeter(false);
+		StatusDlg.Show(MB_ICONNONE, false);
+		StatusDlg.SetTitle("Probing EXT4 Driver");
+		StatusDlg.SetMessage("Trying to autoMount your EXT4 partitions ...");
+		
+		-- Kill if running
+		StatusDlg.SetStatusText("Current Status: Killing GUI ExtFS handler");
+		killProcess("ExtFS By SupremeGamers.exe"); Application.Sleep(1000);
+		
+		-- Force unMount to cleanly reMount
+		StatusDlg.SetStatusText("Current Status: Force unMounting if is already mounted");
+		umountExt();
+		
+		-- Start services
+		StatusDlg.SetStatusText("Current Status: Starting services");
+		Service.Start("DokanMounter", "DokanMounter", nil); Application.Sleep(3000);
+		Service.Start("ParagonMounter", "ParagonMounter", nil); Application.Sleep(3000);
+		StatusDlg.SetStatusText("Current Status: Final mountCall to System");
+		Shell.Execute(paragon_mounter, "open", "/mount", "", SW_HIDE, false); Application.Sleep(9000);
+		
+		-- Finally hide statusDlg
+		StatusDlg.Hide();
+		Dialog.Message("Information", "If you can\'t find your EXT4 partitions then you must RESTART and try again.", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		
+	end
+	
+end
+
+function umountExt()
+
+	if ( ext_is_mounted == true ) then
+		get_paragon_mounter();
+		Shell.Execute(paragon_mounter, "open", "/umount", "", SW_HIDE, true);
+		Service.Stop("ParagonMounter", "ParagonMounter", 5);
+		Service.Stop("DokanMounter", "DokanMounter", 5);
+	end
+
+end
+
+function makeDataImg(sizeMb, sizeGb)
+
+	sizeBytes = sizeMb * 1048576;
+	Shell.Execute(_TempLaunchFolder.."\\make_ext4fs.exe", "open", " -l "..sizeBytes.." -b 4096 -a /data -L data "..SessionVar.Expand("%AppFolder%\\data.img"), _TempLaunchFolder, SW_HIDE, true);
+	
+end
+
+
+
+
+---- HTTPS Download functions
+
+-- Callback function for HTTP.DownloadSecure
+function DownloadCallback(nDownloaded, nTotal, TransferRate, SecondLeft, SecondsLeftFormat, Message)
+    -- Convert total and downloaded bytes into formatted strings
+    sDownloaded = String.GetFormattedSize(nDownloaded, FMTSIZE_AUTOMATIC, true);
+    sTotal = String.GetFormattedSize(nTotal, FMTSIZE_AUTOMATIC, true);
+
+    -- Output time left, formatted.
+    StatusDlg.SetMessage(dwFileName);
+    
+    -- Output formatted sizes to user through statusdlg status text
+    StatusDlg.SetStatusText("Downloaded: " .. sDownloaded .. " / " .. sTotal.."   Time Left: "..SecondsLeftFormat);
+
+    -- Set meter position (fraction downloaded * max meter range)
+    StatusDlg.SetMeterPos((nDownloaded / nTotal) * 65534);
+
+    -- Continue with the download.
+    return true;
+end
+	
+function downloadFile(dwUrl, localFile, name)
+	downloadFileFailed = false -- reinitialize the check var
+	while ( 1 == 1 )
+	do		
+		-- Set meter range (max range = 65534)
+		StatusDlg.ShowProgressMeter(true);
+		StatusDlg.SetMeterRange(0, 65534);
+		
+		-- Show the StatusDlg
+		StatusDlg.Show(0, false);
+		StatusDlg.SetTitle("Downloading");
+		StatusDlg.SetMessage("");
+		StatusDlg.SetStatusText("");
+			
+		-- Set status file name
+		dwFileName = name;
+		
+		-- Download a file from the internet to the user's computer
+		-- Uses DownloadCallback() as the callback function
+	
+		HTTP.DownloadSecure(dwUrl, localFile, MODE_BINARY, 20, 443, nil, nil, DownloadCallback);
+		
+		-- Hide the StatusDlg
+		StatusDlg.Hide();
+		
+		-- Handle error	
+		error = Application.GetLastError();
+		if ( error ~= 0 ) or ( File.DoesExist(localFile) == false ) then choice = Dialog.Message("Error during download", _tblErrorMessages[error].."\r\n\r\nDo you want to retry ?", MB_YESNO, MB_ICONEXCLAMATION, MB_DEFBUTTON1); else break; end
+		if ( choice == IDNO ) then downloadFileFailed = true; break; end	
+	end
+end
+		
+
+function getEncodedUrl(fileName)
+
+    encodedUrl = String.Replace(fileName, "/", "%2F", false);
+    return encodedUrl;
+
+end
+
+
+
+
+-- Precheck --
+
+-- Conflicting programes warning START
+---Ext2Fsd
+if ( File.DoesExist("C:\\Program Files\\Ext2Fsd\\Ext2Mgr.exe") == true ) then
+	Dialog.Message("Error", "Seems like you have *Ext2Fsd installed on your system. Please *unins\'tall it and reboot before proceeding as it can conflict with the installation process!", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	File.ExploreFolder("C:\\Program Files\\Ext2Fsd", SW_SHOWNORMAL);
+	--Application.Exit(0);
+end
+
+---ParagonLinuxFS
+if ( is_x64 == true ) then
+	paragon_extfs_lookup = "C:\\Program Files (x86)\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
+else
+	paragon_extfs_lookup = "C:\\Program Files\\Paragon Software\\LinuxFS for Windows\\extmounter.exe";
+end
+
+if ( File.DoesExist(paragon_extfs_lookup) == true ) then
+	Dialog.Message("Error", "Seems like you have *ParagonLinuxFS installed on your system. Please *uninstall it and reboot before proceeding as it can conflict with the installation process!", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+	File.ExploreFolder(paragon_extfs_lookup)
+	Application.Exit(1);
+end
+	
+---Verify ParagonExtFS
+get_paragon_mounter();
+x64_paragon = paragon_mounter;
+x32_paragon = paragon_mounter;
+extmounter_crc = 2723912317;
+if ( is_x64 == true ) and ( File.DoesExist(x64_paragon) == true ) then
+	
+	if ( File.GetCRC(x64_paragon) == extmounter_crc ) then
+		paragon_installed = true;
+		
+	else
+		Dialog.Message("Attention", "You have a older version of ParagonExtFS, please uninstall it and reboot to use the installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		Application.Exit(1);
+	end
+	
+elseif ( is_x64 == false ) and ( File.DoesExist(x32_paragon) == true ) then
+
+	if ( File.GetCRC(x32_paragon) == extmounter_crc ) then
+		paragon_installed = true;
+		
+	else
+		Dialog.Message("Attention", "You have a older version of ParagonExtFS, please uninstall it and reboot to use the installer", MB_OK, MB_ICONINFORMATION, MB_DEFBUTTON1);
+		Application.Exit(1);
+	end
+	
+end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -6906,7 +5300,8 @@ g_HandleSystemReboot();
 <Name>On Install Error</Name>
 <Args>number e_ErrorCode, string e_ErrorMsgID</Args>
 <Script>-- These actions are performed is an error occurs while the setup is installing files.
-</Script>
+-- Clean %temp%
+cleanTemp();</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
@@ -6957,22 +5352,22 @@ g_HandleSystemReboot();
 <SUF7SessionVars>
 <SessionVar>
 <Name>%ProductName%</Name>
-<Value>PhoenixOS DarkMatter</Value>
+<Value>Advanced Android-x86 Installer</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
 <Name>%CompanyName%</Name>
-<Value>aXoNuS</Value>
+<Value>SupremeGamers</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>Exo4.5</Value>
+<Value>1.6</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
 <Name>%Copyright%</Name>
-<Value>Copyright © 2019 %CompanyName%</Value>
+<Value>Copyright © 2020 %CompanyName%</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -7003,15 +5398,15 @@ g_HandleSystemReboot();
 </SUF7SessionVars>
 <BuildConfigurations>
 <BuildConfig>
-<Name>Default</Name>
+<Name>Full</Name>
 <PreBuildProg/>
 <PreBuildCmdLine/>
 <PreBuildWait>0</PreBuildWait>
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>PhoenixOS_DarkMatter_Exo4.5.exe</Filename>
-<OutputFolder>C:\Users\AXON\Documents</OutputFolder>
+<Filename>Advanced_Android-x86_Installer_v1.6_Full.exe</Filename>
+<OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
 <CustomSegSizeMode>0</CustomSegSizeMode>
@@ -7036,19 +5431,68 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>4.5</ResourceFileVersion>
-<ResourceProductVersion>4.5</ResourceProductVersion>
-<ResourceCompanyName>AXIMOS</ResourceCompanyName>
-<ResourceProductName>PhoenixOS DarMatter</ResourceProductName>
-<ResourceComments>Engine by AXON</ResourceComments>
+<ResourceFileVersion>1.6</ResourceFileVersion>
+<ResourceProductVersion>1.6</ResourceProductVersion>
+<ResourceCompanyName>SupremeGamers</ResourceCompanyName>
+<ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
+<ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
 <ResourceInternalName>ex_sg</ResourceInternalName>
-<ResourceFileDescription>PhoenixOS DarMatter</ResourceFileDescription>
-<ResourceCopyright>Copyright © 2019 AXIMOS</ResourceCopyright>
+<ResourceFileDescription>Advanced Android-x86 Installer</ResourceFileDescription>
+<ResourceCopyright>Copyright © 2020 SupremeGamers</ResourceCopyright>
 <ResourceTrademarks>supreme-gamers.com</ResourceTrademarks>
 <ResourcePrivateBuild/>
 <ResourceSpecialBuild/>
 <StampResources>1</StampResources>
-<CompressionType CompressionSetting="LZMA2_HIGH" DictionarySize="24" WordSize="32" CPUThreads="2"/>
+<CompressionType CompressionSetting="LZMA2_HIGH" DictionarySize="24" WordSize="32" CPUThreads="4"/>
+<Vars/>
+</BuildConfig>
+<BuildConfig>
+<Name>Lite</Name>
+<PreBuildProg/>
+<PreBuildCmdLine/>
+<PreBuildWait>0</PreBuildWait>
+<PostBuildProg/>
+<PostBuildCmdLine/>
+<PostBuildWait>0</PostBuildWait>
+<Filename>Advanced_Android-x86_Installer_v1.6_Lite.exe</Filename>
+<OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
+<SegmentSizeMode>0</SegmentSizeMode>
+<CustomSegSize>0</CustomSegSize>
+<CustomSegSizeMode>0</CustomSegSizeMode>
+<Platform>0</Platform>
+<CollectLaunchUserInfo>0</CollectLaunchUserInfo>
+<CodeSignSetups>0</CodeSignSetups>
+<CodeSignLocation/>
+<CodeSignWithSHA256>1</CodeSignWithSHA256>
+<CodeSignCertificateFileSHA256/>
+<CodeSignCertificatePasswordSHA256>
+</CodeSignCertificatePasswordSHA256>
+<CodeSignTimeStampURLSHA256/>
+<CodeSignArgumentsSHA256/>
+<CodeSignWithSHA1>1</CodeSignWithSHA1>
+<CodeSignTimeStampURLSHA1/>
+<CodeSignArgumentsSHA1/>
+<CodeSignSHA1CertificateToUse>0</CodeSignSHA1CertificateToUse>
+<CodeSignCertificateFileSHA1/>
+<CodeSignCertificatePasswordSHA1>
+</CodeSignCertificatePasswordSHA1>
+<CodeSignDescription/>
+<CodeSignDescriptionURL/>
+<UseCustomIcon>1</UseCustomIcon>
+<CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
+<ResourceFileVersion>1.6</ResourceFileVersion>
+<ResourceProductVersion>1.6</ResourceProductVersion>
+<ResourceCompanyName>SupremeGamers</ResourceCompanyName>
+<ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
+<ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
+<ResourceInternalName>ex_sg</ResourceInternalName>
+<ResourceFileDescription>Advanced Android-x86 Installer</ResourceFileDescription>
+<ResourceCopyright>Copyright © 2020 SupremeGamers</ResourceCopyright>
+<ResourceTrademarks>supreme-gamers.com</ResourceTrademarks>
+<ResourcePrivateBuild/>
+<ResourceSpecialBuild/>
+<StampResources>1</StampResources>
+<CompressionType CompressionSetting="LZMA2_HIGH" DictionarySize="24" WordSize="32" CPUThreads="4"/>
 <Vars/>
 </BuildConfig>
 </BuildConfigurations>
