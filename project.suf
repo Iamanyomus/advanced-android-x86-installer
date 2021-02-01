@@ -1121,8 +1121,8 @@ end
 <IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_BUTTON_01>extFS (Recommended)</IDS_CTRL_BUTTON_01>
-<IDS_CTRL_BUTTON_02>otherFS</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_BUTTON_01>         extFS           (Better compatibility)</IDS_CTRL_BUTTON_01>
+<IDS_CTRL_BUTTON_02>          otherFS             (Easy and safe)</IDS_CTRL_BUTTON_02>
 <IDS_CTRL_STATICTEXT_LABEL_01>It is recommended that you use the Ext4 option for best user experience</IDS_CTRL_STATICTEXT_LABEL_01>
 <IDS_CTRL_EDIT_01>%ProductVer%</IDS_CTRL_EDIT_01>
 <IDS_CTRL_EDIT_MASK_01/>
@@ -5362,7 +5362,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%ProductVer%</Name>
-<Value>1.6</Value>
+<Value>1.7</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5405,7 +5405,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_v1.6_Full.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_v1.7_Full.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5431,8 +5431,8 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.6</ResourceFileVersion>
-<ResourceProductVersion>1.6</ResourceProductVersion>
+<ResourceFileVersion>1.7</ResourceFileVersion>
+<ResourceProductVersion>1.7</ResourceProductVersion>
 <ResourceCompanyName>SupremeGamers</ResourceCompanyName>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
@@ -5454,7 +5454,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>Advanced_Android-x86_Installer_v1.6_Lite.exe</Filename>
+<Filename>Advanced_Android-x86_Installer_v1.7_Lite.exe</Filename>
 <OutputFolder>C:\Users\AXON\Downloads</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>0</CustomSegSize>
@@ -5480,8 +5480,8 @@ g_HandleSystemReboot();
 <CodeSignDescriptionURL/>
 <UseCustomIcon>1</UseCustomIcon>
 <CustomIconFile>D:\ProjectBase\DarkMatter\WinInstallerBuild\logo.ico</CustomIconFile>
-<ResourceFileVersion>1.6</ResourceFileVersion>
-<ResourceProductVersion>1.6</ResourceProductVersion>
+<ResourceFileVersion>1.7</ResourceFileVersion>
+<ResourceProductVersion>1.7</ResourceProductVersion>
 <ResourceCompanyName>SupremeGamers</ResourceCompanyName>
 <ResourceProductName>Advanced Android-x86 Installer</ResourceProductName>
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
