@@ -5068,7 +5068,7 @@ function install_gearlock(OS_SOURCE, prompt)
 	
 	-- Get actual gearlock installer binary
 	if ( downloadFileFailed == false ) then
-		File.OpenURL("https://supreme-gamers.com/resources/gearlock-custom-recovery-replacement-for-android-x86.40/updates", SW_MAXIMIZE);
+		File.OpenURL("https://github.com/axonasif/gearlock/releases/download/v7.3.15/gearlock", SW_MAXIMIZE);
 		HTTP.DownloadSecure("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/version").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\gearlock_version", MODE_BINARY, 20, 443, nil, nil, nil);
 		gearlock_version = TextFile.ReadToString(_TempLaunchFolder.."\\gearlock_version"); File.Delete(_TempLaunchFolder.."\\gearlock_version", false, false, false, nil);
 		downloadFile("https://gitlab.com/api/v4/projects/20100223/repository/files/"..getEncodedUrl("installer-binary/latest/gearlock").."/raw?ref=master&amp;private_token=exefduQX5n1YBWo8MRjm", _TempLaunchFolder.."\\bootinstall-gearlock", "GearLock "..gearlock_version.." Installer Binary");
@@ -5367,7 +5367,7 @@ g_HandleSystemReboot();
 </SessionVar>
 <SessionVar>
 <Name>%Copyright%</Name>
-<Value>Copyright © 2020 %CompanyName%</Value>
+<Value>Copyright Â© 2020 %CompanyName%</Value>
 <Type>1</Type>
 </SessionVar>
 <SessionVar>
@@ -5438,7 +5438,7 @@ g_HandleSystemReboot();
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
 <ResourceInternalName>ex_sg</ResourceInternalName>
 <ResourceFileDescription>Advanced Android-x86 Installer</ResourceFileDescription>
-<ResourceCopyright>Copyright © 2020 SupremeGamers</ResourceCopyright>
+<ResourceCopyright>Copyright Â© 2020 SupremeGamers</ResourceCopyright>
 <ResourceTrademarks>supreme-gamers.com</ResourceTrademarks>
 <ResourcePrivateBuild/>
 <ResourceSpecialBuild/>
@@ -5487,7 +5487,7 @@ g_HandleSystemReboot();
 <ResourceComments>The Advanced Android-x86 Installer for Windows</ResourceComments>
 <ResourceInternalName>ex_sg</ResourceInternalName>
 <ResourceFileDescription>Advanced Android-x86 Installer</ResourceFileDescription>
-<ResourceCopyright>Copyright © 2020 SupremeGamers</ResourceCopyright>
+<ResourceCopyright>Copyright Â© 2020 SupremeGamers</ResourceCopyright>
 <ResourceTrademarks>supreme-gamers.com</ResourceTrademarks>
 <ResourcePrivateBuild/>
 <ResourceSpecialBuild/>
